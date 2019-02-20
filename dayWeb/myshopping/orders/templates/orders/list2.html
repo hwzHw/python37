@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询所有订单</title>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/orders/999.jpg");
+			background-size: 1200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>您的所有订单：</h1>
+		
+		<table border="" cellspacing="0" cellpadding="">
+			<tr>
+				<th>收货人</th>
+				<th>收货电话</th>
+				<th>收货地址</th>
+				<th>商品名称</th>
+				<th>商品总价</th>
+				<th>商品数量</th>
+				<th>订单备注</th>
+				<th>订单操作</th>
+			</tr>
+			{% for o in orders %}
+				<tr>
+					<td>{{o.recv_name}}</td>
+					<td>{{o.recv_tel}}</td>
+					<td>{{o.recv_address}}</td>
+					<td>{{o.orderitem_set.all.first.goods_name}}</td>
+					<td>{{o.allPrice}}</td>
+					<td>{{o.orderitem_set.all.first.goods_count}}</td>
+					<td>{{o.remark}}</td>
+					<td>
+						<a href="{% url 'orders:delete' o.id %}">删除</a>;
+						<a href="">结算</a>
+					</td>
+				</tr>
+			
+				{% empty %}
+				<tr>
+					<td>购物车没有商品哦，<a href="">去添加吧</a></td>
+				</tr>
+				
+				
+			
+			{% endfor %}
+		</table>
+		<br>
+		<h3>
+			<a href="{% url 'users:user_index' %}">返回主页</a>
+		</h3>
+		
+		
+		
+	</div>
+</body>
+</html>

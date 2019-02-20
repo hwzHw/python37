@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>所属店铺的商品列表</title>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/goods/333.jpeg");
+			background-size: 1350px ;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>这个店铺的商品有：</h1>
+		<h3>
+			<a href="{% url 'users:user_index' %}">返回主页</a>
+			<a href="{% url 'store:detail' store.id %}">店铺主页</a>
+			
+		</h3>
+		
+		<table border="" cellspacing="0" cellpadding="">
+			
+			<tr>
+				<th>商品名称</th>
+				<th>商品图片</th>
+				<th>商品描述</th>
+				<th>商品单价</th>
+				<th>商品库存</th>
+				<th>商品操作</th>
+			</tr>
+			{% for g in goods %}	
+				<tr>
+					<td>{{g.name}}</td>
+					<td><img src="/{{g.goodsimage_set.all.first.path}}" width="200" height="200" ></td>
+					<td>{{g.intro}}</td>
+					<td>{{g.price}}</td>
+					<td>{{g.stock}}</td>
+					<td>
+						<a href="{% url 'goods:update' g.id %}">修改商品</a>
+						<a href="{% url 'goods:delete' store.id g.id %}">删除商品</a>
+					</td>
+				</tr>
+			
+			
+			
+				{% empty %}
+				<tr>
+					<td>亲还没有商品哦，<a href="{% url 'goods:add' store.id %}">点我添加商品吧</a></td>
+				</tr>
+			
+			
+			{% endfor %}
+			
+		</table>
+
+	</div>
+</body>
+</html>

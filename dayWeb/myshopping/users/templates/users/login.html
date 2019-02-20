@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/static/css/css_user/css/styledl.css" />
+		<script type="text/javascript" src="/static/css/js_user/js/jquery-1.12.4.min.js" ></script>
+		<script type="text/javascript" src="/static/css/js_user/js/javadl.js" ></script>
+	</head>
+	<body>
+		<div id="paixiedl">
+			<div class="logodl">
+				<img src="/static/imgs/imgs_user/images/paixielogo.jpg" alt="" />
+				<p>欢迎登录</p>
+			</div>
+			<div class="contentdl">
+				<a class="mfzc" href="#"><img src="/static/imgs/imgs_user/images/jlb.jpg" alt="" /></a>
+				<div class="contentdl-right">
+					<span>登录拍鞋平台<p>还没有拍鞋网账号？</p><a href="{% url 'users:user_register' %}">免费注册</a></span>
+					<form action="{% url 'users:login_success' %}" method="post">
+						{% csrf_token %}
+						<div class="textzh">
+							<input type="text" id="textzh" placeholder="请输入帐号" name="username" />
+							<i></i>
+						</div>
+						<b class="textone" style="display:block;width:255px;height:29px;color:red;text-align: center;font:12px/29px '微软雅黑';"></b>
+						<div class="passwordma">
+							<input type="password" id="passwordma" placeholder="请输入密码" name="password" />
+							<i></i>
+						</div>
+						<b class="texttwo" style="display:block;width:255px;height:29px;color:red;text-align: center;font:12px/29px '微软雅黑';"></b>
+						<div class="chick">
+							<input type="checkbox" name="o" />下次自动登录
+							<a href="#">忘记密码？</a>
+						</div>
+						<input class="dl" type="submit" value="登录">
+						<!--<a class="dl" href="{% url 'users:login_success' %}">登录</a>-->
+					</form>
+					<div class="other-login">
+						你也可以使用以下账号登录：
+						<br />
+						<p>
+							<a class="qq" title="使用qq账号登录拍鞋网" href="#"></a>
+							<a class="alipay" title="使用支付宝账号登录拍鞋网" href="#"></a>
+							<a class="sina" title="使用新浪账号登录拍鞋网" href="#"></a>
+							<a class="renren" title="使用人人网账号登录拍鞋网" href="#"></a>
+							<a class="netease" title="使用网易账号登录拍鞋网" href="#"></a>
+							<a class="xunlei" title="使用迅雷账号登录拍鞋网" href="#"></a>
+							<a class="baidu" title="使用百度账号登录拍鞋网" href="#"></a>
+							<a class="qh360" title="使用360账号登录拍鞋网" href="#"></a>
+							<a class="weixin" title="使用微信扫码登录拍鞋网" href="#"></a>
+							<a class="wanlitong" title="使用平安万里通登录拍鞋网" href="#"></a>
+						</p>
+					</div>
+					<div class="dlewmimg"><img src="/static/imgs/imgs_user/images/dlewm1.jpg" alt="" /></div>
+				</div>	
+				<div class="pcdl"  style="display:none">
+					<p>用拍鞋网APP 扫码安全登录</p>
+					<img src="/static/imgs/imgs_user/images/denglu.png">
+					<div class="textdl"><a href="#">刷二维码</a><span>|</span><a href="#">使用帮助</a></div>
+					<div class="dllist"><a href="#"><img src="/static/imgs/imgs_user/images/dllist.jpg" alt="" /></a></div>
+					<div class="dlewmimg"><img style='border:0' src="/static/imgs/imgs_user/images/dlewm2.jpg" alt="" /></div>
+				</div>
+				
+			</div>
+			<div class="footerdl">
+				 Copyright © 2007-2016 Paixie.net All Rights Reserved 增值电信业务经营许可证：闽B2-20110084 
+			</div>
+		</div>
+
+	</body>
+</html>

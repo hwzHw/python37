@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+	<style type="text/css">
+		#addGoods, #a2{
+			margin-left: 30px;
+		}
+	</style>
+	<script src="/static/js/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	<div id="content">
+		<h1>商品详情：</h1>
+		<h3>
+			<a href="{% url 'users:user_index' %}">返回主页</a>
+			<a id="a2" href="{% url 'shopcart:list' %}">返回购物车</a>
+		</h3>
+		<p>商品名称：{{goods.name}}</p>
+		<p>商品图片：<img src="/{{goods.goodsimage_set.all.first.path}}" width="200" height="200" ></p>
+		<p>商品描述：{{goods.intro}}</p>
+		<p>商品单价：{{goods.price}}</p>
+		<p>商品库存：{{goods.stock}}</p>
+		选择数量：<input type="number" name="count" id="count" value="1" />
+		<br><br><br>
+		<div id="">
+			<a href="">立即购买</a>
+			<!-- <a id="a2" href="{% url 'shopcart:add' 1 goods.id %}">添加购物车</a> -->
+			<button id="addGoods" type="button" goods_id='{{goods.id}}'>添加购物车</button>
+		</div>
+		
+	</div>
+	
+	<script type="text/javascript">
+		$(function(){
+			$('#addGoods').click(function(){
+				var $goods_id = $(this).attr('goods_id')
+				var $count = $('#count').val()
+				if ($count<=0){
+					alert('数量不能为0')
+				}
+				$.ajax({
+					url : '/shopcart/'+ $count +'/'+ $goods_id +'/add',
+					type : 'get',
+					success : function(mag){
+						alert('添加成功')
+					},
+					
+					error : function(info){
+						alert('添加失败，请重新添加')
+					},
+					
+				})
+				
+				
+			})
+			
+			
+		})
+		
+		
+		
+		
+	</script>
+	
+	
+	
+</body>
+</html>

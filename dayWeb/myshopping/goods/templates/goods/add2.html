@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加商品</title>
+	<script src="/static/js/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/store/555.jpg");;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>请开始上架商品:</h1>
+		<form action="{% url 'goods:add' store.id %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			商品名称：<input type="text" name="name" /><br><br>
+			商品单价：<input type="number" name="price" /><br><br>
+			商品库存：<input type="number" name="stock" /><br><br>
+			<input type="hidden" name="store" value="{{store.id}}" />
+			
+			商品图片：<input type="file" name="cover" />
+			<button type="button">继续添加</button><br><br>
+			
+			商品类型:
+				<select name="type1" id="type1">
+					<option value="-1">请选择一级类型</option>
+					{% for t in type1 %}
+						<option value ="{{t.id}}">{{t.name}}</option>
+					{% endfor %}
+					
+				</select>
+				
+				<select name="type2" id="type2">
+					<option value=""></option>
+				</select><br><br>
+			商品描述：
+			<textarea name="intro" rows="5" cols="100">
+				
+			</textarea>
+				
+			<br><br><br>	
+			<input type="submit" value="确定添加"/>
+			<input type="reset" value="重新添加"/>
+		</form>
+	</div>
+	
+	<script type="text/javascript">
+		$(function(){
+			$('#type1').on('change',function(){
+				
+				$.ajax({
+					
+					url: '/goods/findTypePid/',
+					type: 'get',
+					data: {'parent_id':$(this).val()},
+					success: function(data){
+						$('#type2').empty()
+						// console.info(data)
+						data = JSON.parse(data)
+						// console.info(data)
+						for (var i=0; i< data.length; i++){
+							
+							var type = data[i]
+							$op = $('<option>')
+							$op.attr('value', type.fields.id)
+							$op.text(type.fields.name)
+							$('#type2').append($op)
+						}
+						
+					},
+					
+					error: function(){
+						alert('网络异常，请重新点击')
+					}
+					
+					
+				})
+				
+			})
+			
+		})
+	</script>
+</body>
+</html>

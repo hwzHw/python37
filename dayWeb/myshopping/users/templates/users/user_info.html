@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人中心</title>
+		<link rel="stylesheet" href="/static/css/css_user_info/init.css" />
+		<link rel="stylesheet" href="/static/css/css_user_info/personal-center.css" />
+	</head>
+	<body>
+		<div id="headerwrap">
+			<div id="header" class="clearfix">
+				<div class="leftArea fl">
+					<ul>
+						<li><a href="javascript:;">拍鞋网在线</a></li>
+						<li class="website-nav"><a href="javascript:;">网站导航<i></i></a></li>
+						<li class="forum-nav"><a href="javascript:;">论坛导航<i></i></a></li>
+						<li><a href="javascript:;">手机客户端</a></li>
+					</ul>
+				</div>
+				<div class="rightArea fr">
+					<ul>
+						<li><a href="javascript:;"><span style="color:#999;">欢迎您，</span>{{user.pickname}}</a></li>
+						<li class="letter"><a href="javascript:;">letter<i></i></a></li>
+						<li><a href="{% url 'users:user_logout' %}">退出</a></li>
+						<li class="myforum"><a href="javascript:;">我的主页<i></i></a></li>
+						<li class="myfocus"><a href="javascript:;">关注<i></i></a></li>
+						<li class="zhanghao"><a href="javascript:;">账号<i></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="logowrap">
+			<div id="logo">
+				<h1><a href="javascript:;"><img src="/static/imgs/user_info/personal/logo.jpg"/></a></h1>
+				<ul class="nav fl">
+					<li><a style="color: white;" href="{% url 'users:user_index' %}">首页</a></li>
+					<li>个人主页</li>
+					<li>信息</li>
+					<li class="icon">个人设置<i></i></li>
+				</ul>
+				<form action="" id="search" method="post">
+					<input type="text" name="txt" id="txt" placeholder="请输入要搜索的内容" value="" />
+					<input type="button" value="" id="btn"/>
+				</form>
+			</div>
+		</div>
+		<form action="{% url 'users:user_update' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div id="main">
+			<div class="user clearfix">
+				<dl class="msg fl">
+					
+					<dt class="pic fl"><img src="/{{user.header}}" width="70" height="70" ></dt>
+					
+					<dd class="nickname fl">
+						<p>{{user.pickname}} <span>Lv.1</span></p>
+						上传头像：<input type="file" name="header" id="" value="" />
+					</dd>
+				</dl>
+				<ul class="focus fr">
+					<li><p class="num">0</p>
+					<p>好友</p></li>
+					<li style="border-left: 1px solid #E6E6E6;border-right: 1px solid #E6E6E6;"><p class="num">0</p>
+					<p>粉丝</p></li>
+					<li><p class="num">0</p>
+					<p>关注</p></li>
+				</ul>
+			</div>
+			<div class="nav">
+				<ul>
+					<li><a href="javascript:;">动态</a></li>
+					<li><a href="javascript:;">论坛</a></li>
+					<li><a href="javascript:;">任务</a></li>
+					<li><a href="javascript:;">咨询</a></li>
+					<li class="active"><a href="javascript:;">资料</a></li>
+					<li><a href="javascript:;">Z金豆</a></li>
+					<li><a href="javascript:;">设备</a></li>
+				</ul>
+			</div>
+			<div class="msg-detail">
+				<div class="leftArea fl">
+					 <ul>
+					 	<li class="msg"><i></i>资料</li>
+					 	<li><a href="javascript:;">个人资料</a></li>
+					 	<li><a href="javascript:;">修改头像</a></li>
+					 	<li><a href="javascript:;">修改密码</a></li>
+					 	<li><a href="javascript:;">达人属性</a></li>
+					 	<li><a href="javascript:;">个性签名</a></li>
+					 	<li><a href="javascript:;">其他</a></li>
+					 	<li class="set"><i></i>账号设置</li>
+					 	<li><a href="javascript:;">账号管理</a></li>
+					 	<li><a href="javascript:;">账号绑定</a></li>
+					 	<li><a href="javascript:;">隐私管理</a></li>
+					 	<li><a href="javascript:;">认证</a></li>
+					 </ul>
+				</div>
+				<div class="rightArea fl">
+
+					<div class="header">基本信息<span><i></i><input type="submit" value="修改" /></span></div>
+					<ul class="base-msg">
+						<li><span>昵称：</span><input type="text" name="pickname" value="{{user.pickname}}" /></li>
+						<li><span>登录名：</span>{{rootuser.username}}</li>
+						<li><span>等级：</span>Lv.1</li>
+						<li><span>性别：</span><input type="text" name="sex" value="{{user.gender}}"</li>
+						<li><span>年龄：</span><input type="text" name="age" value="{{user.age}}"</li>
+						<li><span>电话：</span><input type="text" name="phone" value="{{user.phone}}"</li>
+						<li><span>cusID：</span>{{user.cusID}}</li>
+						<li><span>所在地：</span>河南</li>
+						
+						<li><span>注册时间：</span>{{rootuser.date_joined}}</li>
+						<li><span>最后登录：</span>{{rootuser.last_login}}</li>
+						
+					</ul>
+					
+					<div class="achievement">
+						个人成就
+					</div>
+					<div class="achievement-box">
+						<dl>
+							<dt>论坛贡献：</dt>
+							<dd>
+								<p class="num">0</p>
+								<p>帖子</p>
+							</dd>
+							<dd>
+								<p class="num">0</p>
+								<p>精华</p>
+							</dd>
+							<dd style="border:0;">
+								<p class="num">0</p>
+								<p>回复</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>问答贡献：</dt>
+							<dd>
+								<p class="num">0</p>
+								<p>提问</p>
+							</dd>
+							<dd>
+								<p class="num">0</p>
+								<p>回答</p>
+							</dd>
+							<dd>
+								<p class="num">0</p>
+								<p>被邀请</p>
+							</dd>
+							<dd>
+								<p class="num">0</p>
+								<p>问答积分</p>
+							</dd>
+							<dd style="border:0;">
+								<p class="num">0</p>
+								<p>已兑换</p>
+							</dd>
+							<dd class="txt">
+								如何赚取问答积分？
+							</dd>
+						</dl>
+						<dl>
+							<dt>Z金豆：</dt>
+							<dd>
+								<p class="num">10</p>
+								<p>Z金豆</p>
+							</dd>
+							<dd style="border:0;">
+								<p class="num">0</p>
+								<p>已兑换</p>
+							</dd>
+							<dd class="txt">
+								如何赚取金豆？
+							</dd>
+						</dl>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		</form>
+		<div id="linkswrap">
+			<div id="links">
+				<p class="copyright"> ©2016 拍鞋网在线 版权所有</p>
+				<ul class="links fr">
+					<li><a href="javascript:;">公司简介</a>|</li>
+					<li><a href="javascript:;">公司经历</a>|</li>
+					<li><a href="javascript:;">营销推广</a>|</li>
+					<li><a href="javascript:;">媒体合作</a>|</li>
+					<li><a href="javascript:;">品牌大全</a>|</li>
+					<li><a href="javascript:;">账号注册</a>|</li>
+					<li><a href="javascript:;">招聘信息</a>|</li>
+					<li><a href="javascript:;">联系方式</a>|</li>
+					<li><a href="javascript:;">隐私声明</a>|</li>
+					<li><a href="javascript:;">站点地图</a>|</li>
+					<li><a href="javascript:;">反馈纠错</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

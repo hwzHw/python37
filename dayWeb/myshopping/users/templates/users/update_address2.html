@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改地址页面</title>
+	<script src="/static/js/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/js_address/address.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/store/555.jpg");;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>请修改您的收获地址：</h1>
+		<form action="{% url 'users:update_address' address.id  %}" method="post">
+			{% csrf_token %}
+			收货人的姓名：<input type="text" name="recv_name" value="{{address.recv_name}}" /><br><br>
+			收货人的电话：<input type="text" name="recv_tel" value="{{address.recv_tel}}" /><br><br>
+			收货人的地区：<select class="form-control" id="cmbProvince" name="province" >{{address.province}}</select>
+						
+						<select class="form-control" id="cmbCity" name="city" >{{address.city}}</select>
+						<select class="form-control" id="cmbArea" name="area" >{{address.area}}</select>
+			<br><br>
+			收货人的街道：<input type="text" name="street" value="{{address.street}}" /><br><br>
+			收货详细地址：<input type="text" name="desc" value="{{address.desc}}" /><br><br>
+			是否设为默认地址：<input type="checkbox" name="is_default" value="True" /><br><br>
+			<input type="submit" value="确认修改" />
+			<input type="reset" value="重新修改" />
+		</form>
+		
+	</div>
+	
+	
+			
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			addressInit('cmbProvince', 'cmbCity', 'cmbArea');  
+			
+			
+		});
+
+	</script>
+</body>
+</html>

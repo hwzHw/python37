@@ -1,0 +1,31 @@
+body{background:#f5f5f5;}
+#paixiezc{width:979px;height:575px;margin:34px auto 0;}
+.logo{width:979px;height:66px;}
+.logo img{display:block;float:left;width:204px;height:66px;}
+.logo p{display:block;float:left;font:18px/40px "微软雅黑";text-indent: 23px;}
+.login-content{width:939px;height:335px;margin-top:47px;background:#fff;border:1px solid #dadada;padding-top:40px;padding-left:40px;}
+#form{width:660px;height:278px;border-right:1px dashed #ccc;padding-top:15px;float:left;}
+.usename{width:660px;height:40px;}
+.usename b{float:left;display:block;width:150px;height:40px;text-align: center;color:red;font:12px/40px "微软雅黑";}
+.usename span{float:left;display:block;width:77px;height:40px;font:14px/40px "微软雅黑";text-indent:15px;float:left;}
+#usename{float:left;width:297px;height:38px;border:1px solid #ccc;padding-left:10px;font-size:16px}
+.pass{width:660px;height:40px;margin-top:27px;}
+.pass b{float:left;display:block;width:150px;height:40px;text-align: center;color:red;font:12px/40px "微软雅黑";}
+.pass span{float:left;display:block;width:77px;height:40px;font:14px/40px "微软雅黑";float:left;}
+#password{float:left;width:297px;height:38px;border:1px solid #ccc;padding-left:10px;font-size:16px}
+.passtwo{width:660px;height:40px;margin-top:27px;}
+.passtwo b{float:left;display:block;width:150px;height:40px;text-align: center;color:red;font:12px/40px "微软雅黑";}
+.passtwo span{float:left;display:block;width:77px;height:40px;font:14px/40px "微软雅黑";float:left;}
+#passwordtwo{float:left;width:297px;height:38px;border:1px solid #ccc;padding-left:10px;font-size:16px}
+.rado{width:294px;height:34px;padding:17px 0 0 77px;}
+#rado{display: inline-block;vertical-align: middle;}
+.rado span{display:inline-block;text-indent: 5px;font-size:14px;color: #878787;}
+.rado a{display:inline-block;text-decoration: none;font-size:14px;}
+.btn{width:593px;height:40px;padding-left:77px;}
+#btn{display:inline-block;width:292px;height:40px;border-radius: 3px;background: #0487df;text-decoration: none;text-align: center;font:18px/40px "微软雅黑";color:#fff;}
+#btn:hover{opacity: .8;}
+.contentright{width:242px;height:81px;float:left;color: #919191;display: inline;line-height: 40px;padding-left: 30px;font-size:12px;}
+.contentright a{position:relative;text-decoration: none;display:inline-block;width:98px;height:24px;border:1px solid #f34200;background:#f76926;vertical-align: middle;text-align: center;color:#fff;line-height: 24px;border-radius:3px;}
+.contentright a:hover{text-decoration: underline;}
+.contentright img{display:block;width:15px;height:15px;position: absolute;top:5px;left:4px;}
+.login-footer{width:979px;height:85px;font:12px/85px "微软雅黑";text-align: center;color:#668686;}

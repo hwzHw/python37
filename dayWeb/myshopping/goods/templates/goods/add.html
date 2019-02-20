@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/shop-car.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script src="/static/js/the_Same.js"></script>
+    <script src="/static/js/shop-car.js"></script>
+	<script src="/static/js/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		#h1{
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+
+
+
+<!--导航-->
+<div id="nav-wrap">
+    <div id="nav">
+        <ul>
+            <li><a href="{% url 'users:user_index' %}" class="nav-page">首页</a></li>
+            
+            <li><a href="{% url 'store:detail' store.id %}">店铺主页</a></li>
+            <li><a href="{% url 'shopcart:list' %}">购物车</a></li>
+			<li><a href="">品牌男装</a></li>
+            <li><a href="#" >积分抽奖</a></li>
+            <li><a href="#" >特价商品</a><span></span></li>
+            <li><a href="#" class="nav-balabala">巴拉巴拉专区</a></li>
+            <li><a href="#">签到换礼</a></li>
+        </ul>
+
+    </div>
+</div>
+<!--购物车内容-->
+<div class="shopping_car_wrap">
+    <div class="shopping_car">
+        <!-- <div class="shop_menu"><img src="/static/imgs/img/shopping_car.jpg"></div> -->
+		
+		<br>
+		<br>
+
+        <div class="updater-list">
+			<h1 id="h1">请开始上架商品：</h1>
+            <form action="{% url 'goods:add' store.id %}" method="post" enctype="multipart/form-data">
+            	{% csrf_token %}
+            	商品名称：<input type="text" name="name" /><br><br>
+            	商品单价：<input type="number" name="price" /><br><br>
+            	商品库存：<input type="number" name="stock" /><br><br>
+            	<input type="hidden" name="store" value="{{store.id}}" />
+            	
+            	商品图片：<input type="file" name="cover" />
+            	<button type="button">继续添加</button><br><br>
+            	
+            	商品类型:
+            		<select name="type1" id="type1">
+            			<option value="-1">请选择一级类型</option>
+            			{% for t in type1 %}
+            				<option value ="{{t.id}}">{{t.name}}</option>
+            			{% endfor %}
+            			
+            		</select>
+            		
+            		<select name="type2" id="type2">
+            			<option value=""></option>
+            		</select><br><br>
+            	商品描述：
+            	<textarea name="intro" rows="5" cols="100">
+            		
+            	</textarea>
+            		
+            	<br><br><br>	
+            	<input type="submit" value="确定添加"/>
+            	<input type="reset" value="重新添加"/>
+            </form>
+			<br>
+			<br>
+			<br>
+        </div>
+		
+
+</div>
+
+<hr>
+<hr>
+<hr>
+
+
+
+
+
+
+
+<!--bottom-->
+<div id="bottom-wrap">
+    <div id="bottom">
+        <div class="user-help fl">
+            <h2>用户帮助</h2>
+            <ul style="list-style:circle;">
+                <li><a href="#">玩转步淘商城</a></li>
+                <li><a href="#">生活商城常见问题</a></li>
+                <li><a href="#">网站的保障计划</a></li>
+                <li><a href="#">本站意见建议</a></li>
+            </ul>
+        </div>
+        <div class="user-help fl">
+            <h3>购物相关</h3>
+            <ul style="list-style:circle;">
+                <li><a href="#">本店商户入驻</a></li>
+                <li><a href="#">本店商户登录</a></li>
+                <li><a href="#">本站合作案例</a></li>
+                <li><a href="#">步淘友情链接</a></li>
+            </ul>
+        </div>
+
+        <div class="user-help fl">
+            <h4>商务合作</h4>
+            <ul style="list-style:circle;">
+                <li><a href="#">玩转步淘商城</a></li>
+                <li><a href="#">生活商城常见问题</a></li>
+                <li><a href="#">网站的保障计划</a></li>
+                <li><a href="#">本站意见建议</a></li>
+            </ul>
+        </div>
+
+        <div class="user-help fl">
+            <h5>关于步淘</h5>
+            <ul style="list-style:circle;">
+                <li><a href="#">关于生活商城</a></li>
+                <li><a href="#">步淘网聘英才</a></li>
+                <li><a href="#">联系步淘网</a></li>
+                <li><a href="#">生活商城用户协议</a></li>
+            </ul>
+        </div>
+
+        <div class="bot-detial fl">
+            <h3>客户服务热线<b>(长途免费)</b></h3>
+            <span>400-680-2212</span>
+            <div>QQ在线客服</div>
+            <p>(周一到周日:8:30-18:00)</p>
+        </div>
+    </div>
+</div>
+<!--links-->
+<div id="links-wrap">
+    <div id="links">
+        <ul>
+            <li><a href="#" class="about">关于步淘    丨</a></li>
+            <li><a href="#">联系我们   丨 </a></li>
+            <li><a href="#">诚聘精英   丨</a></li>
+            <li><a href="#">友情链接   丨 </a></li>
+            <li><a href="#">隐私条款   丨</a></li>
+            <li><a href="#">网站地图   丨</a> </li>
+        </ul>
+
+    </div>
+</div>
+<!--footer-->
+<div id="footer">
+    <p>Copyright @ 2010-2012 butao.com Allright Resevred 版权所有 浙B2-20090126-17</p>
+    <img src="/static/imgs/img/foot1.png" class="ft-img">
+    <img src="/static/imgs/img/foot2.png">
+    <img src="/static/imgs/img/foot1.png">
+    <img src="/static/imgs/img/footer4).png" class="ft-img4">
+</div>
+
+
+
+	<script type="text/javascript">
+		$(function(){
+			$('#type1').on('change',function(){
+				
+				$.ajax({
+					
+					url: '/goods/findTypePid/',
+					type: 'get',
+					data: {'parent_id':$(this).val()},
+					success: function(data){
+						$('#type2').empty()
+						// console.info(data)
+						data = JSON.parse(data)
+						// console.info(data)
+						for (var i=0; i< data.length; i++){
+							
+							var type = data[i]
+							$op = $('<option>')
+							$op.attr('value', type.fields.id)
+							$op.text(type.fields.name)
+							$('#type2').append($op)
+						}
+						
+					},
+					
+					error: function(){
+						alert('网络异常，请重新点击')
+					}
+					
+					
+				})
+				
+			})
+			
+		})
+	</script>
+</body>
+</html>

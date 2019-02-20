@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改地址</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/shop-car.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script src="/static/js/the_Same.js"></script>
+    <script src="/static/js/shop-car.js"></script>
+	<script src="/static/js/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/js_address/address.js" type="text/javascript" charset="utf-8"></script>
+	
+	<style type="text/css">
+		#h1{
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+
+
+
+<!--导航-->
+<div id="nav-wrap">
+    <div id="nav">
+        <ul>
+            <li><a href="{% url 'users:user_index' %}" class="nav-page">首页</a></li>
+			
+            <li><a href="{% url 'shopcart:list' %}">购物车</a></li>
+			<li><a href="{% url 'store:list' %}">店铺列表</a></li>
+			<li><a href="">品牌男装</a></li>
+            <li><a href="#" >积分抽奖</a></li>
+            <li><a href="#" >特价商品</a><span></span></li>
+            <li><a href="#" class="nav-balabala">巴拉巴拉专区</a></li>
+            <li><a href="#">签到换礼</a></li>
+        </ul>
+
+    </div>
+</div>
+<!--购物车内容-->
+<div class="shopping_car_wrap">
+    <div class="shopping_car">
+        <!-- <div class="shop_menu"><img src="/static/imgs/img/shopping_car.jpg"></div> -->
+		
+		<br>
+		<br>
+
+        <div class="updater-list">
+			<h1 id="h1">请修改您的收获地址：</h1>
+            <form action="{% url 'users:update_address' address.id  %}" method="post">
+            	{% csrf_token %}
+            	收货人的姓名：<input type="text" name="recv_name" value="{{address.recv_name}}" /><br><br>
+            	收货人的电话：<input type="text" name="recv_tel" value="{{address.recv_tel}}" /><br><br>
+            	收货人的地区：<select class="form-control" id="cmbProvince" name="province" >{{address.province}}</select>
+            				
+            				<select class="form-control" id="cmbCity" name="city" >{{address.city}}</select>
+            				<select class="form-control" id="cmbArea" name="area" >{{address.area}}</select>
+            	<br><br>
+            	收货人的街道：<input type="text" name="street" value="{{address.street}}" /><br><br>
+            	收货详细地址：<input type="text" name="desc" value="{{address.desc}}" /><br><br>
+            	是否设为默认地址：<input type="checkbox" name="is_default" value="True" /><br><br>
+            	<input type="submit" value="确认修改" />
+            	<input type="reset" value="重新修改" />
+            </form>
+			<br>
+			<br>
+			<br>
+        </div>
+		
+
+</div>
+
+<hr>
+<hr>
+<hr>
+
+
+
+
+
+
+
+<!--bottom-->
+<div id="bottom-wrap">
+    <div id="bottom">
+        <div class="user-help fl">
+            <h2>用户帮助</h2>
+            <ul style="list-style:circle;">
+                <li><a href="#">玩转步淘商城</a></li>
+                <li><a href="#">生活商城常见问题</a></li>
+                <li><a href="#">网站的保障计划</a></li>
+                <li><a href="#">本站意见建议</a></li>
+            </ul>
+        </div>
+        <div class="user-help fl">
+            <h3>购物相关</h3>
+            <ul style="list-style:circle;">
+                <li><a href="#">本店商户入驻</a></li>
+                <li><a href="#">本店商户登录</a></li>
+                <li><a href="#">本站合作案例</a></li>
+                <li><a href="#">步淘友情链接</a></li>
+            </ul>
+        </div>
+
+        <div class="user-help fl">
+            <h4>商务合作</h4>
+            <ul style="list-style:circle;">
+                <li><a href="#">玩转步淘商城</a></li>
+                <li><a href="#">生活商城常见问题</a></li>
+                <li><a href="#">网站的保障计划</a></li>
+                <li><a href="#">本站意见建议</a></li>
+            </ul>
+        </div>
+
+        <div class="user-help fl">
+            <h5>关于步淘</h5>
+            <ul style="list-style:circle;">
+                <li><a href="#">关于生活商城</a></li>
+                <li><a href="#">步淘网聘英才</a></li>
+                <li><a href="#">联系步淘网</a></li>
+                <li><a href="#">生活商城用户协议</a></li>
+            </ul>
+        </div>
+
+        <div class="bot-detial fl">
+            <h3>客户服务热线<b>(长途免费)</b></h3>
+            <span>400-680-2212</span>
+            <div>QQ在线客服</div>
+            <p>(周一到周日:8:30-18:00)</p>
+        </div>
+    </div>
+</div>
+<!--links-->
+<div id="links-wrap">
+    <div id="links">
+        <ul>
+            <li><a href="#" class="about">关于步淘    丨</a></li>
+            <li><a href="#">联系我们   丨 </a></li>
+            <li><a href="#">诚聘精英   丨</a></li>
+            <li><a href="#">友情链接   丨 </a></li>
+            <li><a href="#">隐私条款   丨</a></li>
+            <li><a href="#">网站地图   丨</a> </li>
+        </ul>
+
+    </div>
+</div>
+<!--footer-->
+<div id="footer">
+    <p>Copyright @ 2010-2012 butao.com Allright Resevred 版权所有 浙B2-20090126-17</p>
+    <img src="/static/imgs/img/foot1.png" class="ft-img">
+    <img src="/static/imgs/img/foot2.png">
+    <img src="/static/imgs/img/foot1.png">
+    <img src="/static/imgs/img/footer4).png" class="ft-img4">
+</div>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			addressInit('cmbProvince', 'cmbCity', 'cmbArea');  
+			
+			
+		});
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color: #66CC66;
+			}
+			.content{
+				background-color: #99D9EA;
+				width: 600px;
+				margin: 20px auto;
+				font-size: 25px;
+				text-align: center;
+			}
+			p{
+				width: 300px;
+				border: 1px solid black;
+				background: #99D9EA;
+			}
+			p:hover{
+				background-color: darkred;
+			}
+			ul{
+				border-top: 2px solid gold;
+				display: none;
+			}
+			li{
+				list-style: none;
+				font-size: 18px;
+				width: 150px;
+				margin: 0 auto;
+				border: 1px dotted orange;
+				line-height: 40px;
+			}
+			li:hover{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>请按照类型查找您的商品：</h1>
+		<div class="content">
+			{% for type in allGoodsType %}
+			<p>{{type.name}}</p>
+				<ul>
+					{% for type2 in type.goodstype_set.all %}
+					<li>{{type2.name}}</li>
+					{% endfor %}
+				</ul>
+				
+				
+				{% empty %}
+				<p>当前没有商品类型，请添加</p>
+			{% endfor %}
+			
+		</div>
+		<script src="/static/js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			let pTitle=$("p")
+			
+			pTitle.click(function(){
+				$(this).next().show(1500)
+				$(this).next().siblings("ul").hide(1500)	
+			})
+	
+		</script>
+	</body>
+</html>

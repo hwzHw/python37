@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认订单</title>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/orders/999.jpg");
+			background-size: 1200px;
+		}
+		#addGoods, #a2{
+			margin-left: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>请确认订单：</h1>
+		<h3>
+			<a href="{% url 'users:user_index' %}">返回主页</a>
+			<a id="a2" href="{% url 'shopcart:list' %}">返回购物车</a>
+		</h3>
+		<form action="{% url 'orders:done' %}" method="post">
+		{% csrf_token %}
+			
+			<table border="" cellspacing="0" cellpadding="">
+				
+				<tr>
+					<th>商品名称</th>
+					<th>商品图片</th>
+					<th>商品数量</th>
+					<th>商品单价</th>
+					<th>商品总价</th>
+					<th>订单备注</th>
+				</tr>
+				{% for s in shopCarts %}	
+				
+					<input type="hidden" name="s_id" value="{{s.id}}" />
+					<tr>
+						<td>{{s.goods.name}}</td>
+						<td><img src="/{{s.goods.goodsimage_set.all.first.path}}" width="100" height="100" ></td>
+						<td>{{s.count}}</td>
+						<td>{{s.goods.price}}</td>
+						<td>{{s.allTotal}}</td>
+						<td>
+							<textarea rows="5" cols="20" name="remark">
+								
+							</textarea>
+						</td>
+					</tr>
+		
+				{% endfor %}
+			</table>
+			<br>
+			<h3>请选择收获地址：</h3>
+			<table border="" cellspacing="0" cellpadding="">
+				
+				<tr>
+					<th>收货人</th>
+					<th>电话号码</th>
+					<th>收获地址</th>
+					<th>默认</th>
+				</tr>
+				{% for address in addresses %}
+					<tr>
+						<td>{{address.recv_name}}</td>
+						<td>{{address.recv_tel}}</td>
+						<td>{{address.province}} {{address.city}} {{address.area}} {{address.street}} {{address.desc}}</td>
+						{% if address.is_default %}
+							<td><input type="radio" name="address" value="{{address.id}}" checked /></td>
+						{% else %}
+							<td><input type="radio" name="address" value="{{address.id}}" checked /></td>
+						{% endif %}
+					</tr>
+	
+				{% endfor %}
+			</table>
+			<br>
+	
+			<input type="submit" value="生成订单" />	
+		</form>
+		
+	</div>
+</body>
+</html>

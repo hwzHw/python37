@@ -1,0 +1,110 @@
+/*-----------------------------------------公共样式--------------------------------------*/
+body, h1, h2, h3, h4, h5, h6, hr, p, dl, dt, dd, ul, ol, li, form, button, 
+table, table th, table td, table tr, input { margin: 0; padding: 0;}
+.fll{float:left;}
+.flr{float:right;}
+a{text-decoration: none;}
+img{vertical-align: bottom;border:0;}
+body,button{background-color:#fff;color:#666;font: 12px Arial; }
+html,body{min-width: 980px;}
+html,body{margin: 0 auto; padding: 0; width: 100%;}
+body{position: relative;}
+#paixie_head{height:175px;border-bottom: 3px solid #ff5000;}
+.head_topline{height:33px;background: #fafafa;border-bottom:2px solid #eee;}
+.head_toplogin{width:1221px;margin:0 auto;height:33px;}
+.head_toploginleft{width:354px;height:33px;float: left;}
+.mbicon{width:80px;height:33px;float:left;}
+.p-navtop{display:block;width:129px;font:12px/33px '微软雅黑';}
+.dologinBtn{display:block;width:77px;height:33px;}
+.span-navtop{display:block;width:65px;}
+.span-navtop a{text-decoration: none;color:#666;font:12px/33px "微软雅黑";}
+.head_toploginright{width:397px;height:33px;float:right;}
+
+.head_toploginright i{font:12px/33px "微软雅黑";float:left;margin-left:3px;margin-right:3px;}
+.nav-gwc{display:block;position:relative;width:78px;height:33px;text-indent: 25px;background: url(/static/imgs/imgs_user/images/nav-gwc.jpg) no-repeat 0 8px;}
+.nav-gwc a{width:78px;height:33px;display:block;text-decoration:none;color:#666;font:12px/33px "微软雅黑";}
+.nav-gwc a span{color:#ff5000;font:600 12px/33px "微软雅黑";}
+.nav-left{position:relative;display:block;width:85px;height:33px;font:12px/33px "微软雅黑";background: url(/static/imgs/imgs_user/images/xiala.jpg) no-repeat 60px 13px;}
+.nav-left:hover{color:#ff5000;}
+.nav-newone{cursor: pointer;display:block;width:42px;height:33px;font:12px/33px '微软雅黑';text-align: center;}
+.nav-newone:hover{color:#ff5000;}
+.nav-newtwo{cursor: pointer;display:block;width:70px;height:33px;font:12px/33px '微软雅黑';text-align: center;}
+.nav-newtwo:hover{color:#ff5000;}
+.nav-nav{cursor: pointer;display:block;width:80px;font:12px/33px '微软雅黑';height:33px;text-indent: 15px;position: relative;background: url(/static/imgs/imgs_user/images/xiala.jpg) no-repeat 70px 13px;}
+.nav-nav:hover{color:#ff5000;}
+/*--------------------------------页尾-------------------------------------*/
+#nav-tab{width:1221px;height:142px;margin: 0 auto;}
+.head-righttab{width:150px;height:120px;padding:18px 0 0 124px;}
+.head-lefttab{width:947px;height:141px;}
+.head_logo_so{width:947px;height:93px;}
+.logo{width:433px;height:93px;position: relative;background: url(/static/imgs/imgs_user/images/logo.jpg) no-repeat 0 23px;}
+.soshuo{width:504px;height:63px;padding-top:30px;}
+.head-sobox{width:504px;height:37px;}
+.sotext{width:363px;height:30px;border:2px solid #ff5000;padding-left:33px;position: relative;background: url(/static/imgs/imgs_user/images/sobox.jpg) no-repeat 10px 6px;}
+.search-result{width:484px;padding:10px;font: 12px/20px '黑体';z-index: 20;color:#000;position:relative;top:}
+#search_list{list-style: none;padding-left:10px;font-size: 14px;background: #fff;}
+#search_list li{font:14px/20px "微软雅黑" color:#666;}
+#search_list li:hover{background:#ccc;}
+.sobtn{width:100px;height:34px;background:#ff5000;border:0;}
+.so_text{width:504px;height:22px;}
+.hot{display:inline-block;font:12px/22px "微软雅黑";text-decoration: none;margin-right:18px;}
+.head_nav{width:947px;height:47px;}
+
+.head_menushow{text-indent:5px;width:206px;height:32px;padding-left:15px;background: #ff5000;font:16px/32px "微软雅黑";color:#fff;margin-top:16px;}
+.head_menushow img{margin-top:10px;}
+.head_menulide{width:336px;height:48px;position:relative;}
+.head_menulide a{margin-top:16px;height:31px;font:14px/31px '微软雅黑';float:left;padding:0 20px;text-decoration: none;color:#333;}
+.head_menulide a:hover{background:pink;}
+.new1{width:46px;height:16px;position:absolute;left:164px;top:-2px;}
+.new2{width:46px;height:16px;position:absolute;left:262px;top:-2px;}
+
+#paixie_foot{min-height:382px;}
+.foot_fiveIcon{height:60px;background:#989ba3;padding-top:15px;}
+.fiveIcon_li{width: 1220px;height:48px;margin:auto;list-style: none;}
+.authentic{width:244px;height:48px;}
+.authentic i{display:block;width:61px;height:48px;float:left;}
+.authentic b{display:inline-block;float:left;}
+.authentic b a{text-decoration: none;color:#fff;font:16px/48px "微软雅黑";}
+
+.foot_nav{width:1221px;height:160px;margin:0 auto;padding-top:24px;}
+.foot_nav dl{list-style: none;}
+.f_help{width:149px;height:160px;}
+.foot_nav dl dd p{display:block;width:149px;height:26px;font:600 14px "微软雅黑";}
+.foot_nav dl dd a{display:block;width:149px;height:23px;font:12px/23px "微软雅黑";color:#333333;text-decoration: none;}
+.zhifu{width:149px;height:160px;}
+.shouhe{width:136px;height:160px;}
+.f_about{width:150px;height:160px;}
+.kefu{width:239px;height:160px;}
+.kefu b{display:block;width:239px;height:69px;font:12px/23px "微软雅黑";}
+.moble{width:151px;height:160px;}
+.moble b{display:block;width:149px;height:23px;font:12px/23px "微软雅黑";color:#333333;}
+.moble span{width:239px;height:100px;}
+.moblewx{width:225px;height:160px;}
+.moblewx b{display:block;width:149px;height:23px;font:12px/23px "微软雅黑";color:#333333;}
+.weixin{width:224px;height:69px;}
+.weixin span{width:73px;height:69px;float:left;}
+.weixinb1{width:151px;height:69px;float:left;}
+.btn1{display:block;position:relative;width:151px;height:29px;background: url(/static/imgs/imgs_user/images/xlwb.jpg) no-repeat 0 3px;}
+.btn2{display:inline-block;position:relative;width:151px;height:29px;background: url(/static/imgs/imgs_user/images/txkj.jpg) no-repeat 0 3px;}
+.weixinb1 .agz{display:inline-block;width:60px;height:20px;float:right;border:1px solid #ccc;text-align: center;font:12px/20px "微软雅黑";}
+.weixinb1 .agz:hover{background:greenyellow}
+
+.foot_copyright{border:0;border-top:1px solid #EEEEEE;margin:0 auto;width:1221px;text-align: center;font:10px/15px "微软雅黑";color:a599b2;}
+.foot_copyright legend{width:428px;margin: 0 auto;height:15px;}
+.foot_linkText{width:1211px;height:20px;margin:0 auto;position: relative;overflow: hidden;}
+.dolinkshow{background:url(/static/imgs/imgs_user/images/zuola.jpg) no-repeat;width:11px;height:11px;position:absolute;top:5px;right:0px;}
+.foot_linkText span{width:20px;font:600 12px/20px "微软雅黑";color:#CCC;}
+.foot_linkText a{cursor: pointer;font:12px/20px "微软雅黑";color:#CCC;margin-left: 17px;text-decoration: none;}
+.foot_linkImage{width:1221px;height:37px;margin:0 auto;margin-top:5px;}
+.Images{width:720px;margin:0 auto;}
+.Images a{text-decoration: none;display: inline-block;}
+.Images1{width:113px;height:35px}
+.Images2{width:90px;height:35px}
+.Images3{width:106px;height:35px}
+.Images4{width:91px;height:35px}
+.Images5{width:98px;height:35px}
+.Images6{width:90px;height:35px}
+.Images7{
+		width:106px;height:35px;
+	}
+

@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+/*-------------------------------------此页面为公共样式表------------------------------*/
+
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img ,input,form{ margin:0; padding:0; }
+fieldset, img { border:none; }
+img{display: block;}
+address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
+ul, ol { list-style:none; }
+body { color:#333;font:12px/20px "SimSun","宋体","Arial Narrow",HELVETICA; background:#fff;/* overflow-y:scroll;*/ overflow-x:hidden;}
+a { color:#666; text-decoration:none; }
+.fl{float:left;}
+/*---------------------------------以上是样式重置不可动--------------------*/
+.shopping_car_wrap{
+    background-color: #f7f7f7;
+}
+.shopping_car{
+    width:1002px;
+    padding-top: 10px;
+    margin:0 auto;
+}
+.shop_table{
+    width: 1000px;
+    border: 1px solid #e2dee2;
+    margin-bottom: 20px;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+.shop_table thead{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+
+}
+.shop_table th{
+    border: 1px solid #e2dee2;
+    height: 20px;
+    line-height: 20px;
+    color: #5e5058;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #faf7f8;
+    font-weight: bold;
+}
+.shop_table tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.shop_table td{
+    border: 1px solid #e2dee2;
+    padding: 10px;
+    background-color: #FFF;
+    text-align: center;
+}
+.select_num{
+    height: 26px;
+    line-height: 24px;
+}
+.clearfix:after{
+    clear: both;
+    height:0;
+    overflow: hidden;
+    display: block;
+    visibility:hidden;
+    content: '.';
+}
+.reduce_3{
+    text-align: center;
+    width: 12px;
+    height: 22px;
+    border: 1px solid #ccc;
+    line-height: 22px;
+    background-color: #CCC;
+    float: left;
+}
+.txt_3{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 18px;
+    line-height: 18px;
+    padding: 1px 3px;
+    font-size: 12px;
+    width:40px;
+    text-align: center;
+}
+.plus_3{
+    text-align: center;
+    width: 12px;
+    height: 22px;
+    border: 1px solid #ccc;
+    line-height: 22px;
+    background-color: #CCC;
+
+}
+.goods_amount{
+    color: #d41f2b;;
+    font-weight:900;
+}
+.goods_totle{
+    color: #d41f2b;
+    font-weight:900;
+}
+.continue_shop{
+    margin-left:600px;
+    margin-right:30px;
+}
+.Ri{
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+.total_price{
+    font-size:16px;
+    color:red;
+    font-weight:900;
+}
+.delete{
+    font-size:16px;
+    font-weight:900;
+}
+.delete:hover{
+    color:dodgerblue;
+}

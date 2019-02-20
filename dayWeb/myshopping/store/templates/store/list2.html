@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>所有店铺</title>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/store/555.jpg");;
+		}
+		#content{
+			width: 1200px;
+			margin: 5 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>您的所有店铺如下：</h1>
+		<h3>
+			<a href="{% url 'users:user_index' %}">返回主页</a>
+			<a href="{% url 'store:add' %}">添加店铺</a>
+			
+		</h3>
+		
+		<table border="" cellspacing="0" cellpadding="">
+			
+				<tr>
+					<th>店铺名称</th>
+					<th>店铺封面</th>
+					<th>店铺表述</th>
+					
+					<th>店铺操作</th>
+				</tr>
+				{% for store in stores %}
+				<tr>
+					<td>{{store.name}}</td>
+					<td><img src="/{{store.cover}}" width="100" height="100" ></td>
+					<td>{{store.intro}}</td>
+					<td>
+						<a href="{% url 'store:detail' store.id %}">查看详情</a>
+					</td>
+				</tr>
+			
+			
+			
+				{% empty %}
+				<tr>
+					<td>亲还没有店铺哦，<a href="{% url 'store:add' %}">点我开店吧</a></td>
+				</tr>
+			
+			
+			{% endfor %}
+			
+		</table>
+		
+	</div>
+</body>
+</html>

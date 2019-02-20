@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改店铺</title>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/store/555.jpg");;
+		}
+		#content{
+			width: 1200px;
+			margin: 5 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>请修改店铺：</h1>
+		<form action="{% url 'store:update' store.id %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			店铺名称：<input type="text" name="name" value="{{store.name}}" /><br><br><br>
+			店铺封面: <img src="/{{store.cover}}" width="200" height="200">
+			<input type="file" name="cover" value="" /><br><br><br>
+			店铺描述：
+			<textarea name="intro" rows="5" cols="100">
+				{{store.intro}}
+			</textarea><br><br><br>
+			
+			<input type="submit" value="确定修改" />
+			<input type="reset" value="重新修改" />
+			
+		</form>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/shop-car.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script src="/static/js/the_Same.js"></script>
+    <script src="/static/js/shop-car.js"></script>
+</head>
+<body>
+
+
+
+<!--导航-->
+<div id="nav-wrap">
+    <div id="nav">
+        <ul>
+            <li><a href="{% url 'users:user_index' %}" class="nav-page">首页</a></li>
+            <li><a href="#">品牌特卖</a></li>
+            <li><a href="#">女装折扣</a></li>
+            <li><a href="#">品牌男装</a></li>
+            <li><a href="#" >积分抽奖</a></li>
+            <li><a href="#" >特价商品</a><span></span></li>
+            <li><a href="#" class="nav-balabala">巴拉巴拉专区</a></li>
+            <li><a href="#">签到换礼</a></li>
+        </ul>
+
+    </div>
+</div>
+<!--购物车内容-->
+<div class="shopping_car_wrap">
+    <div class="shopping_car">
+        <div class="shop_menu"><img src="/static/imgs/img/shopping_car.jpg"></div>
+		<form action="{% url 'orders:confirm' %}" method="post">
+			{% csrf_token %}
+        <div class="updater-list">
+            <table class="shop_table">
+                <thead>
+                    <tr>
+                        <th colspan="2">商品</th>
+       
+                        <th width="100">商品数量</th>
+                        <th width="100">商品单价</th>
+                        <th width="100">商品总价</th>
+                        <th width="80">操作</th>
+                    </tr>
+                </thead>
+								{% for s in shopcarts %}
+                <tbody>
+                    <tr class="shop_car_con">
+                        
+                        <td width="300">
+                            <p><input type="checkbox" name="s_id" value="{{s.id}}" />{{s.goods.name}}</p>
+                            
+                        </td>
+												<td width="100"><a><img src="/{{s.goods.goodsimage_set.all.first.path}}"></a></td>
+                        <td>
+                            <div class=" clearfix">
+                                
+                                <input type="number" name="count" value="{{s.count}}" class="txt_3">
+                                
+                            </div>
+                        </td>
+                        <td class="unit-price">￥{{s.goods.price}}</td>
+               
+                        <td class="total_price">{{s.allTotal}}</td>
+                        <td>
+                            <a href="{% url 'shopcart:delete' s.id %}" class="delete">删除</a>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+								{% endfor %}
+            </table>
+			
+
+        </div>
+        <div class="clearfix Ri">
+            <a href="{% url 'users:user_index' %}" class="continue_shop fl" ><img src="/static/imgs/img/shopping_1.jpg"></a>
+						<input type="submit" value="确认订单" class="now_pay fl" width="100" height="100" />	
+            
+        </div>
+		</form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--bottom-->
+<div id="bottom-wrap">
+    <div id="bottom">
+        <div class="user-help fl">
+            <h2>用户帮助</h2>
+            <ul style="list-style:circle;">
+                <li><a href="#">玩转步淘商城</a></li>
+                <li><a href="#">生活商城常见问题</a></li>
+                <li><a href="#">网站的保障计划</a></li>
+                <li><a href="#">本站意见建议</a></li>
+            </ul>
+        </div>
+        <div class="user-help fl">
+            <h3>购物相关</h3>
+            <ul style="list-style:circle;">
+                <li><a href="#">本店商户入驻</a></li>
+                <li><a href="#">本店商户登录</a></li>
+                <li><a href="#">本站合作案例</a></li>
+                <li><a href="#">步淘友情链接</a></li>
+            </ul>
+        </div>
+
+        <div class="user-help fl">
+            <h4>商务合作</h4>
+            <ul style="list-style:circle;">
+                <li><a href="#">玩转步淘商城</a></li>
+                <li><a href="#">生活商城常见问题</a></li>
+                <li><a href="#">网站的保障计划</a></li>
+                <li><a href="#">本站意见建议</a></li>
+            </ul>
+        </div>
+
+        <div class="user-help fl">
+            <h5>关于步淘</h5>
+            <ul style="list-style:circle;">
+                <li><a href="#">关于生活商城</a></li>
+                <li><a href="#">步淘网聘英才</a></li>
+                <li><a href="#">联系步淘网</a></li>
+                <li><a href="#">生活商城用户协议</a></li>
+            </ul>
+        </div>
+
+        <div class="bot-detial fl">
+            <h3>客户服务热线<b>(长途免费)</b></h3>
+            <span>400-680-2212</span>
+            <div>QQ在线客服</div>
+            <p>(周一到周日:8:30-18:00)</p>
+        </div>
+    </div>
+</div>
+<!--links-->
+<div id="links-wrap">
+    <div id="links">
+        <ul>
+            <li><a href="#" class="about">关于步淘    丨</a></li>
+            <li><a href="#">联系我们   丨 </a></li>
+            <li><a href="#">诚聘精英   丨</a></li>
+            <li><a href="#">友情链接   丨 </a></li>
+            <li><a href="#">隐私条款   丨</a></li>
+            <li><a href="#">网站地图   丨</a> </li>
+        </ul>
+
+    </div>
+</div>
+<!--footer-->
+<div id="footer">
+    <p>Copyright @ 2010-2012 butao.com Allright Resevred 版权所有 浙B2-20090126-17</p>
+    <img src="/static/imgs/img/foot1.png" class="ft-img">
+    <img src="/static/imgs/img/foot2.png">
+    <img src="/static/imgs/img/foot1.png">
+    <img src="/static/imgs/img/footer4).png" class="ft-img4">
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开店</title>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/store/555.jpg");;
+		}
+		
+		#content{
+			width: 1200px;
+			margin: 5 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>请您按照流程开启店铺</h1>
+		<form action="{% url 'store:add' %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			店铺名称：<input type="text" name="name" value="" /><br><br><br>
+			店铺封面: <input type="file" name="cover" value="" /><br><br><br>
+			店铺描述：
+			<textarea name="intro" rows="5" cols="100">
+				
+			</textarea><br><br><br>
+			
+			<input type="submit" value="确定开店" />
+			<input type="reset" value="重新开店" />
+			
+		</form>
+		
+	</div>
+</body>
+</html>

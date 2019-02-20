@@ -1,0 +1,67 @@
+a{text-decoration: none;}
+body{background:#f5f5f5;}
+#paixiedl{width:978px;height:662px;margin:34px auto 0;}
+.logodl{width:979px;height:66px;}
+.logodl img{display:block;float:left;width:204px;height:66px;}
+.logodl p{display:block;float:left;font:18px/40px "微软雅黑";text-indent: 23px;}
+.contentdl{position:relative;width:939px;height:422px;margin-top:47px;background:#fff;border:1px solid #dadada;padding-top:40px;padding-left:40px;}
+.mfzc{width:472px;height:289px;position: absolute;top:73px;left:66px;}
+.contentdl-right{width:355px;height:422px;float:right;position: relative;}
+.dlewmimg{position:absolute;right:0;bottom:0;width:60px;height:60px;cursor: pointer;}
+.contentdl-right span{display:block;width:355px;height:49px;padding-top:20px;font:16px "微软雅黑";}
+.contentdl-right span p{width:113px;height:29px;display:inline-block;font:12px "微软雅黑";color:#ccc;margin-left:20px;}
+.contentdl-right span a{width:60px;height:29px;display:inline-block;text-decoration: none;font:12px "微软雅黑";color:#0088cc;}
+.textzh{border:1px solid #ccc;width:255px;height:36px;padding:0 0 0 37px;font:16px "微软雅黑";background:url(/static/imgs/imgs_user/images/dlyhm.jpg) no-repeat 0 0;}
+.textzh i{cursor:pointer;display:block;width:28px;height:18px;padding-top:18px;float:right;}
+#textzh{outline:none;width:225px;height:27px;margin:3px 0 3px 0;border:0;font-size:14px;float:left;}
+.passwordma{border:1px solid #ccc;width:255px;height:36px;padding:0 0 0 37px;font:16px "微软雅黑";background:url(/static/imgs/imgs_user/images/pass.jpg) no-repeat 0 0;}
+#passwordma{outline:none;width:225px;height:27px;margin:3px 0 3px 0;border:0;font-size:14px;}
+.passwordma i{cursor:pointer;display:block;width:28px;height:18px;padding-top:18px;float:right;}
+.chick{width:290px;height:31px;font:14px "微软雅黑";color:#ccc;text-indent:3px;}
+.chick input{vertical-align: middle;}
+.chick a{display:inline-block;height:16px;float:right;width:75px;font:14px/16px "微软雅黑";color:#0088cc;}
+.dl{width:294px;height:40px;background:#ff6600;border-radius:3px;display:inline-block;font:14px/40px "微软雅黑";text-align: center;color:#fff;}
+.dl:hover{opacity: .8;}
+.other-login{width:290px;height:65px;position:relative;font:12px/52px "微软雅黑";color:#ccc;}
+.other-login p{display:block;width:290px;height:27px;position: absolute;bottom:-12px;left:0;}
+.other-login p a{display:inline-block;width:25px;height:25px;background:url(/static/imgs/imgs_user/images/dl-smallpic.jpg);background-position:0px -19px;}
+.qq:hover{opacity: .8;}
+.other-login .alipay{background-position:-24px -19px ;}
+.other-login .alipay:hover{opacity: .5;}
+.other-login .sina{background-position:-48px -19px ;}
+.other-login .sina:hover{opacity: .5;}
+.other-login .renren{background-position:-72px -19px ;}
+.other-login .renren:hover{opacity: .5;}
+.other-login .netease{background-position:-96px -19px ;}
+.other-login .netease:hover{opacity: .5;}
+.other-login .xunlei{background-position:-120px -19px ;}
+.other-login .xunlei:hover{opacity: .5;}
+.other-login .baidu{background-position:-144px -19px ;}
+.other-login .baidu:hover{opacity: .5;}
+.other-login .qh360{background-position:-170px -19px ;}
+.other-login .qh360:hover{opacity: .5;}
+.other-login .weixin{background-position:-194px -19px ;}
+.other-login .weixin:hover{opacity: .5;}
+.other-login .wanlitong{background-position:-216px -19px ;}
+.other-login .wanlitong:hover{opacity: .5;}
+
+.pcdl{width:355px;height:422px;float:right;position: relative;}
+.pcdl p{width:355px;height:28px;margin-top:20px;font:16px/20px "微软雅黑";color:#ccc;display:block;text-indent:10px;}
+.pcdl img{display:block;border:1px solid #ccc;vertical-align: bottom;}
+.textdl{width:214px;height:40px;text-align: center;}
+.textdl a{color:#ccc;font:14px/40px "微软雅黑";}
+.textdl span{color:#ccc;font:14px/40px "微软雅黑";margin-left:10px;margin-right:10px;}
+.dllist{width:214px;height:32px;position: relative;}
+.dllist a{width:147px;height:32px;display:inline-block;position:absolute;top:0;left:35px;}
+.dllist a img{border:0}
+
+
+
+
+
+.footerdl{width:978px;height:85px;font:12px/85px "微软雅黑";text-align: center;color:#668686;}
+
+
+
+
+

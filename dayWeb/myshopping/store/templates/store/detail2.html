@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>店铺详情</title>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/store/555.jpg");;
+		}
+
+		#content{
+			width: 1200px;
+			margin: 5 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>店铺详情如下：</h1>
+		<h3>
+			<a href="{% url 'users:user_index' %}">返回主页</a>
+			<a href="{% url 'store:list' %}">店铺列表</a>	
+		</h3>
+		
+		<table border="" cellspacing="0" cellpadding="">
+		
+			<tr>
+				<th>店铺名称</th>
+				<th>店铺封面</th>
+				<th>店铺表述</th>
+				<th>店铺状态</th>
+				<th>店铺操作</th>
+			</tr>
+			
+			<tr>
+				<td>{{store.name}}</td>
+				<td><img src="/{{store.cover}}" width="200" height="200"></td>
+				<td>{{store.intro}}</td>
+				{% if store.status == 0 %}
+					<td>
+						
+							<p>正在营业</p>
+						
+					</td>
+					<td>
+						<a href="{% url 'store:change' store.id 1 %}">关闭店铺</a>;
+						<a href="{% url 'store:change' store.id 2 %}">删除店铺</a>;
+						<a href="{% url 'store:update' store.id %}">修改店铺</a>;
+						<a href="{% url 'goods:add' store.id %}">上架商品</a>;
+						<a href="{% url 'goods:list' store.id %}">查看商品</a>
+					</td>
+				{% elif store.status == 1 %}
+					<td>
+						
+							<p>暂停营业</p>
+						
+					</td>
+					<td>
+						<a href="{% url 'store:change' store.id 0 %}">开启店铺</a>;
+						<a href="{% url 'store:change' store.id 2 %}">删除店铺</a>
+						<a href="{% url 'store:update' store.id %}">修改店铺</a>;
+						<a href="{% url 'goods:add' store.id %}">上架商品</a>;
+						<a href="{% url 'goods:list' store.id %}">查看商品</a>
+					</td>
+				{% elif store.status == 2 %}
+					<td>
+				
+							<p>已删除</p>
+						
+					</td>
+					
+				{% endif %}
+			</tr>
+			
+
+			
+			
+
+			
+		</table>
+		
+	</div>
+</body>
+</html>

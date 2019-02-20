@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>所有地址列表</title>
+	<style type="text/css">
+		body{
+			background-image: url("/static/imgs/address/111.jpg");;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>地址列表页面</h1>
+		<h3>
+			<a href="{% url 'users:user_index' %}">返回主页</a>
+			<a href="{% url 'shopcart:list' %}">返回购物车</a>
+			<a href="{% url 'users:add_address' %}">添加收获地址</a>
+			
+		</h3>
+		
+		<table border="" cellspacing="0" cellpadding="">
+			
+			<tr>
+				<th>收货人</th>
+				<th>电话号码</th>
+				<th>收获地址</th>
+				<th>是否为默认地址</th>
+				<th>地址操作</th>
+			</tr>
+			{% for address in addresses %}
+				<tr>
+					<td>{{address.recv_name}}</td>
+					<td>{{address.recv_tel}}</td>
+					<td>{{address.province}} {{address.city}} {{address.area}} {{address.street}} {{address.desc}}</td>
+					
+					{% if address.is_default %}
+						<td>是</td>
+					{% else %}
+						<td>否</td>
+					{% endif %}
+					<td>
+						<a href="{% url 'users:update_address' address.id %}">修改地址</a>;
+						<a href="{% url 'users:delete_address' address.id %}">删除地址</a>	
+					</td>
+				</tr>
+			
+			
+			
+				{% empty %}
+				<tr>
+					<td>亲还没有收获地址哦，<a href="{% url 'users:add_address' %}">点我添加地址吧</a></td>
+				</tr>
+			
+			
+			{% endfor %}
+			
+		</table>
+	</div>
+</body>
+</html>
