@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+	
+	<title>用户主页面</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="/static/css/css_user/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/css_user/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/css_user/templatemo_style.css" rel="stylesheet" type="text/css">	
+</head>
+<body>
+	<div class="templatemo-logo visible-xs-block">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 black-bg logo-left-container">
+			<h1 class="logo-left">Black</h1>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg logo-right-container">
+			<h1 class="logo-right">White</h1>
+		</div>			
+	</div>
+	<div class="templatemo-container">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 black-bg left-container">
+			<h1 class="logo-left hidden-xs margin-bottom-60">Black</h1>			
+			<div class="tm-left-inner-container">
+				<ul class="nav nav-stacked templatemo-nav">
+				  <li><a href="{% url 'user:user_index' %}"   class="active"><i class="fa fa-home fa-medium"></i>文章展示</a></li>
+				  <li><a href="{% url 'user:user_articles' %}"><i class="fa fa-shopping-cart fa-medium"></i>个人空间</a></li>
+				  <li><a href="/user/user_detail/?sid={{user.id}}"><i class="fa fa-send-o fa-medium"></i>个人资料</a></li>
+				  <li><a href="#"><i class="fa fa-comments-o fa-medium"></i>作者资料</a></li>
+				  <li><a href="#"><i class="fa fa-gears fa-medium"></i>About Us</a></li>
+				  <li><a href="#"><i class="fa fa-envelope-o fa-medium"></i>Contact</a></li>
+				</ul>
+			</div>
+		</div> <!-- left section -->
+        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg right-container">
+			<h1 class="logo-right hidden-xs margin-bottom-60">White</h1>		
+			<div class="tm-right-inner-container">
+				<h1 class="templatemo-header">博客广场</h1>
+				<img src="/static/imgs/imgs_user/wooden-desk.jpg" alt="Wooden Desk" class="img-thumbnail">
+				
+					{% for a in allarts %}
+						{% for u in users %}
+							{% if u.id == a.author_id %}
+							
+								
+									<article>
+										<h2>{{a.title}}</h2>
+										<a href="{% url 'user:user_otherDetail' u.id %}" class="btn btn-warning">{{u.name}}</a>
+										<br>
+										<br>
+										{% autoescape off %}
+											{{a.content}}
+											<hr >
+											<hr >
+										{% endautoescape %}	
+										<a id="p1" class="btn btn-warning">点赞</a>
+										<a href="#" class="btn btn-warning">评论</a>
+									</article><hr >
+
+								
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+					
+					<script src="/static/js/jQuery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+					<script type="text/javascript">
+						var i=0
+						
+						$("#p1").on("click",function(e){
+							i+=1
+							$("#p1").text("点赞"+i)
+							if(i>=10)
+							{
+								$("#p1").off("click")
+							}
+						})
+				
+			
+					</script>
+					
+					
+					
+					
+					
+					
+					
+					
+				
+				<footer>
+					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-copyright">Copyright &copy; 2084 Your Company Name Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
+					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-social">
+						<a href="#"><i class="fa fa-facebook fa-medium"></i></a>
+						<a href="#"><i class="fa fa-twitter fa-medium"></i></a>
+						<a href="#"><i class="fa fa-google-plus fa-medium"></i></a>
+						<a href="#"><i class="fa fa-youtube fa-medium"></i></a>
+						<a href="#"><i class="fa fa-linkedin fa-medium"></i></a>
+					</p>
+				</footer>
+			</div>	
+		</div> <!-- right section -->
+	</div>	
+	
+</body>
+</html>

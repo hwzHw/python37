@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+	
+	<title>个人文章e</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="/static/css/css_user/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/css_user/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/css_user/templatemo_style.css" rel="stylesheet" type="text/css">	
+</head>
+<body>
+	<div class="templatemo-logo visible-xs-block">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 black-bg logo-left-container">
+			<h1 class="logo-left">Black</h1>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg logo-right-container">
+			<h1 class="logo-right">White</h1>
+		</div>			
+	</div>
+	<div class="templatemo-container">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 black-bg left-container">
+			<h1 class="logo-left hidden-xs margin-bottom-60">Black</h1>	
+			<div class="tm-left-inner-container">
+				<ul class="nav nav-stacked templatemo-nav">
+				  <li><a href="{% url 'user:user_index'%}"><i class="fa fa-home fa-medium"></i>文章展示</a></li>
+				  <li><a href="{% url 'user:user_articles' %}"  class="active"><i class="fa fa-shopping-cart fa-medium"></i>个人空间</a></li>
+				  <li><a href="/user/user_detail/?sid={{user.id}}"><i class="fa fa-send-o fa-medium"></i>个人资料</a></li>
+				  <li><a href="#"><i class="fa fa-comments-o fa-medium"></i>作者资料</a></li>
+				  <li><a href="#"><i class="fa fa-gears fa-medium"></i>About Us</a></li>
+				  <li><a href="#"><i class="fa fa-envelope-o fa-medium"></i>Contact</a></li>
+				</ul>
+			</div>
+		</div> <!-- left section -->
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg right-container">
+			<h1 class="logo-right hidden-xs margin-bottom-60">White</h1>	
+			<div class="tm-right-inner-container">
+				<h1 class="templatemo-header">您的文章如下</h1>
+				<a href="{% url 'user:addArticle'%}" class="btn btn-warning">添加文章</a>
+				<a href="{% url 'user:quit'%}" class="btn btn-warning">退出登录</a>
+				<br>
+				{% for a in page %}
+					<article class="templatemo-item">
+						<h2>{{a.title}}</h2>
+						<img src="/static/imgs/imgs_user/japan.jpg" alt="Japan" class="img-thumbnail">
+						<br>
+						{% autoescape off %}
+							{{a.content}}
+							<hr >
+							<hr >
+						{% endautoescape %}
+						<a href="/user/updateArticle/?sid={{a.id}}" class="btn btn-warning">修改</a>
+						<a href="{% url 'user:delArticle' a.id %}" class="btn btn-warning">删除</a>	
+					</article><hr>
+				{% endfor %}
+				
+				
+				
+				<a href="/user/user_articles/?pagenum=1">首页</a>
+				{% if page.has_previous %}
+					<a href="/user/user_articles/?pagenum={{page.previous_page_number}}">上一页</a>
+				{% endif %}
+
+				{% for i in pagena.page_range %}
+					<a href="/user/user_articles/?pagenum={{i}}">第{{i}}页</a>
+				{% endfor %}
+
+				{% if page.has_next %}
+					<a href="/user/user_articles/?pagenum={{page.next_page_number}}">下一页</a>
+				{% endif %}
+
+
+				<a href="/user/user_articles/?pagenum={{page.paginator.num_pages}}">尾页</a>
+
+				
+				
+				
+				
+				
+				
+				<footer>
+					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-copyright">Copyright &copy; 2084 Your Company Name Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
+					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-social">
+						<a href="#"><i class="fa fa-facebook fa-medium"></i></a>
+						<a href="#"><i class="fa fa-twitter fa-medium"></i></a>
+						<a href="#"><i class="fa fa-google-plus fa-medium"></i></a>
+						<a href="#"><i class="fa fa-youtube fa-medium"></i></a>
+						<a href="#"><i class="fa fa-linkedin fa-medium"></i></a>
+					</p>
+				</footer>
+			</div>	
+		</div> <!-- right section -->
+	</div>	
+</body>
+</html>

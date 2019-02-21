@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+	
+	<title>Services - Black White HTML5 Template</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="/static/css/css_user/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/css_user/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/css_user/templatemo_style.css" rel="stylesheet" type="text/css">	
+	<style type="text/css">
+		#ziliao{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="templatemo-logo visible-xs-block">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 black-bg logo-left-container">
+			<h1 class="logo-left">Black</h1>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg logo-right-container">
+			<h1 class="logo-right">White</h1>
+		</div>			
+	</div>
+	<div class="templatemo-container">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 black-bg left-container">
+			<h1 class="logo-left hidden-xs margin-bottom-60">Black</h1>	
+			<div class="tm-left-inner-container">
+				<ul class="nav nav-stacked templatemo-nav">
+				  <li><a href="{% url 'user:user_index' %}"><i class="fa fa-home fa-medium"></i>文章展示</a></li>
+				  <li><a href="{% url 'user:user_articles' %}"><i class="fa fa-shopping-cart fa-medium"></i>个人空间</a></li>
+				  <li><a href="/user/user_detail/?sid={{user.id}}" class="active"><i class="fa fa-send-o fa-medium"></i>个人资料</a></li>
+				  <li><a href="#"><i class="fa fa-comments-o fa-medium"></i>作者资料</a></li>
+				  <li><a href="#"><i class="fa fa-gears fa-medium"></i>About Us</a></li>
+				  <li><a href="#"><i class="fa fa-envelope-o fa-medium"></i>Contact</a></li>
+				</ul>
+			</div>
+		</div> <!-- left section -->
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg right-container">
+			<h1 class="logo-right hidden-xs margin-bottom-60">White</h1>
+			<div class="tm-right-inner-container">
+				<h1 class="templatemo-header">您的个人资料：</h1>
+				<img src="/{{user.header}}" >
+				<br>
+				头像更换：<input type="file" name="header" id="" value="" />
+				
+				<div class="row" id="ziliao">
+					<form action="{% url 'user:user_detail' %}" method="post">
+						{% csrf_token %}		
+						<input type="hidden" name="sid" value="{{user.id}}" />
+						姓名：<input type="text" name="username" value="{{user.name}}" />
+						<br>
+						<br>
+						密码：<input type="password" name="password" value="{{user.pwd}}" />
+						<br>
+						<br>
+						性别：<input type="text" name="sex" value="{{user.sex}}" />
+						<br>
+						<br>
+						生日：<input type="text" name="data" value="{{user.data}}" />
+						<br>
+						<br>
+						邮箱：<input type="text" name="email" value="{{user.email}}" />
+						<br>
+						<br>
+						电话：<input type="text" name="phone" value="{{user.phone}}" />
+						<br>
+						<br>
+						cusID：<input type="text" name="cusID" value="{{user.cusID}}" />
+		
+						<br>
+						<br>
+						<br>
+						<input type="submit" value="修改"  />
+						<input type="reset"  value="重置" style="margin-left: 30px;" />
+					</form>
+				</div>			
+
+			</div>	
+		</div> <!-- right section -->
+	</div>	
+</body>
+</html>

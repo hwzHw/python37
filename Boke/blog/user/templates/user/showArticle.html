@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章详情</title>
+	<script src="/static/tiny_mce/tiny_mce.js"></script>
+	<style type="text/css">
+		.content{
+			width: 1200px;
+			margin: 10px auto;
+			text-align: center;
+		}
+		h1{
+			width: 200px;
+			margin: 0 auto;
+		}
+		p{
+			text-indent: 2em;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>{{art.title}}</h1>
+		<br>
+		<br>
+		<p>{{art.content}}</p>
+<!-- 		<textarea rows="" cols="" value="{{art.content}}">
+			
+		</textarea>
+		<script type="text/javascript">
+				tinyMCE.init({
+				"mode":"textareas",
+				"theme":"advanced",
+				"width":1200,
+				"height":500,
+			})
+		</script> -->
+		
+		
+	</div>
+</body>
+</html>

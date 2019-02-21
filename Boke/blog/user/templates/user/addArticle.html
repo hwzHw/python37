@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布文章</title>
+	<script src="/static/tiny_mce/tiny_mce.js"></script>
+</head>
+<body>
+	<h4>请添加文章</h4>
+	<form action="{% url 'user:addArticle_success' %}" method="post">
+		{% csrf_token %}
+		<input type="hidden" name="sid" value="{{author}}" />
+		<input type="text" name="title" id="" value="" placeholder="请输入标题" style="width: 1000px;" />
+		<br>
+		<br>
+		<textarea rows="" cols="" name="content">
+			
+		</textarea>
+		<input type="submit" name="" value="添加" />
+	</form>
+	<script type="text/javascript">
+			tinyMCE.init({
+		    "mode":"textareas",
+		    "theme":"advanced",
+		    "width":1200,
+		    "height":450
+		})
+	</script>
+
+</body>
+</html>

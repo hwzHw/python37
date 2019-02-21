@@ -2,14 +2,13 @@ import threading
 import socket
 # 客服端
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-server.bind(("192.168.15.6", 60000))
+server.bind(("192.168.15.6", 60001))
 addr = None
 
 
 def read():
     while True:
         try:
-
             result = server.recvfrom(1024)
             print(result)
             global addr

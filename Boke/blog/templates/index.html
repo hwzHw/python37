@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <h1>项目主页</h1>
+    <h4>{{user.name}}:{{user.age}}</h4>
+
+    {% if user.age == 21 %}
+        <h4>你还不能呀</h4>
+    {% elif user.age == 22 %}
+        <h4>那中吧</h4>
+    {% else %}
+        <h4>你可以啦</h4>
+    {% endif %}
+
+    {% for i in users %}
+        {{i.age}}
+    {% empty %}
+        没有尴尬
+    {% endfor %}
+    <br>
+    <img src="/static/imgs/xxx.jpg" width="200" height="200" >
+
+    {#url加载图片#}
+    {% load static %}
+    <img src="{% static 'imgs/xxx.jpg' %}" width="200" height="200" >
+
+    <form action="/user/create/" method="post">
+        姓名：<input type="text" name="name" value="" />
+        <input type="submit" value="注册" />
+    </form>
+
+    {#url加载#}
+    <form action="{% url 'user:create' %}" method="post">
+        {% csrf_token %}
+        姓名：<input type="text" name="name" value="" />
+        <input type="submit" value="注册" />
+    </form>
+
+    {%comment%}
+        这是多行注释
+    {%endcomment%}
+
+    {#单行注释#}
+
+
+</body>
+</html>

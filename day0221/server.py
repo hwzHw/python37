@@ -2,11 +2,11 @@ import threading
 import socket
 
 # 服务端
-client = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 
 def read():
-    client.sendto("".encode("utf8"), ("192.168.15.6", 60000))
+    client.sendto("".encode("utf8"), ("192.168.15.6", 60001))
     while True:
         try:
             result = client.recvfrom(1024)

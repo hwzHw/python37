@@ -1,0 +1,126 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+<head>
+
+<title>Custom Signup Form A Flat Responsive Widget Template :: W3layouts</title>
+
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="Custom Signup Form Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Meta-Tags -->
+
+<!-- Custom-Style-Sheet -->
+<!-- Index-Page-CSS --> <link rel="stylesheet" href="/static/css/css_register/style.css" 	type="text/css" media="all">
+<!-- Calendar-CSS -->	<link rel="stylesheet" href="/static/css/css_register/jquery-ui.css" type="text/css" media="all">
+<!-- //Custom-Style-Sheet -->
+
+<!-- Fonts -->
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" type="text/css" media="all">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700"			   type="text/css" media="all">
+<!-- //Fonts -->
+<style type="text/css">
+	#header{
+		position: absolute;
+		right: 600px;
+		bottom: 150px;
+		
+	}
+</style>
+</head>
+<!-- //Head -->
+
+
+
+<!-- Body -->
+<body>
+
+	<h1>CUSTOM SIGNUP FORM</h1>
+
+	<div class="containerw3layouts-agileits">
+
+		<div class="w3imageaits">
+			<img class="user" src="/static/imgs/imgs_register/user.png" alt="Custom Signup Form">
+			<h2></h2>
+			<p>It should only take you a minute to connect</p>
+		</div>
+
+		<div class="aitsloginwthree w3layouts agileits">
+			<form action="{% url 'user:regist_success' %}" method="post" enctype="multipart/form-data">
+				
+				<input type="text" Name="username" placeholder="Name" required="">
+				<div class="radio-btns agileits w3layouts">
+					<div class="cc-selector wthreeselector">
+						<p>Gender</p>
+					</div>
+					<div class="cc-selector wthreeselector">
+						<input id="visa" type="radio" name="sex" value="man">
+						<label class="drinkcard-cc visa" for="visa"></label>
+					</div>
+					<div class="cc-selector wthreeselector">
+						<input id="mastercard" type="radio" name="sex" value="woman">
+						<label class="drinkcard-cc mastercard" for="mastercard"></label>
+					</div>
+				</div>
+				<div class="wthreedob">
+					<input class="date agileits w3layouts" id="datepicker1" type="text" name="data" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+				</div>
+				<input class="fill email" type="text" name="email" placeholder="Email" required="">
+				<input type="password" Name="password" placeholder="Password" required="">
+				<input class="fill tel" name="phone" placeholder="Phone" required="">
+				<input type="text" Name="cusID" placeholder="Customer ID" required="">
+				<div id="header">
+					头像：<input type="file" name="header" id="" value="" />
+				</div>
+				
+				<div class="send-button wthree agileits">
+					<input type="submit" value="Sign Up">
+				</div>
+			</form>
+		</div>
+
+		<div class="clear"></div>
+
+	</div>
+
+	<div class="w3lsfooteragileits">
+		<p> &copy; 2017 Custom Signup Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="=_blank">W3layouts</a></p>
+	</div>
+
+
+
+	<!-- Necessary-JavaScript-Files-&-Links -->
+
+		<!-- Default-JavaScript --><script type="text/javascript" src="/static/js/jquery-3.1.1.js"></script>
+
+		<!-- Date-Picker-JavaScript -->
+			<script src="/static/js/jquery-ui.js"></script>
+			<script>
+				$(function() {
+					$( "#datepicker1" ).datepicker();
+				});
+			</script>
+		<!-- //Date-Picker-JavaScript -->
+
+	<!-- //Necessary-JavaScript-Files-&-Links -->
+
+
+
+</body>
+<!-- //Body -->
+
+
+
+</html>

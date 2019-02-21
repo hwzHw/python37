@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testAjax</title>
+	<script src="/static/js/jQuery/jquery-2.1.4.js" ></script>
+
+</head>
+<body>
+	<p>测试jquryAjax</p>
+	<button type="button" id='user'>测试</button>
+	<script src="/static/js/jQuery/jquery-2.1.4.js" ></script>
+	<script type="text/javascript">
+		$('#user').on('click', function(){
+			
+			$.ajax({
+				url: '/user/testAjax/',
+				type: 'POST',
+				dateType: 'JSON',
+				success: function(data){
+					// alert(data.name);
+					JSON.parse(data)
+					
+					alert(typeof(data));
+					alert(data[1]['fields']['name']);
+				}
+			})
+		})
+	</script>
+</body>
+</html>
