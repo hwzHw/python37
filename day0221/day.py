@@ -26,20 +26,26 @@
 #
 # ..................佛祖开光 ,永无BUG...................
 # ..................佛祖保佑，永不加班...................
-import socket
-from threading import Thread
-
-def readThread():
-    BUFFERSIZE = 1024
-    while True:
-        try:
-            databytes = clientSocket.recv(BUFFERSIZE)
-            if len(databytes) == 0:
-                clientSocket.close()
-                break
-            else:
-                datastr = databytes.decode("gbk")
-                print("收到消息", datastr)
-        except Exception as e:
-            print(e)
-            break
+# 冒泡排序
+# items = [10,30,67,5,18,0,24]
+# print(items)
+# def sort(items):
+#     count = len(items)
+#     for i in range(1, count):
+#         for j in range(i+1,count):
+#             if items[i] > items[j]:
+#                 items[i],items[j] = items[i], items[j]
+#         print(items)
+# sort(items)
+# 正则去重
+# import re
+# a = 'not 404 found 张三 99 深圳'
+# list = a.split(' ')
+# print(list)
+# res = re.findall('\d+|[a-zA-Z]+',a) #数字 | 单词
+# for i in res:
+#     if i in list:
+#         list.remove(i)
+# new_str=' '.join(list)
+# print(res)
+# print(new_str)
