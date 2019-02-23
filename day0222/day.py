@@ -1,5 +1,5 @@
 #
-# @Time    : 2019/2/21 9:44
+# @Time    : 2019/2/22 10:36
 # @Author  : Mat
 # @壮      ：Very Cool
 # @File    : day.py
@@ -26,26 +26,22 @@
 #
 # ..................佛祖开光 ,永无BUG...................
 # ..................佛祖保佑，永不加班...................
-# 冒泡排序
-# items = [10,30,67,5,18,0,24]
-# print(items)
-# def sort(items):
-#     count = len(items)
-#     for i in range(1, count):
-#         for j in range(i+1,count):
-#             if items[i] > items[j]:
-#                 items[i],items[j] = items[i], items[j]
-#         print(items)
-# sort(items)
-# 正则去重
-# import re
-# a = 'not 404 found 张三 99 深圳'
-# list = a.split(' ')
-# print(list)
-# res = re.findall('\d+|[a-zA-Z]+',a) #数字 | 单词
-# for i in res:
-#     if i in list:
-#         list.remove(i)
-# new_str=' '.join(list)
-# print(res)
-# print(new_str)
+import re
+# " . " 不可以匹配换行符，匹配任意一个字符（除了\n）
+# result = re.findall('.', 'hello \n china', flags=re.M)
+# print(result)
+
+
+# " [] " 匹配[]中列举的字符
+# result = re.findall('[01234].ello', '0hello 1hello 2 ello 88ello')
+# print(result)
+
+
+# " \d "  匹配数字 0-9
+# result = re.findall('\dhello', 'hello 1hello 5hello 0 hello')
+# print(result)
+
+
+# " \D " 匹配非数字，即不是数字
+result = re.findall("\Dhello", "xhello 1hello 5hello 0hello")
+print(result)

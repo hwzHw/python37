@@ -1,0 +1,739 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <meta name="keywords" content="沪深A股行情,沪深A股指数,沪深股市,沪深指数" />
+<meta name="description" content="证券之星行情中心为您提供最新、最全、最精的沪深A股实时行情和沪深A股指数。帮助您充分掌握沪深A股股市行情内容,追踪个股,为您的投资保驾护航!" />
+<title>沪深A股-股票行情-行情中心-证券之星</title>
+<link rel="stylesheet" type="text/css" href="//j.ssajax.cn/css/quote2011/stockmarket/2014082701/common.css" />
+
+<script type="text/javascript" src="//j.ssajax.cn/js/quote2011/common/20120411/quotecommon.min.js"></script>
+
+<script src="//j.ssajax.cn/js/quote2011/quotecommon/20120411/sortpagetype.min.js"  type="text/javascript"></script>
+
+<base target="_blank" />
+</head>
+<body>
+<!-- 头部 begin  -->
+<div id="top">
+  <div class="w">
+    <div class="lf"><a href="//www.stockstar.com">首页</a><a href="//stock.stockstar.com/">股票</a><a href="//quote.stockstar.com/">行情</a><a href="//resource.stockstar.com/">数据</a><a href="//stock.stockstar.com/report/">研报</a><a href="//fund.stockstar.com/">基金</a><a href="//bond.stockstar.com/">债券</a><a href="//if.stockstar.com/">期指</a><a href="//futures.stockstar.com/">期货</a><a href="//gold.stockstar.com/">黄金</a><a href="//forex.stockstar.com/">外汇</a><a href="//bank.stockstar.com/">银行</a><a href="http://video.stockstar.com/">视频</a>
+      </div>
+    <div class="login">
+      <div class="icon home"></div>
+      <div class="lf"><a href="//my.stockstar.com/">我的证券之星</a><span>[<a href="//member.stockstar.com/login/log_in.aspx">登录</a>]</span><span>[<a href="//member.stockstar.com/login/registe.aspx">注册</a>]</span>|<a href="javascript:void(0);return false;" target="_self" onclick="base.command.setHomepage(this,'//quote.stockstar.com');">设为首页</a>|<a href="javascript:void(0);return false;" target="_self" onclick="base.command.setFavorite('证券之星-行情频道','//quote.stockstar.com');">收藏本页</a></div>
+    </div>
+  </div>
+</div><div class="h_7"></div>
+<div id="head">
+  <div class="logo fl"><a href="//www.stockstar.com" title="证券之星">证券之星</a></div>
+  <div id="ad_1" class="ad fr">     
+  </div>
+</div>
+<div class="h_7"></div>
+<!-- 头部 end  -->
+<div class="h_10"></div>
+<div class="top_nav">
+      <div class="pageTitle">
+        <h2 class="hqzx">行情中心</h2>
+      </div>
+<div class="search" id="divSearchBox">
+            <!-- 股票搜索框-->
+            <!--<div class="ac_results" style="z-index: 100; top: 23px; left: 0px;"></div>
+<div class="searchText">
+<input class="text" autocomplete="off" type="text"
+     value="代码/名称/拼音" onclick="AutoComplete.Clear('divSearchBox');" onkeyup="AutoComplete.Show(event,'divSearchBox',0,'quotesearch');" onblur="AutoComplete.OnBlur('divSearchBox');" /></div>
+<input type="submit" class="newbtn redshbtn" value="查询" onclick="AutoComplete.Submit('divSearchBox');" />
+<div class="infomesage" style="display:none;"></div> 
+<form action="http://quote.stockstar.com/stock/exdir.aspx" method="post">
+<input type="hidden" name="code" />
+<input type="hidden" name="mk" />
+<input type="hidden" name="securtytype" />
+<input type="hidden" name="target" value="quotesearch" />
+</form>-->
+
+<!-- 2013-01-21 new modify add by xb.zhu-->
+<div class="searchText"><input id="ajaxinput_q" class="text" type="text" /></div>
+<input id="ajaxinputquery_q" type="submit" class="newbtn redshbtn" value="查询"/>
+<script src="//j.ssajax.cn/js/lib/StockSuggest.min.1.8.js" type="text/javascript"></script>
+<script type="text/javascript">
+    new StockSuggest("ajaxinput_q", {
+        width: "193px",           //下拉层宽度
+        autoSubmit: true,         //是否允许自动提交
+        className: 'searchText', //自定义样式
+        types: [101, 102, 103, 104, 201,105, 300, 401, 403, 405, 501, 502, 503, 504,801,802], //展示的证券类型
+        status: [1, 2, 3,4],
+        opacity: 1,                   //透明度
+        shortcutKey: true,                  //行情软件中的快捷键 
+        text: '代码/简称/拼音',       //默认文字
+        header: { show: true, columns: ["简称", "类型"] }, //显示字段
+        orderBy: 2,                     //指数代码优先
+        evt: 'ajaxinputquery_q'       //触发事件
+    });
+</script>
+
+        </div>
+</div>
+<div class="h_5"></div>
+<div class="w">
+  <!-- 左侧子导航 begin -->
+    
+<div class="sideleft">
+    <div class="subMenuBox">
+        <div class="list submenu1">
+            <h3 class="hasChild cur curbg">
+                <em class="cur"></em><a href="/"
+                    target="_self">沪深市场</a></h3>
+            <div class="subNav" style="display:block">
+                <dl class="open">
+                    <dt class="hasChild "><em class="cur"></em>
+                        <a href='/stock/sha.shtml' target="_self">市场分类</a> </dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/stock/sha.shtml" target="_self">·沪市A股</a></li>
+                            <li class=""><a href="/stock/sza.shtml" target="_self">·深市A股</a></li>
+                            <li class=""><a href="/stock/shb.shtml" target="_self">·沪市B股</a></li>
+                            <li class=""><a href="/stock/szb.shtml" target="_self">·深市B股</a></li>
+                            <li class=""><a href="/stock/small.shtml" target="_self">·中小板</a></li>
+                            <li class=""><a href="/stock/gem.shtml" target="_self">·创业板</a></li>
+                            <li class="curbg"><a href="/stock/ranklist_a.shtml" target="_self">·A股市场</a></li>
+                            <li class=""><a href="/stock/ranklist_b.shtml" target="_self">·B股市场</a></li>
+                            <li class=""><a href="/stock/ab_sh.shtml" target="_self">·A+B股</a></li>
+                              <li class=""><a href="/stock/ipo.shtml" target="_self">·新股</a></li>
+                            <li class=""><a href="/stock/blockperformance_0_400129614_0_0_1.html" target="_self">·沪港通(沪股通)</a></li>
+			    <li class=""><a href="/stock/blockperformance_0_400130077_0_0_1.html" target="_self">·深港通(深股通)</a></li>
+                            <li class=""><a href="/stock/shwarn.shtml" target="_self">·沪市风险警示板</a></li>
+                            <li class=""><a href="/stock/szwarn.shtml" target="_self">·深市退市整理板</a></li>
+                             <li class=""><a href="/stock/third.shtml" target="_self">·三板</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="">
+                    <dt class="hasChild "><em class=""></em>
+                        <a href="/stock/industry.shtml" target="_self">标准行业</a> </dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/stock/industry_a.shtml" target="_self">·农林牧渔业</a></li>
+                            <li class=""><a href="/stock/industry_b.shtml" target="_self">·采矿业</a></li>
+                            <li class=""><a href="/stock/industry_c.shtml" target="_self">·制造业</a></li>
+                            <li class=""><a href="/stock/industry_d.shtml" target="_self">·水电煤</a></li>
+                            <li class=""><a href="/stock/industry_e.shtml" target="_self">·建筑业</a></li>
+                            <li class=""><a href="/stock/industry_f.shtml" target="_self">·批发和零售业</a></li>
+                            <li class=""><a href="/stock/industry_g.shtml" target="_self">·交通运输仓储</a></li>
+                            <li class=""><a href="/stock/industry_h.shtml" target="_self">·住宿和餐饮业</a></li>
+                            <li class=""><a href="/stock/industry_i.shtml" target="_self">·信息技术业</a></li>
+                            <li class=""><a href="/stock/industry_j.shtml" target="_self">·金融业</a></li>
+                            <li class=""><a href="/stock/industry_k.shtml" target="_self">·房地产业</a></li>
+                            <li class=""><a href="/stock/industry_l.shtml" target="_self">·租赁商务服务业</a></li>
+                            <li class=""><a href="/stock/industry_m.shtml" target="_self">·科学技术服务业</a></li>
+                            <li class=""><a href="/stock/industry_n.shtml" target="_self">·公共设施管理业</a></li>
+                            <li class=""><a href="/stock/industry_o.shtml" target="_self">·居民服务修理业</a></li>
+                            <li class=""><a href="/stock/industry_p.shtml" target="_self">·教育</a></li>
+                            <li class=""><a href="/stock/industry_q.shtml" target="_self">·卫生和社会工作</a></li>
+                            <li class=""><a href="/stock/industry_r.shtml" target="_self">·文化体育娱乐业</a></li>
+                            <li class=""><a href="/stock/industry_s.shtml" target="_self">·综合</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="">
+                    <dt class=""><a href="/stock/blockrank_5.shtml" target="_self">
+                        概念板块</a> </dt>
+                </dl>
+                <dl class="">
+                    <dt class="hasChild "><em class=""></em>
+                        <a href="/stock/blockrank_3.shtml" target="_self">地域板块</a> </dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/stock/blockperformance_3_400122115.shtml"
+                                target="_self">·北京</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122123.shtml"
+                                target="_self">·上海</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122116.shtml"
+                                target="_self">·天津</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122133.shtml"
+                                target="_self">·广东</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122136.shtml"
+                                target="_self">·重庆</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122122.shtml"
+                                target="_self">·黑龙江</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122121.shtml"
+                                target="_self">·吉林</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122120.shtml"
+                                target="_self">·辽宁</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122117.shtml"
+                                target="_self">·河北</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122130.shtml"
+                                target="_self">·河南</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122129.shtml"
+                                target="_self">·山东</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122118.shtml"
+                                target="_self">·山西</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122141.shtml"
+                                target="_self">·陕西</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122144.shtml"
+                                target="_self">·宁夏</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122142.shtml"
+                                target="_self">·甘肃</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122145.shtml"
+                                target="_self">·新疆</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122119.shtml"
+                                target="_self">·内蒙古</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122140.shtml"
+                                target="_self">·西藏</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122137.shtml"
+                                target="_self">·四川</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122139.shtml"
+                                target="_self">·云南</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122138.shtml"
+                                target="_self">·贵州</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122134.shtml"
+                                target="_self">·广西</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122135.shtml"
+                                target="_self">·海南</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122131.shtml"
+                                target="_self">·湖北</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122132.shtml"
+                                target="_self">·湖南</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122128.shtml"
+                                target="_self">·江西</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122124.shtml"
+                                target="_self">·江苏</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122125.shtml"
+                                target="_self">·浙江</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122126.shtml"
+                                target="_self">·安徽</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122127.shtml"
+                                target="_self">·福建</a></li>
+                            <li class=""><a href="/stock/blockperformance_3_400122143.shtml"
+                                target="_self">·青海</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="">
+                    <dt class="hasChild "><em class=""></em>
+                        <a href="/stock/index.shtml" target="_self">指数列表</a> </dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/stock/Index_sh.shtml" target="_self">·上证系列指数</a></li>
+                            <li class=""><a href="/stock/Index_sz.shtml" target="_self">·深证系列指数</a></li>
+                            <li class=""><a href="/stock/Index_cn.shtml" target="_self">·巨潮系列指数</a></li>
+                            <li class=""><a href="/stock/Index_cs.shtml" target="_self">·中证系列指数</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="">
+                    <dt class="hasChild "><em class=""></em>
+                        <a href="/stock/rank.shtml" target="_self">综合排行</a> </dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/stock/rank_a.shtml" target="_self">·A股市场排行</a>
+                            </li>
+                            <li class=""><a href="/stock/rank_sha.shtml" target="_self">·沪市A股排行</a>
+                            </li>
+                            <li class=""><a href="/stock/rank_shb.shtml" target="_self">·沪市B股排行</a>
+                            </li>
+                            <li class=""><a href="/stock/rank_sza.shtml" target="_self">·深市A股排行</a>
+                            </li>
+                            <li class=""><a href="/stock/rank_szb.shtml" target="_self">·深市B股排行</a>
+                            </li>
+                            <li class=""><a href="/stock/rank_small.shtml" target="_self">·中小板排行</a>
+                            </li>
+                            <li class=""><a href="/stock/rank_gem.shtml" target="_self">·创业板排行</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                
+            </div>
+        </div>
+        
+        <div class="list submenu2">
+            <h3 class="hasChild cur">
+                <em id="specialem" class=""></em><a href="/global/" target="_self">全球</a></h3>
+            <div class="subNav" style="display:none">
+                <dl class="">
+                    <dt class=""><a href="/global/" target="_self">全球股市</a>
+                    </dt>
+                </dl>
+                <dl class="">
+                    <dt class=""><a href="/global/chinastock.htm" target="_self">中国概念股</a>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+        
+
+        <div class="list submenu3">
+            <h3 class="hasChild cur">
+                <em class=""></em><a href="/fund/" target="_self">基金</a></h3>
+            <div class="subNav" style="display:none">
+                <dl class="">
+                    <dt class="hasChild "><em class=""></em>
+                        <a href="/fund/open.shtml" target="_self">开放式基金</a> </dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/fund/stock.shtml" target="_self">·股票型</a></li>
+                            <li class=""><a href="/fund/mixed.shtml" target="_self">·混合型</a></li>
+                            <li class=""><a href="/fund/bond.shtml" target="_self">·债券型</a></li>
+                            <li class=""><a href="/fund/etf.shtml" target="_self">·ETF</a></li>
+                            <li class=""><a href="/fund/lof.shtml" target="_self">·LOF</a></li>
+                            <li class=""><a href="/fund/qdii.shtml" target="_self">·QDII</a></li>
+                            <li class=""><a href="/fund/currency.shtml" target="_self">·货币型</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="">
+                    <dt class="hasChild ""><em class=""></em>
+                        <a href="/fund/closed.shtml" target="_self">封闭式基金</a> </dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/fund/closed.shtml" target="_self">·传统封基</a></li>
+                            <li class=""><a href="/fund/innovation.shtml" target="_self">·创新封基</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="">
+                    <dt class="hasChild "><em class=""></em>
+                        <a href="/fund/quote_etf.shtml" target="_self">基金行情</a> </dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/fund/quote_etf.shtml" target="_self">·ETF行情</a></li>
+                            <li class=""><a href="/fund/quote_lof.shtml" target="_self">·LOF行情</a></li>
+                            <li class=""><a href="/fund/quote_closed.shtml" target="_self">·封基行情</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <!--<div class="list submenu4">
+            <h3 class="hasChild cur">
+                <em class=""></em><a href="/futures/ff.htm" target="_self">金融期货</a></h3>
+            <div class="subNav" style="display:none">
+                <dl class="">
+                    <dt class="hasChild "><em class=""></em><a href="/futures/if.htm" target="_self">股指期货</a></dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/futures/ifnational.htm" target="_self">·国内期指</a></li>
+                            <li class=""><a href="/futures/ifglobal.htm" target="_self">·国际期指</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="">
+                    <dt class=""><a href="/futures/bf.htm" target="_self">债券期货</a></dt>
+                </dl>
+            </div>
+        </div>-->
+        <div class="list submenu9"> <!--20130225新添加调整，放置在最后 -->
+        <h3 class="hasChild cur"> 
+            <em class=""></em><a href="/futures/" target="_self">期货</a></h3>
+        <div class="subNav" style="display:none">
+         <dl class="">
+            <dt class="hasChild "><em class=""></em> 
+                <a href="/futures/energy.shtml" target="_self">能源</a> </dt>
+            <dd>
+              <ul>
+                <li class=""><a href="/futures/energyinland.shtml" target="_self">·国内能源</a></li>
+                <li class=""><a href="/futures/energyinternation.shtml" target="_self">·国际能源</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <dl class="">
+                    <dt class="hasChild "><em class=""></em>
+                        <a href="/futures/preciousmetal.shtml" target="_self">贵金属</a> </dt>
+                    <dd>
+                        <ul>
+                            <li class=""><a href="/futures/premetalinland.shtml" target="_self">·国内贵金属</a></li>
+                            <li class=""><a href="/futures/premetalinternation.shtml" target="_self">·国际贵金属</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+          <dl class="">
+            <dt class="hasChild "><em class=""></em> <a href="/futures/basemetal.shtml" target="_self">基础金属</a> </dt>
+            <dd>
+              <ul>
+                <li class=""><a href="/futures/basemetalinland.shtml" target="_self">·国内基础金属</a></li>
+                <li class=""><a href="/futures/basemetalinternation.shtml" target="_self">·国际基础金属</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <dl class="">
+            <dt class="hasChild "><em class=""></em> <a href="/futures/agroproducts.shtml" target="_self">农产品</a> </dt>
+            <dd>
+              <ul>
+                <li class=""><a href="/futures/agroproductsinland.shtml" target="_self">·国内农产品</a> </li>
+                <li class=""><a href="/futures/agroproductsinternation.shtml" target="_self">·国际农产品</a> </li>
+
+              </ul>
+            </dd>
+          </dl>
+          <dl class="">
+            <dt class="hasChild "><em class=""></em> <a href="/futures/oilseeds.shtml" target="_self">油籽</a> </dt>
+            <dd>
+              <ul>
+                <li class=""><a href="/futures/oilseedsinland.shtml" target="_self">·国内油籽</a> </li>
+                <li class=""><a href="/futures/oilseedsinternation.shtml" target="_self">·国际油籽</a> </li>
+              </ul>
+            </dd>
+          </dl>
+           <dl class="">
+            <dt class="hasChild "><em class=""></em> <a href="/futures/softcommodity.shtml" target="_self">软商品</a> </dt>
+            <dd>
+              <ul>
+                <li class=""><a href="/futures/softcommodityinland.shtml" target="_self">·国内软商品</a> </li>
+                <li class=""><a href="/futures/softcommodityinternation.shtml" target="_self">·国际软商品</a> </li>
+              </ul>
+            </dd>
+          </dl>
+           <dl class="">
+                    <dt class=""><a href="/futures/othercommondity.shtml" target="_self">化工材料</a></dt>
+            </dl>
+         <dl class="">
+            <dt class="hasChild "><em class=""></em> <a href="/futures/futures.shtml" target="_self">国内期货</a> </dt>
+            <dd>
+              <ul>
+                <li class=""><a href="/futures/shfe.html" target="_self">·上海期货交易所</a> </li>
+                <li class=""><a href="/futures/dce.html" target="_self">·大连商品交易所</a> </li>
+                <li class=""><a href="/futures/czce.html" target="_self">·郑州商品交易所</a> </li>
+              </ul>
+            </dd>
+          </dl>
+           <dl class="">
+            <dt class="hasChild "><em class=""></em> <a href="/futures/futuresglobal.shtml" target="_self">国际期货</a> </dt>
+            <dd>
+              <ul>
+                 <li class=""><a href="/futures/lme.html" target="_self">·伦敦金属交易所</a> </li>
+                <li class=""><a href="/futures/ipe.html" target="_self">·伦敦石油交易所</a> </li>
+                <li class=""><a href="/futures/cbot.html" target="_self">·芝加哥期货交易所</a> </li>
+                <!--<li class=""><a href="/futures/cme.html" target="_self">·芝加哥商业交易所</a></li>-->
+                <li class=""><a href="/futures/nybot.html" target="_self">·纽约期货交易所</a></li>
+                <li class=""><a href="/futures/nymex.html" target="_self">·纽约商品交易所</a></li>
+                <li class=""><a href="/futures/tocom.html" target="_self">·东京工业品交易所</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </div>
+        <!-- 现货市场 -->
+		
+		<!-- end 现货市场 -->
+        <div class="list submenu6">
+            <h3 class="hasChild cur">
+                <em class=""></em><a href="/bond/" target="_self">债券</a></h3>
+            <div class="subNav" style="display:none">
+                <dl class="">
+                    <dt class=""><a href="/bond/national.shtml" target="_self">国债</a>
+                    </dt>
+                </dl>
+                <dl class="">
+                    <dt class=""><a href="/bond/corp.shtml" target="_self">企债</a>
+                    </dt>
+                </dl>
+                <dl class="">
+                    <dt class=""><a href="/bond/convertible.shtml" target="_self">
+                        可转债</a> </dt>
+                </dl>
+                <dl class="">
+                    <dt class=""><a href="/bond/repurchase.shtml" target="_self">
+                        回购</a> </dt>
+                </dl>
+
+                <dl class="">
+                    <dt class=""> 
+                        <a href="/bond/bankrepurchase.shtml" target="_self">银行间</a> </dt>
+                    
+                </dl>
+            </div>
+        </div>
+        <div class="list submenu7">
+            <h3 class="hasChild cur">
+                <em class=""></em><a href="/forex/" target="_self">外汇</a></h3>
+            <div class="subNav" style="display:none">
+                <dl class="">
+                    <dt class=""><a href="/forex/all.shtml" target="_self">所有汇率</a>
+                    </dt>
+                </dl>
+                <dl class="">
+                    <dt class=""><a href="/forex/basic.shtml" target="_self">基本汇率</a>
+                    </dt>
+                </dl>
+                <dl class="">
+                    <dt class=""><a href="/forex/cross.shtml" target="_self">交叉汇率</a>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+
+        
+           <div class="list submenu8">
+			<h3 class="cur">
+				<em class=""></em><a target="_self" href="/gold/">黄金</a>
+			</h3>
+
+			<div class="subNav" style="display:none">
+                <dl class="">
+                    <dt class=""><a href="/gold/globalgold.shtml" target="_self">国际贵金属</a>
+                    </dt>
+                </dl>
+                <dl class="">
+                    <dt class=""><a href="/gold/london.shtml" target="_self">伦敦金定盘价</a>
+                    </dt>
+                </dl>
+                <dl class=''>
+					<dt class="hasChild "><em class=""></em>
+						<a href="/gold/SHFE.shtml" target="_self">国内贵金属</a>
+					</dt>
+					<dd>
+						<ul>
+							<li class=""><a href="/gold/SHFE.shtml" target="_self">·上海贵金属期货</a></li>
+							<li class=""><a href="/gold/SGE.shtml" target="_self">·上海贵金属现货</a></li>
+						</ul>
+					</dd>
+				</dl>
+                <dl class="">
+                    <dt class=""><a href="/gold/etf.shtml" target="_self">ETF金银持有量</a>
+                    </dt>
+                </dl>
+                <dl class=''>
+					<dt class="hasChild "><em class=""></em>
+						<a href="/gold/nationalcurrency.shtml" target="_self">金条金币报价</a>
+					</dt>
+					<dd>
+						<ul>
+							<li class=""><a href="/gold/nationalcurrency.shtml" target="_self">·国内金条金币报价</a></li>
+							<li class=""><a href="/gold/globalcurrency.shtml" target="_self">·国际金条金币报价</a></li>
+						</ul>
+					</dd>
+				</dl>
+                <dl class="">
+                    <dt class=""><a href="/gold/salegold.shtml" target="_self">零售金商报价</a>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+        
+
+        <div class="list submenu9">
+            <h3 class="">
+                <a href="//quote.stockstar.com/stock/fav/favorite.htm">自选股</a></h3>
+        </div> 
+    </div>
+    <div class="h_10">
+    </div>
+    <div class="bom_bor skinBox contactBox">
+        <div class="con">
+            <p class="phoneNum">
+                <strong>数据合作电话：</strong></p>
+            <p>
+                021-50819999-6740
+            </p>
+            <p class="email">
+                <strong>意见反馈：</strong></p>
+            <p>
+                datainfo@stockstar.com</p>
+        </div>
+    </div>
+    <div class="h_8">
+    </div>
+    <!--AdForward Begin:-->
+    <div id="ad150250"></div>
+    <!--AdForward End-->
+</div>
+
+<script type="text/javascript">
+  nav.init(".sideleft");
+</script>
+
+
+  <!-- 左侧子导航 end -->
+  <!-- 右侧内容 begin -->
+    <div class="sideRight">
+    <div class="nva_menu">
+      <h4><a href="//quote.stockstar.com/">返回行情中心</a></h4>
+      <h3>当前位置：<a href="//www.stockstar.com/">首页</a>&nbsp;-&nbsp;<a href="//quote.stockstar.com/">行情</a>&nbsp;-&nbsp;<a href="//quote.stockstar.com/">沪深市场</a>&nbsp;-&nbsp;</h3>
+      <h1>沪深A股</h1>
+    </div>
+    <div class="clear"></div>
+    <div class="box box02">
+      <div class="bg_box" id="table1">
+        <div class="con">
+          <h2><span></span>沪深A股</h2>
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" class="trHover" id="table1">
+            <thead class="tbody_right">
+              <tr>
+                <td width="6%" class="align_center"><a href="" sort="1" class="">代码</a></td>
+                <td width="8%" class="align_center">简称</td>
+                <td width="8%" ><a href="" sort="2" class="">最新价</a></td>
+                <td width="8%" ><a href="" sort="3" class="">涨跌幅</a></td>
+                <td width="8%" ><a href="" sort="4" class="">涨跌额</a></td>
+                <td width="9%" ><a href="" sort="5" class="">5分钟涨幅</a></td>
+                <td width="10%" ><a href="" sort="6" class="">成交量(手)</a></td>
+                <td width="11%" ><a href="" sort="7" class="">成交额(万元)</a></td>
+                <td width="7%" ><a href="" sort="8" class="">换手率</a></td>
+                <td width="6%" ><a href="" sort="9" class="">振幅</a></td>
+                <td width="6%" ><a href="" sort="10" class="">量比</a></td>
+                <td width="6%"><a href="" sort="11" class="">委比</a></td>
+                <td width="7%" ><a href="" sort="12" class="">市盈率</a></td>
+              </tr>
+            </thead>
+            <tbody class="tbody_right" id="datalist">
+             <tr><td class="align_center "><a href="//stock.quote.stockstar.com/603956.shtml">603956</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/603956.shtml">威派格</a></td><td class=""><span class="red">8.21</span></td><td class="select"><span class="red">44.04%</span></td><td class=""><span class="red">2.51</span></td><td class=""><span class="black">0.00%</span></td><td class="">297.20</td><td class="">24.25</td><td class="">0.07%</td><td class="">24.04%</td><td class="">0.00</td><td class="">1.00</td><td class="">--</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/300758.shtml">300758</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/300758.shtml">七彩化学</a></td><td class=""><span class="red">31.81</span></td><td class="select"><span class="red">44.00%</span></td><td class=""><span class="red">9.72</span></td><td class=""><span class="black">0.00%</span></td><td class="">317.60</td><td class="">100.90</td><td class="">0.12%</td><td class="">23.99%</td><td class="">0.00</td><td class="">1.00</td><td class="">--</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600226.shtml">600226</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600226.shtml">瀚叶股份</a></td><td class=""><span class="red">3.14</span></td><td class="select"><span class="red">10.18%</span></td><td class=""><span class="red">0.29</span></td><td class=""><span class="black">0.00%</span></td><td class="">922717.64</td><td class="">27547.70</td><td class="">4.63%</td><td class="">11.23%</td><td class="">2.10</td><td class="">1.00</td><td class="">13.83</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/000536.shtml">000536</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/000536.shtml">华映科技</a></td><td class=""><span class="red">3.47</span></td><td class="select"><span class="red">10.16%</span></td><td class=""><span class="red">0.32</span></td><td class=""><span class="black">0.00%</span></td><td class="">1354219.33</td><td class="">46227.45</td><td class="">6.76%</td><td class="">6.35%</td><td class="">0.54</td><td class="">1.00</td><td class="">43.31</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/000563.shtml">000563</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/000563.shtml">陕国投Ａ</a></td><td class=""><span class="red">4.03</span></td><td class="select"><span class="red">10.11%</span></td><td class=""><span class="red">0.37</span></td><td class=""><span class="black">0.00%</span></td><td class="">2927498.32</td><td class="">110911.59</td><td class="">7.39%</td><td class="">14.48%</td><td class="">1.61</td><td class="">1.00</td><td class="">26.35</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/000727.shtml">000727</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/000727.shtml">华东科技</a></td><td class=""><span class="red">2.18</span></td><td class="select"><span class="red">10.10%</span></td><td class=""><span class="red">0.20</span></td><td class=""><span class="black">0.00%</span></td><td class="">4057695.33</td><td class="">86781.74</td><td class="">13.85%</td><td class="">6.57%</td><td class="">3.63</td><td class="">1.00</td><td class="">--</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600864.shtml">600864</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600864.shtml">哈投股份</a></td><td class=""><span class="red">5.45</span></td><td class="select"><span class="red">10.10%</span></td><td class=""><span class="red">0.50</span></td><td class=""><span class="black">0.00%</span></td><td class="">817378.09</td><td class="">42479.90</td><td class="">5.18%</td><td class="">10.51%</td><td class="">1.80</td><td class="">1.00</td><td class="">27.03</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600151.shtml">600151</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600151.shtml">航天机电</a></td><td class=""><span class="red">4.80</span></td><td class="select"><span class="red">10.09%</span></td><td class=""><span class="red">0.44</span></td><td class=""><span class="black">0.00%</span></td><td class="">404773.21</td><td class="">18761.70</td><td class="">2.91%</td><td class="">10.78%</td><td class="">1.33</td><td class="">1.00</td><td class="">--</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600909.shtml">600909</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600909.shtml">华安证券</a></td><td class=""><span class="red">6.11</span></td><td class="select"><span class="red">10.09%</span></td><td class=""><span class="red">0.56</span></td><td class=""><span class="red">0.16%</span></td><td class="">1079332.26</td><td class="">63334.60</td><td class="">3.99%</td><td class="">10.27%</td><td class="">2.62</td><td class="">1.00</td><td class="">33.48</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/000839.shtml">000839</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/000839.shtml">中信国安</a></td><td class=""><span class="red">4.26</span></td><td class="select"><span class="red">10.08%</span></td><td class=""><span class="red">0.39</span></td><td class=""><span class="black">0.00%</span></td><td class="">1521145.02</td><td class="">62460.69</td><td class="">3.88%</td><td class="">11.11%</td><td class="">1.62</td><td class="">1.00</td><td class="">76.51</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600635.shtml">600635</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600635.shtml">大众公用</a></td><td class=""><span class="red">5.46</span></td><td class="select"><span class="red">10.08%</span></td><td class=""><span class="red">0.50</span></td><td class=""><span class="black">0.00%</span></td><td class="">2359818.28</td><td class="">124386.86</td><td class="">9.76%</td><td class="">11.69%</td><td class="">2.12</td><td class="">1.00</td><td class="">31.87</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/601519.shtml">601519</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/601519.shtml">大智慧</a></td><td class=""><span class="red">5.35</span></td><td class="select"><span class="red">10.08%</span></td><td class=""><span class="red">0.49</span></td><td class=""><span class="black">0.00%</span></td><td class="">130151.20</td><td class="">6963.09</td><td class="">0.65%</td><td class="">0.00%</td><td class="">0.29</td><td class="">1.00</td><td class="">--</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/601901.shtml">601901</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/601901.shtml">方正证券</a></td><td class=""><span class="red">7.32</span></td><td class="select"><span class="red">10.08%</span></td><td class=""><span class="red">0.67</span></td><td class=""><span class="black">0.00%</span></td><td class="">1428579.19</td><td class="">99868.97</td><td class="">1.74%</td><td class="">10.38%</td><td class="">2.18</td><td class="">1.00</td><td class="">37.21</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600235.shtml">600235</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600235.shtml">民丰特纸</a></td><td class=""><span class="red">6.56</span></td><td class="select"><span class="red">10.07%</span></td><td class=""><span class="red">0.60</span></td><td class=""><span class="black">0.00%</span></td><td class="">644803.34</td><td class="">40746.65</td><td class="">18.35%</td><td class="">11.74%</td><td class="">1.76</td><td class="">1.00</td><td class="">80.43</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600572.shtml">600572</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600572.shtml">康恩贝</a></td><td class=""><span class="red">7.43</span></td><td class="select"><span class="red">10.07%</span></td><td class=""><span class="red">0.68</span></td><td class=""><span class="black">0.00%</span></td><td class="">3486745.46</td><td class="">256349.11</td><td class="">13.11%</td><td class="">4.74%</td><td class="">11.32</td><td class="">1.00</td><td class="">24.68</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/000750.shtml">000750</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/000750.shtml">国海证券</a></td><td class=""><span class="red">5.58</span></td><td class="select"><span class="red">10.06%</span></td><td class=""><span class="red">0.51</span></td><td class=""><span class="black">0.00%</span></td><td class="">3555144.94</td><td class="">188216.60</td><td class="">8.43%</td><td class="">10.65%</td><td class="">1.99</td><td class="">1.00</td><td class="">26.79</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/002002.shtml">002002</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/002002.shtml">鸿达兴业</a></td><td class=""><span class="red">4.71</span></td><td class="select"><span class="red">10.05%</span></td><td class=""><span class="red">0.43</span></td><td class=""><span class="black">0.00%</span></td><td class="">1530600.94</td><td class="">69819.74</td><td class="">6.00%</td><td class="">10.75%</td><td class="">1.32</td><td class="">1.00</td><td class="">9.37</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600825.shtml">600825</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600825.shtml">新华传媒</a></td><td class=""><span class="red">6.35</span></td><td class="select"><span class="red">10.05%</span></td><td class=""><span class="red">0.58</span></td><td class=""><span class="black">0.00%</span></td><td class="">1028696.84</td><td class="">63899.67</td><td class="">9.85%</td><td class="">11.61%</td><td class="">2.38</td><td class="">1.00</td><td class="">229.08</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/601881.shtml">601881</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/601881.shtml">中国银河</a></td><td class=""><span class="red">10.18</span></td><td class="select"><span class="red">10.05%</span></td><td class=""><span class="red">0.93</span></td><td class=""><span class="black">0.00%</span></td><td class="">1100890.70</td><td class="">108879.19</td><td class="">8.96%</td><td class="">8.76%</td><td class="">1.71</td><td class="">1.00</td><td class="">23.09</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/002289.shtml">002289</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/002289.shtml">宇顺电子</a></td><td class=""><span class="red">7.34</span></td><td class="select"><span class="red">10.04%</span></td><td class=""><span class="red">0.67</span></td><td class=""><span class="red">1.24%</span></td><td class="">353748.04</td><td class="">24478.22</td><td class="">13.66%</td><td class="">13.94%</td><td class="">1.61</td><td class="">1.00</td><td class="">--</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/002547.shtml">002547</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/002547.shtml">春兴精工</a></td><td class=""><span class="red">8.55</span></td><td class="select"><span class="red">10.04%</span></td><td class=""><span class="red">0.78</span></td><td class=""><span class="red">0.23%</span></td><td class="">1929697.47</td><td class="">155375.11</td><td class="">25.29%</td><td class="">12.74%</td><td class="">1.50</td><td class="">1.00</td><td class="">98.23</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/300023.shtml">300023</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/300023.shtml">宝德股份</a></td><td class=""><span class="red">7.45</span></td><td class="select"><span class="red">10.04%</span></td><td class=""><span class="red">0.68</span></td><td class=""><span class="black">0.00%</span></td><td class="">236976.90</td><td class="">16809.57</td><td class="">16.41%</td><td class="">10.04%</td><td class="">2.85</td><td class="">1.00</td><td class="">129.52</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/300264.shtml">300264</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/300264.shtml">佳创视讯</a></td><td class=""><span class="red">5.92</span></td><td class="select"><span class="red">10.04%</span></td><td class=""><span class="red">0.54</span></td><td class=""><span class="black">0.00%</span></td><td class="">115497.80</td><td class="">6721.54</td><td class="">3.58%</td><td class="">9.67%</td><td class="">3.12</td><td class="">1.00</td><td class="">--</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600061.shtml">600061</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600061.shtml">国投资本</a></td><td class=""><span class="red">11.62</span></td><td class="select"><span class="red">10.04%</span></td><td class=""><span class="red">1.06</span></td><td class=""><span class="black">0.00%</span></td><td class="">400567.46</td><td class="">44833.55</td><td class="">0.96%</td><td class="">9.66%</td><td class="">1.87</td><td class="">1.00</td><td class="">18.93</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/600985.shtml">600985</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/600985.shtml">淮北矿业</a></td><td class=""><span class="red">11.40</span></td><td class="select"><span class="red">10.04%</span></td><td class=""><span class="red">1.04</span></td><td class=""><span class="black">0.00%</span></td><td class="">68726.32</td><td class="">7578.61</td><td class="">2.61%</td><td class="">9.94%</td><td class="">1.94</td><td class="">1.00</td><td class="">63.43</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/603598.shtml">603598</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/603598.shtml">引力传媒</a></td><td class=""><span class="red">9.32</span></td><td class="select"><span class="red">10.04%</span></td><td class=""><span class="red">0.85</span></td><td class=""><span class="black">0.00%</span></td><td class="">62041.00</td><td class="">5782.21</td><td class="">2.32%</td><td class="">0.24%</td><td class="">1.30</td><td class="">1.00</td><td class="">49.93</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/002113.shtml">002113</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/002113.shtml">天润数娱</a></td><td class=""><span class="red">3.95</span></td><td class="select"><span class="red">10.03%</span></td><td class=""><span class="red">0.36</span></td><td class=""><span class="black">0.00%</span></td><td class="">792317.31</td><td class="">30218.34</td><td class="">9.61%</td><td class="">11.42%</td><td class="">2.58</td><td class="">1.00</td><td class="">141.88</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/002591.shtml">002591</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/002591.shtml">恒大高新</a></td><td class=""><span class="red">7.57</span></td><td class="select"><span class="red">10.03%</span></td><td class=""><span class="red">0.69</span></td><td class=""><span class="black">0.00%</span></td><td class="">64936.01</td><td class="">4781.42</td><td class="">3.55%</td><td class="">11.63%</td><td class="">1.49</td><td class="">1.00</td><td class="">--</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/002673.shtml">002673</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/002673.shtml">西部证券</a></td><td class=""><span class="red">9.98</span></td><td class="select"><span class="red">10.03%</span></td><td class=""><span class="red">0.91</span></td><td class=""><span class="black">0.00%</span></td><td class="">1486285.98</td><td class="">141855.43</td><td class="">4.24%</td><td class="">11.25%</td><td class="">2.32</td><td class="">1.00</td><td class="">48.03</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/002797.shtml">002797</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/002797.shtml">第一创业</a></td><td class=""><span class="red">7.02</span></td><td class="select"><span class="red">10.03%</span></td><td class=""><span class="red">0.64</span></td><td class=""><span class="black">0.00%</span></td><td class="">2971577.04</td><td class="">199291.95</td><td class="">15.49%</td><td class="">10.66%</td><td class="">2.22</td><td class="">1.00</td><td class="">89.59</td></tr><tr><td class="align_center "><a href="//stock.quote.stockstar.com/002846.shtml">002846</a></td><td class="align_center"><a href="//stock.quote.stockstar.com/002846.shtml">英联股份</a></td><td class=""><span class="red">12.62</span></td><td class="select"><span class="red">10.03%</span></td><td class=""><span class="red">1.15</span></td><td class=""><span class="black">0.00%</span></td><td class="">112201.80</td><td class="">13554.91</td><td class="">21.49%</td><td class="">12.47%</td><td class="">3.10</td><td class="">1.00</td><td class="">32.22</td></tr>
+            </tbody>
+              <tr class="noSelect no_trHover">
+                <td colspan="16" class="time notSelect"><span class="fl" id="datatime">数据时间：2019-02-22 15:31:30</span>
+                    <div class="fenye fr" id="divPageControl1">                                            
+                    </div>
+                </td>
+              </tr>
+       
+          </table>
+        </div>
+      </div>
+      <script type="text/javascript"> 
+        var type='a';
+        var direction=1;//0:up 1:down
+        var sort=3;
+        var webhandler="rank";
+        var pagestr="ranklist_"+type;
+        var floder="stock";   
+        
+        $(document).ready(function() {   
+            initial(); 
+            Init();	 
+                        
+        }); 
+	  </script>
+    </div>
+    
+    <div class="h_8"></div>
+    <!--AdForward Begin:-->
+    <div id="ad8006001"></div>
+    <!--AdForward End-->
+    <div class="h_8"></div>
+    
+    
+    
+    <div class="box4">
+      <div class="list">
+        <div class="top"></div>
+        <div class="con">
+          <dl class="w_4">
+            <dt><a href="/Radar/"><span class="bg">股市</span>雷达</a></dt>
+            <dd><a href="/Radar/stockperformance_4.htm">5日涨幅 </a></dd>
+            <dd><a href="/Radar/stockperformance_5.htm">20日涨幅 </a></dd>
+            <dd><a href="/Radar/stockperformance_6.htm">60日涨幅 </a></dd>
+            <dd class="last"><a href="/Radar/stockbrowse.aspx?cycle=3">52周涨幅 </a></dd>
+            <dd><a href="/Radar/external_special.htm">均线分析 </a></dd>
+            <dd><a href="/Radar/external_special_8.htm">连续上涨 </a></dd>
+            <dd><a href="/Radar/external_special_23.htm">向上跳空 </a></dd>
+            <dd class="last"><a href="/Radar/external_special_23_2.htm">向下跳空 </a></dd>
+            <dd class="w_2"><a href="/Radar/external_special_10.htm">收盘创5日新高 </a></dd>
+            <dd class="w_2 last"><a href="/Radar/external_special_12.htm" class="fr">盘中创5日新高 </a></dd>
+          </dl>
+        </div>
+        <div class="bot"></div>
+      </div>
+      <div class="list fr">
+        <div class="top"></div>
+        <div class="con">
+          <dl class="w_3">
+            <dt><a href="/cashflow/"><span class="bg">资金</span>流向</a></dt>
+            <dd><a href="/cashflow/industry/">行业资金流入 </a></dd>
+            <dd><a href="/cashflow/industry/day1_2_0.html">行业资金流出 </a></dd>
+            <dd class="last"><a href="/cashflow/industry/day1_3_1.html">行业资金流入占比 </a></dd>
+            <dd><a href="/cashflow/stock/">个股资金流入 </a></dd>
+            <dd><a href="/cashflow/stock/day1_All_3_0_1.html">个股资金流出 </a>
+              </li>
+            <dd class="last"><a href="/cashflow/stock/day1_All_4_1_1.html">个股资金流入占比 </a></dd>
+            <dd><a href="/cashflow/main/">主力资金流入 </a></dd>
+            <dd><a href="/cashflow/main/day1_4_0_1.html">主力资金流出 </a></dd>
+            <dd class="last last_r"><a href="/cashflow/continue/in.shtml">资金连续流入 </a></dd>
+          </dl>
+        </div>
+        <div class="bot"></div>
+      </div>
+    </div>
+
+    <div class="h_8"></div>
+    <div class="box5">
+                <div class="list">
+                    <div class="title">
+                        <h4>
+                            <a href="//stock.stockstar.com/list/live.htm " target="_blank">盘中播报</a></h4>
+                        <a href="//stock.stockstar.com/list/live.htm " class="more" target="_blank">更多&gt;&gt;</a>
+                    </div>
+                    
+<div class="con">
+  <ul><li><span>2019-01-23</span><a href="//stock.stockstar.com/SS2019012300000463.shtml">快讯：次新股反弹拉升</a></li><li><span>2019-01-21</span><a href="//stock.stockstar.com/SS2019012100000397.shtml">快讯：白酒板块拉升走强</a></li><li><span>2019-01-18</span><a href="//stock.stockstar.com/SS2019011800000402.shtml">快讯：金属铝板块大涨</a></li><li><span>2019-01-16</span><a href="//stock.stockstar.com/SS2019011600000691.shtml">两市窄幅震荡整理 沪指几乎平盘报收</a></li><li><span>2019-01-16</span><a href="//stock.stockstar.com/SS2019011600000405.shtml">快讯：券商板块再度跳水</a></li><li><span>2019-01-15</span><a href="//stock.stockstar.com/SS2019011500000605.shtml">快讯：大消费板块全线走高</a></li><li><span>2019-01-14</span><a href="//stock.stockstar.com/SS2019011400000365.shtml">快讯：创投板块早盘拉升走强</a></li><li><span>2019-01-11</span><a href="//stock.stockstar.com/SS2019011100000369.shtml">快讯：超图软件快速跳水 股价逼近跌停</a></li><li><span>2019-01-10</span><a href="//stock.stockstar.com/SS2019011000000369.shtml">快讯：创投股开盘走强</a></li><li><span>2019-01-09</span><a href="//stock.stockstar.com/SS2019010900000642.shtml">市场尾盘突现跳水行情 低位5G概念股发力</a></li></ul>
+</div>
+
+                </div>
+                <div class="list fr">
+                    <div class="title">
+                        <h4>
+                            <a href="//stock.stockstar.com/list/2.shtml" target="_blank">今日要闻</a></h4>
+                        <a href="//stock.stockstar.com/list/2.shtml" class="more" target="_blank">更多&gt;&gt;</a>
+                    </div>
+                    
+<div class="con">
+  <ul><li><span>15:21:00</span><a href="//stock.stockstar.com/SS2019022200000531.shtml">国务院：批准北京市支持境外投资者以人民币进行直接投资</a></li><li><span>15:15:09</span><a href="//stock.stockstar.com/SS2019022200000529.shtml">拼多多遭减持谣言系富途数据出错导致</a></li><li><span>15:02:52</span><a href="//stock.stockstar.com/SS2019022200000480.shtml">沪指大涨站上2800 成交额再创阶段新高</a></li><li><span>14:09:24</span><a href="//stock.stockstar.com/SS2019022200000504.shtml">最猛1个月内连发10只 私募新年悄然布局A股 仓位大幅提升</a></li><li><span>14:06:45</span><a href="//stock.stockstar.com/SS2019022200000490.shtml">中证协向券商征求“减税降费”意见 券商股小幅高开</a></li><li><span>14:05:15</span><a href="//stock.stockstar.com/SS2019022200000489.shtml">字节跳动回应科创板上市传闻：消息不实</a></li><li><span>13:57:16</span><a href="//stock.stockstar.com/SS2019022200000484.shtml">券商交易系统外接倒计时 马云已准备好 事关千亿增量资金</a></li><li><span>13:56:06</span><a href="//stock.stockstar.com/SS2019022200000483.shtml">10天9板！东方通信再度涨停 股价续创历史新高</a></li><li><span>10:28:16</span><a href="//stock.stockstar.com/SS2019022200000373.shtml">联通与网宿科技设立合资公司 瞄准下一代CDN技术</a></li><li><span>10:28:14</span><a href="//stock.stockstar.com/SS2019022200000377.shtml">天和防务去年净利润-1.53亿元 同比下降318.14%</a></li></ul>
+</div>
+
+                </div>
+            </div>
+  </div>
+</div>
+<!-- 右侧内容 end -->
+</div>
+<div class="clear"></div>
+<!-- 底部 begin  -->
+    <!-- 底部 begin  -->
+<div id="bottom">
+  <a href="javascript:void(0);" onclick="window.scroll(0,0);" title="返回顶部" class="top" target="_self">TOP↑</a>
+  <div class="clear"></div>
+  <div id="foot">
+    <div><a target="_blank" href="//www.stockstar.com/nav/map.html">网站导航</a> | <a target="_blank" href="//info.stockstar.com/aboutus">公司简介</a> | <a target="_blank" href="//info.stockstar.com/aboutus/Partners.htm">合作伙伴</a> | <a target="_blank" href="//www.stockstar.com/intro/disclaimer.asp">法律声明</a> | <a target="_blank" href="//info.stockstar.com/aboutus/us.htm">诚聘英才</a> | <a target="_blank" href="//info.stockstar.com/aboutus/in.htm">征稿启事</a> | <a target="_blank" href="//info.stockstar.com/aboutus/lx.htm">联系我们</a> | <a target="_blank" href="//info.stockstar.com/aboutus/lx.htm#ad">广告服务</a> | <a target="_blank" href="//member.stockstar.com/message/message.html">用户反馈</a></div>
+    <div>欢迎访问证券之星！请<a target="_blank" href="//info.stockstar.com/aboutus/lx.htm">点此</a>与我们联系 版权所有：Copyright &copy; 1996-<script type="text/javascript">document.write(new Date().getFullYear());</script> </div>
+  </div>
+</div>
+<!-- 底部 end  -->
+
+<!--WebTCode Start-->
+<script type="text/javascript" src="//www.stockstar.com/wt/SS_dcs_tag.js"></script>
+<!--WebTCode End-->
+
+<!-- AdSame ShowCode: 证券之星 / 行情频道 / 行情通发浮标 Begin -->
+<script type="text/javascript" src="//same1.stockstar.com/s?z=stockstar&c=460" ></script> 
+<script type="text/javascript" src="//same1.stockstar.com/s?z=stockstar&c=461" ></script> 
+<!-- AdSame ShowCode: 证券之星 / 行情频道 / 行情通发浮标 End -->
+
+
+<!-- 底部 end  -->
+       
+<!-- 当前页页码（从1开始） -->
+<input name="ClientPageControl1$hdnPageIndex" type="hidden" id="ClientPageControl1_hdnPageIndex" value="1" />
+<!-- 每页记录个数 -->
+<input name="ClientPageControl1$hdnPageSize" type="hidden" id="ClientPageControl1_hdnPageSize" value="30" />
+<!-- 记录总数 -->
+<input name="ClientPageControl1$hdnTotalCount" type="hidden" id="ClientPageControl1_hdnTotalCount" value="3584" />
+<!-- 排序字段 -->
+<input name="ClientPageControl1$hdnSortField" type="hidden" id="ClientPageControl1_hdnSortField" value="3" />
+<!-- 排序方向（0表示正序、1表示倒序） -->
+<input name="ClientPageControl1$hdnDirection" type="hidden" id="ClientPageControl1_hdnDirection" value="1" />
+       
+
+<script type="text/javascript">
+ 	UtilityInfo.InitPage();//头部广告     
+   	//广告位 150*250广告
+    UtilityInfo.ad150250();
+    //广告位 800*600 一类广告
+    UtilityInfo.ad8006001();
+    //广告位 800*600 二类广告
+    UtilityInfo.ad8006002();	
+</script>
+</body>
+</html>
+
