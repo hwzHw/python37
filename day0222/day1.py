@@ -54,7 +54,7 @@ import time
 import random
 
 
-# conn = pymysql.connect(host='127.0.0.1',port=3306,user='root',password='123456',db='dbstock',charset='utf8')
+# conn = pymysql.connect(host='127.0.0.1',port=3306,users='root',password='123456',db='dbstock',charset='utf8')
 # cur = conn.cursor()
 count_url = 'http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeStockCount'
 data_url = 'http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData'

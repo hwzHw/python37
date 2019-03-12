@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block yy %}
+<div class="container">
+
+    <div class="col-md-10 col-md-offset-1">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <form action="{% url 'store:update' store.id %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1>编辑店铺</h1>
+                    <table class="table">
+                        <thead style="background-color: #DDDDDD;">
+                            <tr>
+                                <td colspan="2">编辑店铺</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr style="background-color: #ff8500;">
+                            <td>商铺名称</td>
+                            <td><input class="" name="name" placeholder="{{store.name}}"></td>
+                        </tr>
+                        <tr style="background-color: #ff8500;">
+                            <td>封面</td>
+                            <td><input type="file" name="cover" id="cover"></td>
+                        </tr>
+                        <tr style="background-color: #DDDDDD;">
+                            <td>店铺简介</td>
+                            <td ><input class="" name="intro" placeholder="{{store.intro}}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button><input type="submit" value="修改店铺"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

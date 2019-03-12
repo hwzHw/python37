@@ -1,0 +1,98 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<script src="/static/js/lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+<div  style="padding:10px;">
+    <h4>
+      {% if store.status == 0 %}
+          <p>正在营业</p>
+          <a href="{% url 'store:change' store.id 1 %}">暂停营业</a>
+          <a href="{% url 'store:change' store.id 2 %}">删除店铺</a>
+      {% elif store.status == 1 %}
+          <p>暂停营业</p>
+          <a href="{% url 'store:change' store.id 0 %}">开始营业</a>
+          <a href="{% url 'store:change' store.id 2 %}">删除店铺</a>
+      {% elif store.status == 2 %}
+          <p>店铺已经被删除，请联系管理员</p>
+      {% endif %}
+      <a href="{% url 'store:update' store.id %}">修改店铺信息</a>
+      <a href="{% url 'store:list' %}">查看店铺信息</a>
+    </h4>
+</div>
+<div>
+    <img src="/{{store.cover}}" style="height:350px;width: 1250px;">
+    <h1 style="font-size: 40px;margin-top: -230px;margin-left: 30px;color: #FF7F00">欢迎来到&nbsp;<span>{{store.name}}</span></h1>
+</div>
+<!--添加商品区-->
+<div style="margin-top: 230px;margin-left: 30px;font-size: 25px;color: palevioletred;">添加展示区</div>
+<div style="font-size: 17px;margin-left: 30px;padding-left: 10px;border: 1px;width: 1200px;height: 400px;border: solid 1px;">
+    <form action="{% url 'goods:add' %}" method="post" enctype="multipart/form-data"><br>
+        {% csrf_token %}
+        商品名称：<input type="text" name="name" id="name">
+        商品单价：<input type="number" name="price">
+        商品库存：<input type="number" name="stock"><br><br>
+        <input type="hidden" name="store" value="{{store.id}}">
+        商品图片：<input type="file" name="cover"><br><br>
+        商品类型：
+        <select name="type1" id="type1">
+            <option value="-1">请选择一级类型</option>
+            {% for t in type1 %}
+            <option value="{{t.id}}">{{t.name}}</option>
+            {% endfor %}
+        </select>
+        <select name="type2" id="type2"></select><br><br>
+
+        商品介绍：<textarea name="intro" id="intro" cols="30" rows="10" style="height: 50px"></textarea>
+        <br><br>
+        <button>上架商品</button>
+    </form>
+</div>
+
+<div style="margin-top: 30px;margin-left: 30px;font-size: 25px;color: #1DC116">商品展示区</div>
+<div class="container col-sm-10">
+    <div class="row">
+        {% for g in goods %}
+        <div class="col-sm-6 col-md-4" style="height: 500px">
+            <div class="thumbnail">
+                <img src="/{{g.goodsimages_set.all.first.path}}" style="height: 300px">
+                <div class="caption">
+                    <h2>{{g.name}}</h2>
+                    <p>{{g.intro}}</p>
+                    <h3>￥{{g.price}}</h3>
+                    <p><a href="{% url 'goods:delete_goods' store.id g.id %}"  class="btn btn-primary" role="button" windows >删除商品</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $("#type1").on("change",function(){
+            $.ajax({
+                url:"/goods/findTypeBuId/",
+                type:"get",
+                data:{"parent_id":$(this).val()},
+                success:function(data){
+                    $("#type2").empty()
+                    data=JSON.parse(data)
+                    console.info(data)
+                    for(var i=0; i<data.length; i++){
+                        var type = data[i]
+                        $op = $("<option>")
+                        $op.attr("value",type.pk)
+                        $op.text(type.fields.name)
+                        $("#type2").append($op)
+                    }
+                },
+                error:function(){
+                    alert("网络错误")
+                }
+            })
+        })
+    })
+</script>
+{% endblock %}
+

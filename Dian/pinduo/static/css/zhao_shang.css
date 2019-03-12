@@ -1,0 +1,98 @@
+#zhao_ruzhu{
+    width: 1200px;
+    height: 40px;
+
+
+}
+#ruzhu_left{
+
+    width: 120px;
+    height: 40px;
+    color: #d02228;
+    font-size: 27px;
+    float: left;
+    margin-left: 200px;
+}
+#ruzhu_right{
+    /*background-color: #FF2;*/
+    color: #222222;
+    font-size: 27px;
+    margin-left: 20px;
+
+}
+
+#datu{
+    width: 1350px;
+    height: 350px;
+}
+
+#zhinan {
+    width: 1350px;
+    height: 40px;
+    background-color: #222222;
+    color: #FFFFFF;
+}
+#zhinan ul{
+
+}
+#zhinan li{
+    list-style:none;
+    display: block;
+    float: left;
+    margin-top: 10px;
+    font-size: 17px;
+    margin-left: 90px;
+}
+#zhinan li a{
+text-decoration:none;
+color:white;
+}
+#neirong{
+    width: 1350px;
+    height: 310px;
+}
+/*.neirong_tu{*/
+    /*width: 550px;*/
+    /*height: 310px;*/
+    /*display: block;*/
+    /*float: left;*/
+
+/*}*/
+#tabl{
+    width: 1350px;
+    height: 310px;
+    text-align: center;
+    /*display: table-cell;*/
+    /*vertical-align: middle;*/
+
+}
+
+#ti_jiao{
+    width: 1370px;
+    height: 420px;
+    background-image: url(../images/2.png)
+}
+
+#shang_jia{
+    width: 1370px;
+    height: 500px;
+}
+
+#lian_jie{
+    width: 1370px;
+    height: 60px;
+}
+
+#lian_jie li{
+    list-style:none;
+    display: block;
+    float: left;
+    font-size: 23px;
+    margin-left: 30px;
+}
+#lian_jie li a{
+    color: #999;
+}
+#aaa a{
+    text-decoration:none;
+}

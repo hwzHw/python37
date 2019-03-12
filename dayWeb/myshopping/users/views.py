@@ -21,7 +21,7 @@ def index(req):
 def user_index(req):
     user = models.UserInfo.objects.get(user_id=req.user.id)
 
-    return render(req, 'users/index.html', {'user': user})
+    return render(req, 'users/index.html', {'users': user})
 
 
 #登录
@@ -41,7 +41,7 @@ def login_success(req):
     user = authenticate(username=username, password=password)
     if user is not None:
         if user.is_active:
-            #将验证通过的信息保存在req中，获取为req.user
+            #将验证通过的信息保存在req中，获取为req.users
             login(req, user)
             return redirect('users:user_index')
         else:
@@ -95,7 +95,7 @@ def user_logout(req):
 def user_info(req):
     rootuser = req.user
     user = models.UserInfo.objects.get(user_id=req.user.id)
-    return render(req,'users/user_info.html', {'user':user, 'rootuser':rootuser})
+    return render(req,'users/user_info.html', {'users':user, 'rootuser':rootuser})
 
 
 #个人资料修改

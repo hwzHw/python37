@@ -9,7 +9,7 @@
 	
 	<link href="/static/css/css_user/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="/static/css/css_user/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="/static/css/css_user/templatemo_style.css" rel="stylesheet" type="text/css">	
+	<link href="/static/css/css_user/templatemo_style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="templatemo-logo visible-xs-block">
@@ -29,12 +29,11 @@
 				  <li><a href="{% url 'user:user_articles' %}"><i class="fa fa-shopping-cart fa-medium"></i>个人空间</a></li>
 				  <li><a href="/user/user_detail/?sid={{user.id}}"><i class="fa fa-send-o fa-medium"></i>个人资料</a></li>
 				  <li><a href="#"><i class="fa fa-comments-o fa-medium"></i>作者资料</a></li>
-				  <li><a href="#"><i class="fa fa-gears fa-medium"></i>About Us</a></li>
-				  <li><a href="#"><i class="fa fa-envelope-o fa-medium"></i>Contact</a></li>
+				  <li><a href="{% url 'user:welcome' %}"><i class="fa fa-gears fa-medium"></i>捕鱼达人</a></li>
+				  <li><a href="{% url 'user:game' %}"><i class="fa fa-envelope-o fa-medium"></i>扫雷小游戏</a></li>
 				</ul>
 			</div>
 		</div> <!-- left section -->
-        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg right-container">
 			<h1 class="logo-right hidden-xs margin-bottom-60">White</h1>		
 			<div class="tm-right-inner-container">
@@ -55,12 +54,53 @@
 											{{a.content}}
 											<hr >
 											<hr >
-										{% endautoescape %}	
-										<a id="p1" class="btn btn-warning">点赞</a>
-										<a href="#" class="btn btn-warning">评论</a>
-									</article><hr >
+										{% endautoescape %}
+<hr>
+    {% for i in art_com %}
+	{% if a.id == i.art_cont_id %}
+    <p><small class="com">{{i.user_cont.name}}</small><small>{{i.content}}</small></p>
+										{% endif %}
+    {% endfor %}
 
-								
+
+
+
+		<form id="b" action="/user/{{article.id}}user_index/" class="form-inline" style="text-align:right; display: none;" method="post"
+          enctype="multipart/form-data">
+        {% csrf_token %}
+			<input type="hidden" name="id" value="{{a.id}}">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" name="comment" value=":">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">评论</button>
+
+    </form>
+
+
+
+
+										<a id="p1" class="btn btn-warning">点赞</a>
+										<a id="bt" class="btn btn-warning">评论</a>
+										<!--点击隐藏显示评论-->
+										<script type="text/javascript">
+											window.onload=function(){
+											  var obt=document.getElementById("bt");
+											  var odiv=document.getElementById("b");
+											  obt.onclick=function(){
+												if(odiv.style.display=="none"){
+												  odiv.style.display="block";
+												  obt.value="评论";
+												}
+												else{
+												  odiv.style.display="none";
+												  obt.value="评论";
+												}
+											  }
+											}
+										</script>
+									</article><hr >
 							{% endif %}
 						{% endfor %}
 					{% endfor %}
@@ -68,7 +108,6 @@
 					<script src="/static/js/jQuery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
 					<script type="text/javascript">
 						var i=0
-						
 						$("#p1").on("click",function(e){
 							i+=1
 							$("#p1").text("点赞"+i)
@@ -77,8 +116,18 @@
 								$("#p1").off("click")
 							}
 						})
-				
-			
+
+
+
+
+
+				$(".com").on('click', function(){
+        			var text = $(this).text()
+        		$('.form-control').val('回复'+text+':')
+    				})
+
+
+
 					</script>
 					
 					
@@ -90,7 +139,6 @@
 					
 				
 				<footer>
-					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-copyright">Copyright &copy; 2084 Your Company Name Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
 					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-social">
 						<a href="#"><i class="fa fa-facebook fa-medium"></i></a>
 						<a href="#"><i class="fa fa-twitter fa-medium"></i></a>
@@ -101,7 +149,6 @@
 				</footer>
 			</div>	
 		</div> <!-- right section -->
-	</div>	
-	
+	</div>
 </body>
 </html>

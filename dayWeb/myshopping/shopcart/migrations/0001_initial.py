@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('addTime', models.DateTimeField(auto_now_add=True, verbose_name='商品添加时间')),
                 ('allTotal', models.FloatField(verbose_name='小计金额')),
                 ('goods', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='goods.Goods', verbose_name='购物车商品')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='所属用户')),
+                ('users', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='所属用户')),
             ],
         ),
     ]

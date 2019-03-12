@@ -4,7 +4,6 @@ from tinymce.models import HTMLField
 # Create your models here.
 
 
-
 #继承Model父类，来给数据库映射起来
 class Users(models.Model):
     #主键 类型写法
@@ -15,10 +14,10 @@ class Users(models.Model):
     email = models.CharField(max_length=255)
     pwd = models.CharField(max_length=255)
     data = models.CharField(max_length=50)
-    phone = models.IntegerField(max_length=20)
+    phone = models.CharField(max_length=50)
     cusID = models.CharField(max_length=20)
-    header = models.ImageField(upload_to= 'static/headers/', null=True, blank=True,
-                                  default = 'static/headers/xxx.jpg')
+    header = models.ImageField(upload_to='static/headers/', null=True, blank=True,
+                                  default='static/headers/xxx.jpg')
 
     #第三种插入方法  这个语句获得联系
     # userManager = UsersManager()
@@ -51,7 +50,12 @@ class Article(models.Model):
         return reverse('user:artshow', kwargs={'pk': self.pk})
 
 
-
+class Comment(models.Model):
+    id = models.AutoField(primary_key=True, verbose_name='评论编号')
+    content = models.CharField(max_length=255, verbose_name='评论内容')
+    null = models.ForeignKey('self', null=True, verbose_name='评论')
+    user_cont = models.ForeignKey(Users, on_delete=models.CASCADE, verbose_name='用户评论')
+    art_cont = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='评论文章')
 
 
 

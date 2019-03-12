@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视图首页</title>
+	<script type="text/javascript" src='/static/js/tiny_mce.js'></script>
+    <script type="text/javascript">
+        tinyMCE.init({
+            'mode':'textareas',
+            'theme':'advanced',
+            'width':400,
+            'height':100
+        });
+    </script>
+</head>
+    <body>
+		<a href="/myblog/login" style="margin-left: 50px;">登录</a>
+		<a href="/myblog/register" style="margin-left: 50px;">注册</a><br>
+		<!--第一种图片导入方法-->
+        <img src="/static/imgs/666.jpg" style="width: 400px; height: 400px;"/><br>
+
+        <!--&lt;!&ndash;第二种导入图片方法 不管这个static放到哪个位置都可以&ndash;&gt;-->
+        <!--{% load static %}-->
+        <!--<img src="{% static '/imge/h11.jpg' %}"  style="width: 400px; height: 400px;"/><br>-->
+
+        <from action="/blog/login/" method="post"></from>
+    {% csrf_token %}
+    标题：<input type="text" name="title"/>
+    <br>内容：<textarea name="content" id="" cols="30" rows="10"></textarea>
+<p>
+ 验证码：
+<input type="text" name="code" id="code">
+<img src="/blog/create_code/" alt="图片有问题" onclick="refresh_check_code(this)">
+</p>
+<script>
+ function refresh_check_code(node) {
+    // src 后面加问号会自动刷新验证码 img 的 src
+    // get 请求方式缓存处理
+ node.src = '/blog/create_code/?search=' + Math.random();
+ }
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index2</title>
+</head>
+<body>
+    <h1>这是index2</h1>
+    <h1>姓名：{{user.name}}  |  年龄:{{user.age}}</h1>
+
+
+
+    {% if user.age == 18 %}
+    <h2>你太小了！</h2>
+    {% else %}
+    <h2>你已经老了!</h2>
+    {% endif %}
+
+
+<!--方法1图片-->
+    <img src="/static/img/image_264.jpg" alt="找不到" width="500" height="400" >
+
+    <!--方法2图片-->
+    {% load static %}
+    <img src="{% static 'img/image_264.jpg' %}" alt="找不到" width="500" height="400" >
+    <br>
+
+
+    {% for a in users %}
+         {{a.age}}
+    {% endfor %}
+
+
+     <form action="/user/create/" method="post">
+         {% csrf_token %}
+         姓名：<input type="text" name="name"/>
+         <input type="submit" value="提交"/>
+     </form>
+</body>
+</html>
+

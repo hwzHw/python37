@@ -2,6 +2,10 @@ from django.conf.urls import url
 
 from . import views
 urlpatterns = [
+    # 小游戏
+    url('^game/$',views.game, name='game'),
+    # 捕鱼达人小游戏
+    url('^welcome/$',views.welcome, name='welcome'),
     url('^index/$',views.index, name='index'),
     #退出登录
     url('^quit/$',views.quit, name='quit'),
@@ -25,7 +29,8 @@ urlpatterns = [
     url('addArticle_success/$', views.addArticle_success,name='addArticle_success'),
 
     #产生验证码
-    url(r'^createCode/$', views.createCode, name='createCode'),
+    # url(r'^createCode/$', views.createCode, name='createCode'),
+    url(r'^create_code/$', views.create_code, name='create_code'),
 
 
 

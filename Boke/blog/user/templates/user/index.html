@@ -17,6 +17,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 <!--/webfonts-->
+	<style>
+		.yanzhengma{
+			line-height:24px;
+		}
+	</style>
 </head>
 <body>
 <!--start-main-->
@@ -27,13 +32,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<form action="{% url 'user:login_success' %}" method="post">
 		<input name="username" type="text" class="text" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" >
 		<input name="password" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
-		<!-- <input name="yanzheng" type="text" value="输入验证码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"> -->
+
+		<input name="yanzheng" type="text" value="输入验证码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '验证码';}">{{ error }}
+				<img src="/user/create_code/" alt="图片有问题" onclick="refresh_check_code(this)">
+				<script>
+				 function refresh_check_code(node) {
+					// src 后面加问号会自动刷新验证码 img 的 src
+					// get 请求方式缓存处理
+				 node.src = '/user/create_code/?search=' + Math.random();
+				 }
+				</script>
+
+
 		<div class="btn"><input type="submit" onclick="myFunction()" value="Continue"></div>
 	</form>
 		<div class="remember">
 			<p>
 				<a href="#">忘记密码<img src="/static/imgs/arrow.png" /></a>
 				<a href="/user/register" style="margin-left: 50px;">注册<img src="/static/imgs/arrow.png" /></a>
+
 			</p>
 		<!-- <h4><a href="#">Sign up now<img src="/static/images/arrow.png" /></a></h4> -->
 		</div>

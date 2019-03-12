@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮箱注册</title>
+
+    <link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/login1.css">
+
+</head>
+<body>
+<div id="k">
+    <div class="panel">
+          <div class="panel-heading text-center text-danger"><h2>邮箱注册</h2></div>
+
+          <div class="panel-body">
+
+            <form class="col-md-10 col-md-offset-1" action="{% url 'users:login1' %}" method="post">
+                <h5>{{msg}}</h5>
+                {% csrf_token %}
+              <div class="form-group input-group-lg">
+                <label for="exampleInputEmail1">帐号</label>
+                <input type="email" class="form-control" name="username" id="exampleInputEmail1" placeholder="请输入您要注册帐号" title="6~16位任意字符,空格除外">
+              </div>
+              <div class="form-group input-group-lg">
+                <label for="exampleInputPassword1">密码</label>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="请输入您要注册密码" title="6~16位任意字符,空格除外">
+              </div>
+              <button type="submit" class="btn btn-success btn-lg col-md-12">注册</button>
+            </form>
+          </div>
+        </div>
+        <a href="{% url 'users:index' %}" class="pull-right">返回首页</a>
+    </div>
+</body>
+</html>

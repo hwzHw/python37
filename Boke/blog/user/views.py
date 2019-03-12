@@ -17,8 +17,6 @@ from django.core.paginator import Paginator
 from django.conf import settings
 
 
-
-
 def param(requset, name):
     print(name)
     # print(dir(requset))          #显示请求头数据
@@ -28,6 +26,14 @@ def param(requset, name):
     user = models.Users.objects.get(id=name)
     arts = user.arts.all()
     return render(requset, 'user/listTitle.html', {'user': user, 'arts': arts})
+# 小游戏
+def game(req):
+    return render(req, 'user/game.html')
+
+
+# 捕鱼达人小游戏
+def welcome(req):
+    return render(req, 'user/welcome.html')
 
 
 def index(req):
@@ -43,6 +49,10 @@ def register(req):
 def login_success(req):
     username = req.POST.get('username', )
     password = req.POST.get('password', )
+    yanzheng = req.POST.get('yanzheng')
+    code = req.session.get('code')
+    if yanzheng != code:
+        return render(req, 'user/index.html', {'error': '验证码错误！'})
     # yanzheng = req.POST.get('yanzheng', )
     # code = req.session['code']
     # print(code)
@@ -50,9 +60,9 @@ def login_success(req):
     # md5util = md5()
     # md5util.update(password.encode('utf8'))
     # pwd1 = md5util.hexdigest()
-
     try:
         user = models.Users.objects.get(name=username, pwd=password)
+        req.session['user_id'] = user.id
         arts = user.arts.all()
         req.session['loginUser'] = user
         return redirect("user:user_index")
@@ -74,32 +84,55 @@ def regist_success(req):
         email = req.POST.get('email')
         phone = req.POST.get('phone')
         cusID = req.POST.get('cusID')
-        header = req.FILES["header"]
-        print(sex, name, pwd, data, email, phone, cusID, header)
-        if 6 < len(pwd) < 18:
-            return HttpResponse('<h1>密码需在6~18位之间，请重新注册！</h1>')
-
-        # md5util = md5()
-        # md5util.update(pwd.encode('utf8'))
-        # pwd1 = md5util.hexdigest()
         try:
-            user = models.Users.objects.get(name=name)
-            return HttpResponse('<h1>用户名存在</h1>')
-        except:
+            header = req.FILES["header"]
             models.Users.objects.create(name=name, pwd=pwd, sex=sex, data=data, email=email, phone=phone, cusID=cusID,
-                                        header=header)
+                                    header=header)
             return redirect('user:index')
+        except:
+            print(sex, name, pwd, data, email, phone, cusID)
+            if 12 < len(pwd):
+                return HttpResponse('<h1>密码需在0~11位之间，请重新注册！</h1>')
+
+            # md5util = md5()
+            # md5util.update(pwd.encode('utf8'))
+            # pwd1 = md5util.hexdigest()
+            try:
+                user = models.Users.objects.get(name=name)
+                user.save()
+                return HttpResponse('<h1>用户名存在</h1>')
+            except:
+                models.Users.objects.create(name=name, pwd=pwd, sex=sex, data=data, email=email, phone=phone, cusID=cusID)
+                return redirect('user:index')
 
 
 # 所有文章内容
 def user_index(req):
-    user = req.session['loginUser']
-    arts = user.arts.all()
+    if req.method == 'GET':
+        user = req.session['loginUser']
+        arts = user.arts.all()
+        users = models.Users.objects.all()
+        allarts = models.Article.objects.all()
+        try:
+            art_id = req.session.get('art_id')
+            artss = models.Article.objects.filter(pk=art_id)[0]
+            art_com = artss.comment_set.all()
+            return render(req, 'user/user_index.html',
+                          {'art_com': art_com, 'user': user, 'arts': arts, 'allarts': allarts, 'users': users})
 
-    users = models.Users.objects.all()
-    allarts = models.Article.objects.all()
+        except:
+            return render(req, 'user/user_index.html', {'user': user, 'arts': arts, 'allarts': allarts, 'users': users})
 
-    return render(req, 'user/user_index.html', {'user': user, 'arts': arts, 'allarts': allarts, 'users': users})
+    if req.method == 'POST':
+        comment = req.POST['comment']
+        user_id = req.session.get('user_id')
+        id = req.POST['id']
+        req.session['art_id'] = id
+        if comment == '':
+            return redirect(reverse('user:user_index'))
+        # print(com)
+        models.Comment(content=comment, art_cont_id=id, user_cont_id=user_id).save()
+        return redirect(reverse('user:user_index'))
 
 
 # 个人文章
@@ -208,12 +241,18 @@ def delArticle(req, id):
 
 
 # 验证码
-def createCode(req):
-    # 准备响应出去的字节流
+# def createCode(req):
+#     # 准备响应出去的字节流
+#     f = BytesIO()
+#     img, code = utils.create_code()
+#     # 图片放入流
+#     img.save(f, 'PNG')
+#     # 放入回话作用域
+#     req.session['code'] = code
+#     return HttpResponse(f.getvalue())
+def create_code(request):
     f = BytesIO()
-    img, code = utils.create_code()
-    # 放入回话作用域
-    req.session['code'] = code
-    # 图片放入流
+    img, code = utils.creatr_code()
     img.save(f, 'PNG')
+    request.session['code'] = code
     return HttpResponse(f.getvalue())

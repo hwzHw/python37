@@ -1,0 +1,28 @@
+body li{
+    list-style:none;
+
+}
+#huahua{
+    width: 1350px;
+
+}
+#huahua1{
+    width: 800px;
+    margin-left: 200px;
+}
+
+#tou_bu{
+    width: 540px;
+    height: 90px;
+}
+#tou_bu p{
+    display: block;
+    float: left;
+}
+
+#img1 img{
+    width: 100px;
+    height: 100px;
+}
+
+

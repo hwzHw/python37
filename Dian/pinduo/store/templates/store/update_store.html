@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改店铺资料</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'js/lib/bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+
+</head>
+<body>
+<form action="{% url 'store:update' store.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container" style="margin-left: 200px">
+        <div class="col-lg-9 ">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" id="background">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-th-list"></span> 修改商铺</a></li>
+            </ul>
+        </div>
+
+
+    <!-- Tab panes -->
+        <div class="col-lg-9">
+            <!--111111111111111111111111111111111111111111111111111111-->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <table class="table">
+                        <thead style="background-color: #DDDDDD;">
+                            <tr>
+                                <td colspan="2">拼多多</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr style="background-color: #ff8500;">
+                            <td>商铺名称</td>
+                            <td><input class="" name="name" placeholder="{{store.name}}"></td>
+
+                        </tr>
+                        <tr style="background-color: #ff8500;">
+                            <td>封面</td>
+                            <td><input type="file" name="cover" id="cover"></td>
+
+                        </tr>
+                        <tr style="background-color: #DDDDDD;">
+                            <td>店铺简介</td>
+                            <td ><input class="" placeholder="">{{store.intro}}</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button><input type="submit" value="修改店铺"></button>
+                </div>
+            <!--2222222222222222222222222222222222222222222222222-->
+            <!--<div role="tabpanel" class="tab-pane" id="profile">-->
+                <!--<table class="table">-->
+                    <!--<thead>-->
+
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td><img class="img-circle" src="images/headers/daohang.jpg"></td>-->
+                    <!--<tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+                <!--<button>保存</button>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333&ndash;&gt;-->
+            <!--<div role="tabpanel" class="tab-pane" id="messages">3</div>-->
+            <!--<div role="tabpanel" class="tab-pane" id="settings">4</div>-->
+            <!--<div role="tabpanel" class="tab-pane" id="settings1">5</div>-->
+            <!--<div role="tabpanel" class="tab-pane" id="settings2">6</div>-->
+            </div>
+
+    </div>
+</div>
+</form>
+
+
+</body>
+</html>

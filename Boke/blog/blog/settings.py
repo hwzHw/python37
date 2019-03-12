@@ -134,9 +134,9 @@ STATICFILES_DIRS = [
 TINYMCE_JS_URL = "/static/tiny_mce/tiny_mce.js"
 TINYMCE_JS_ROOT = "/static/tiny_mce/"
 TINYMCE_DEFAULT_CONFIG = {
-	 'theme': "advanced",
-	 'width': 600,
-	 'height': 400,
+    'theme': "advanced",
+    'width': 600,
+    'height': 400,
 }
 
 #会话的序列化解析

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 	
-	<title>个人文章e</title>
+	<title>个人空间</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<meta charset="UTF-8">
@@ -55,9 +55,7 @@
 						<a href="{% url 'user:delArticle' a.id %}" class="btn btn-warning">删除</a>	
 					</article><hr>
 				{% endfor %}
-				
-				
-				
+
 				<a href="/user/user_articles/?pagenum=1">首页</a>
 				{% if page.has_previous %}
 					<a href="/user/user_articles/?pagenum={{page.previous_page_number}}">上一页</a>
@@ -71,17 +69,9 @@
 					<a href="/user/user_articles/?pagenum={{page.next_page_number}}">下一页</a>
 				{% endif %}
 
-
 				<a href="/user/user_articles/?pagenum={{page.paginator.num_pages}}">尾页</a>
 
-				
-				
-				
-				
-				
-				
 				<footer>
-					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-copyright">Copyright &copy; 2084 Your Company Name Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
 					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-social">
 						<a href="#"><i class="fa fa-facebook fa-medium"></i></a>
 						<a href="#"><i class="fa fa-twitter fa-medium"></i></a>
@@ -91,7 +81,7 @@
 					</p>
 				</footer>
 			</div>	
-		</div> <!-- right section -->
+		</div>
 	</div>	
 </body>
 </html>

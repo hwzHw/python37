@@ -77,8 +77,8 @@ form li{
 }
 input[type="text"] {
 font-family: 'Roboto', sans-serif;
-  width: 231px;
-  padding: 15px 15px 15px 15px;
+  width: 200px;
+  padding: 12px 12px 12px 12px;
   color: #fff;
   font-size: 1em;
   outline: none;
@@ -95,7 +95,7 @@ font-family: 'Roboto', sans-serif;
 
  input[type="password"]{
 	font-family: 'Roboto', sans-serif;
-	width: 231px;
+	width: 200px;
 	padding: 15px 15px 15px 15px;
 	color: #fff;
 	font-size: 1em;

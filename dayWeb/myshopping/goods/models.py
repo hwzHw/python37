@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+# from myshopping.store.models import Store
 from store.models import Store
 
 

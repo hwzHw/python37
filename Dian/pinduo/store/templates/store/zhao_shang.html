@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>韩都衣舍开放平台-品牌招商</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'js/lib/bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/zhao_shang.css' %}">
+</head>
+<body>
+
+<!--商户入驻-->
+<div id="zhao_ruzhu">
+    <div id="ruzhu_left">
+        <p>
+            韩都衣舍
+        </p>
+    </div>
+
+    <div id="ruzhu_right">
+        <p class="glyphicon glyphicon-user">
+            商户入驻
+        </p>
+    </div>
+</div>
+
+<!--大图-->
+<div id="datu">
+<div id="zhinan">
+    <ul>
+        <li><a href="{% url 'users:index' %}">首页</a></li>
+        <li><a href="{% url 'store:list' %}" >我的店铺</a></li>
+        <li>入驻帮手</li>
+    </ul>
+</div>
+
+<div id="neirong">
+    <div>
+        <table id="tabl" style="background-image: url({% static 'images/zhao_shang/1.png' %})">
+            <tr>
+                <td style="font-size:60px; color: white;">韩都衣舍诚招优质商户</td>
+            </tr>
+            <tr>
+                <td style="font-size:17px; color: white;">商户搭建自由平等的在线销售平台</td>
+            </tr>
+            <tr>
+                 <td id="aaa">
+                     <!--<button class="btn btn-warning btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                        <!--<a href="{% url 'store:add' %}" >立即入驻</a>-->
+                     <!--</button>-->
+                     <!--<form action="/store/add/" method="GET">-->
+                     <!--<button class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                    <a href="{% url 'store:add' %}">
+                        <button class="btn btn-warning btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            立即入驻
+                        </button>
+                    </a>
+                     <!--</form>-->
+                 </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+
+<div id="ti_jiao">
+    <img src="{% static 'images/zhao_shang/2.png' %}" alt="">
+</div>
+
+<div id="shang_jia">
+    <img style="margin-left: 250px" src="{% static 'images/zhao_shang/6.png' %}" alt="">
+</div>
+
+<div id="erwei_ma">
+    <img src="{% static 'images/zhao_shang/3.png' %}" alt="">
+</div>
+
+<div id="lian_jie">
+    <ul>
+        <li><a href="">商家入驻</a></li>
+        <li><a href="">多多大学</a></li>
+        <li><a href="">热点资讯</a></li>
+        <li><a href="">校园招聘</a></li>
+        <li><a href="">关于我们</a></li>
+        <li><a href="">帮助中心</a></li>
+        <li><a href="">下载App</a></li>
+        <li><a href="">维权投诉指引</a></li>
+        <li><a href="">廉政举报</a></li>
+    </ul>
+</div>
+
+<div id="ye_jiao">
+    <img src="{% static 'images/zhao_shang/5.png' %}" alt="">
+</div>
+
+
+</body>
+</html>

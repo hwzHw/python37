@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block yy %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账户信息</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'js/lib/bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<div>
+
+  <div class="container">
+    <div class="col-lg-3 col-lg-offset-1">
+
+        <!-- Nav tabs -->
+        <ul class="nav navbar" role="tablist">
+            <li role="presentation" class="active"><a href="{% url 'users:update' %}" aria-controls="home" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-th-list"></span> 个人信息</a></li>
+            <li role="presentation"><a href="{% url 'users:update_head' %}" aria-controls="profile" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-user"></span> 修改头像</a></li>
+            <li role="presentation"><a href="{% url 'users:update_password' request.user.id %}" aria-controls="messages" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-modal-window"></span> 修改密码</a></li>
+            <li role="presentation"><a href="{% url 'users:aaa' %}" aria-controls="messages" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-modal-window"></span> 收货地址</a></li>
+        </ul>
+    </div>
+
+    <!-- Tab panes -->
+    <div class="col-lg-8">
+        <div class="panel-heading">{{msg}}</div>
+        <div class="panel-heading">修改头像</div>
+      <div class="panel-body">
+       <form action="/users/update_head/" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+      <table class="table table-bordered table-hover table-striped">
+          <thead>
+            <tr>
+                <td colspan="2">用户信息---{{i.id}}</td>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td>用户头像</td>
+                    <td>
+                        <img style="width:400px;" src="/{{i.header}}" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;"><p style="margin-top:15px;">上传头像</p></td>
+                    <td>
+                        <input type="file" style="width:400px; height:50px;" class="form-control" name="head">
+                    </td>
+                </tr>
+                <!--<tr>-->
+                    <!--<td>用户邮箱：</td>-->
+                    <!--<td>-->
+                        <!--<input type="text" value="{{i.email}}" name="email">-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <tr>
+                    <td colspan="2">
+                        <input onclick="return window.confirm(您确定要修改吗？)" type="submit" value="修改" style="color:red;">
+                    </td>
+                </tr>
+          </tbody>
+      </table>
+    </form>
+    </div>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

@@ -2,7 +2,7 @@ import pymysql
 config = {
     'host': '127.0.0.1',
     'port': 3306,
-    'user': 'root',
+    'users': 'root',
     'passwd': '123456',
     'charset':'utf8',
     'cursorclass':pymysql.cursors.DictCursor
@@ -19,14 +19,14 @@ try:
     conn.select_db(DB_NAME)
 
     #创建表
-    TABLE_NAME = 'user'
+    TABLE_NAME = 'users'
     cursor.execute('CREATE TABLE %s(id int primary key,name varchar(30))' %TABLE_NAME)
 
     # 批量插入纪录
     values = []
     for i in range(20):
         values.append((i,'kk'+str(i)))
-    cursor.executemany('INSERT INTO user values(%s,%s)',values)
+    cursor.executemany('INSERT INTO users values(%s,%s)',values)
 # 查询数据条目
     count = cursor.execute('SELECT * FROM %s' %TABLE_NAME)
     print ('total records:', cursor.rowcount)

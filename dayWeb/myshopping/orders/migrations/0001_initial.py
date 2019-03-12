@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('recv_address', models.CharField(max_length=255, verbose_name='收件地址')),
                 ('allPrice', models.CharField(max_length=100, verbose_name='订单总金额')),
                 ('remark', models.CharField(max_length=255, verbose_name='订单备注')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='订单所属用户')),
+                ('users', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='订单所属用户')),
             ],
         ),
         migrations.CreateModel(

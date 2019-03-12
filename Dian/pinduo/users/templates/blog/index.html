@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block xianshi %}
+
+
+{% if request.session.loginUser %}
+    <li><a href="#">{{request.session.loginUser}}</a></li>
+    <li><a href="/users/del_login"><span>退出</span></a></li>
+{% else %}
+    <li><a href="/users/user_login/">登录</a></li>
+	<li><a href="{% url 'users:user_register' %}"><span>注册</span></a></li>
+{% endif %}
+{% endblock %}
+

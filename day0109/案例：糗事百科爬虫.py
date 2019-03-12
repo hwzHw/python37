@@ -49,7 +49,7 @@ try:
         print('title:',title)
         author = item.xpath('.//span[@class="recmd-name"]/text()')[0]
         print('author:',author)
-        portrait = item.xpath('.//a[@class="recmd-user"]/img/@src')[0]
+        portrait = item.xpath('.//a[@class="recmd-users"]/img/@src')[0]
         print('portrait:',portrait)
         tmp = item.xpath('.//div[@class="recmd-num"]/span')
         votenum = tmp[0].text

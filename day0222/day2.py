@@ -249,26 +249,53 @@ import copy
 
 # 编写完的代码在没有运行的时候称为程序，正在运行的代码称为进程
 # 父子进程的执行顺序没有先后顺序，在多线程中每个进程都赋值父进程的所有数据，互不影响
-from multiprocessing import Process
-import os, time
+# from multiprocessing import Process
+# import os, time
+#
+#
+# def fun(name, age, **kwargs):
+#     print(name, age, kwargs)
+#     time.sleep(1)
+#     print(name, age, kwargs)
+#     time.sleep(1)
+#     print(name, age, kwargs)
+#     time.sleep(1)
+#     print(name, age, kwargs)
+#
+#
+# if __name__ == '__main__':
+#     print('parent pid %d' % os.getpid())
+#     p = Process(name='chile', target=fun, args=('hwz', 20), kwargs={'Hello': False})
+#     p.start()
+#     print('p name %s pid %d' % (p.name, int(p.pid)))
+#     time.sleep(2)
+#     p.terminate()
+#     p.join()
+#     print('Finish')
+
+# list = [[]] *2
+# print(list)
+# list[0].append(10)
+# print(list)
+# list[1].append(20)
+# print(list)
+# list.append(30)
+# print(list)
+
+from wsgiref.simple_server import make_server
+"""
+该函数是wsgi函数，有两个参数
+param env 代表 客服端的基本信息
+param response 响应头对象
+"""
 
 
-def fun(name, age, **kwargs):
-    print(name, age, kwargs)
-    time.sleep(1)
-    print(name, age, kwargs)
-    time.sleep(1)
-    print(name, age, kwargs)
-    time.sleep(1)
-    print(name, age, kwargs)
+def app(env, response):
+    print(env['QUERY_STRING'])
+    response('200 OK', [('Content-Type', 'text/html; charset = utf8')])
+    return [b'<h1>Hello World</h1>']
 
 
-if __name__ == '__main__':
-    print('parent pid %d' % os.getpid())
-    p = Process(name='chile', target=fun, args=('hwz', 20), kwargs={'Hello': False})
-    p.start()
-    print('p name %s pid %d' % (p.name, int(p.pid)))
-    time.sleep(2)
-    p.terminate()
-    p.join()
-    print('Finish')
+server = make_server('', 8000, app)
+print('服务已启动！')
+server.serve_forever()

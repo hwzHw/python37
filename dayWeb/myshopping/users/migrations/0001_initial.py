@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('header', models.ImageField(default='static/imgs/headers/xxx.jpg', upload_to='static/imgs/headers', verbose_name='用户头像')),
                 ('phone', models.CharField(default='110', max_length=50, verbose_name='电话')),
                 ('cusID', models.CharField(max_length=20, verbose_name='身份证')),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('users', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

@@ -96,7 +96,7 @@ def detail(req, gid):
     user = UserInfo.objects.get(user=req.user)
     goods = models.Goods.objects.get(pk=gid)
 
-    return render(req, 'goods/detail.html', {'goods': goods, 'user': user})
+    return render(req, 'goods/detail.html', {'goods': goods, 'users': user})
 
 
 #ajax获得数据  一级类型和二级类型

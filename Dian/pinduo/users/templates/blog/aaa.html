@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>地址添加</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">
+	<script type="text/javascript" src="{% static 'js/lib/jquery/jquery-1.12.4.min.js' %}"></script>
+
+	<script language="javascript" src="{% static 'css/pcasunzip.js' %}" charset="gb2312"></script>
+
+	<script type="text/javascript">
+
+	function getValue(){
+	var getpro=document.getElementById("province").value;
+	var getcity=document.getElementById("city").value;
+	var getarea=document.getElementById("area").value;
+	<!--alert(getpro+" "+getcity+" "+getarea);-->
+	document.getElementById("user_form").submit();
+	 }
+
+	</script>
+</head>
+<body>
+
+<!-- global-nav  导航栏 -->
+<div id="global-nav">
+	<div class="global-nav">
+		<ul class="global-fl">
+			<li class="nav-toindex"><a href="{% url 'users:index' %}">返回首页</a></li>
+			<li class="nav-collect"><a href="{% url 'store:zhao_shang' %}">网上开店</a></li>
+		</ul>
+		<div class="global-fr">
+			<ul class="global-login">
+				<li>您好，欢迎光临韩都衣舍！</li>
+				{% if request.session.loginUser %}
+						<li><a href="#">{{request.session.loginUser}}</a></li>
+						<li><a href="/users/del_login"><span>退出</span></a></li>
+					{% else %}
+						<li><a href="/users/user_login/">登录</a></li>
+						<li><a href="{% url 'users:user_register' %}"><span>注册</span></a></li>
+					{% endif %}
+				<li><a href="{% url 'shopcart:listt' %}">购物车</a></li>
+			</ul>
+			<ul class="global-help">
+				<li><a href="#">在线客服</a></li>
+				<li><a href="{% url 'users:update' %}">修改信息</a></li>
+				<li id="site-nav-display"><a  href="#"><span></span>网站导航</a>
+					<ul class="site-nav">
+						<li class="nav-hot">
+							<h2>大家都在买 Hot</h2>
+							<a href="">T恤</a>
+							<a href="">连衣裙</a>
+							<a href="">牛仔裤</a>
+							<a href="">毛衣针织</a>
+							<a href="">卫衣绒衫</a>
+							<a href="">休闲套装</a>
+						</li>
+						<li class="nav-women">
+							<h2>女装  Women</h2>
+							<a href="">韩风快时尚女装</a>
+							<a href="">韩风快时尚妈妈装</a>
+							<a href="">韩风甜美少女装</a>
+							<a href="">韩风复古设计师女装</a>
+							<a href="">韩风名媛时尚女装</a>
+							<a href="">欧美浪漫田园风女装</a>
+							<a href="">韩风大码女装</a>
+							<a href="">欧美快时尚女装</a>
+						</li>
+						<li class="nav-men one-line">
+							<h2>男装 Men</h2>
+							<a href="">韩风快时尚男装</a>
+							<a href="">东方禅意设计师男装</a>
+							<a href="">欧美街头轻潮男装</a>
+						</li>
+						<li class="nav-children one-line">
+							<h2>童装 Children</h2>
+							<a href="">韩风快时尚童装</a>
+							<a href="">东方简约设计师童装</a>
+						</li>
+						<li class="nav-help" style="border:0">
+							<h2>帮助中心 Help</h2>
+							<a href="">会员制度</a>
+							<a href="">售后服务</a>
+							<a href="">购物流程</a>
+							<a href="">韩都招聘</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+	<!-- header -->
+<!--#####################################增加一张大图######################################-->
+<div id="a_datu" style="width:400px;height:100px;margin-left:200px;">
+	<img src="{% static 'images/zhao_shang/aaa_adatu.png' %}" alt="">
+</div>
+<!--###########################################################################-->
+<!--###################################增加收货地址###############################3-->
+<div id="a_haha1" style="width:1366px;height:400px">
+	<div id="a_haha2" style="width:900px;height:400px;margin-left:300px;">
+
+		<form id="user_form" action="{% url 'users:aaa'%}" method="post">
+
+			{% csrf_token %}
+		<fieldset style="padding:5px;">
+		<legend><h1>添加您的收货地址</h1></legend>
+
+			收货人名称：<input type="text" name="recv_name"><br><br>
+			收货人电话：<input type="text" name="recv_tel"><br><br>
+		收  货  地  址 ：<select name="province" id="province"></select>
+						<select name="city" id="city"></select>
+						<select name="area" id="area"></select><br><br>
+		详 细 地 址   ：<input type="text" name="desc"><br><br>
+		 是否设为默认地址: <input type="checkbox" name="is_default" value="true"><br><br>
+						<input style="font-size:15px; color:red;" type="button" name="bt" id="bt" value="提交" onclick="getValue()"><br><br>
+		</fieldset>
+		</form>
+		<script language="javascript" defer>
+		new PCAS("province","city","area","河南省","郑州市","金水区");
+
+		</script>
+	</div>
+</div>
+<!--##################################################################-->
+
+
+<!--############################显示地址######################################-->
+<div id="b_haha1" style="width:1366px;">
+<div id="b_haha2" style="width:900px;margin-left:300px;">
+<div class="panel-body">
+<form action="{% url 'users:address_list'%}" method="post">
+	{% csrf_token %}
+<h1>地址列表页面</h1>
+	<table border="1px solid #969696" cellspacing="0" cellpadding="0" style="color:black;text-align: center;margin:30px 0px 110px 0px;">
+		<thead style="height:45px;width:200px;font-size: 18px;background-color: #969696;">
+			<tr style="line-height:16px;">
+				<td style="height:45px;width:75px;">收货人</td>
+				<td style="height:45px;width:50px;">电话</td>
+				<td style="height:45px;width:85px;">收货地区</td>
+				<td style="height:45px;width:85px;">详细地址</td>
+				<td style="height:45px;width:100px;">操   作</td>
+			</tr>
+		</thead>
+		<tbody>
+			{% for address in addresses %}
+				<tr >
+					<td style="height:45px;width:75px;">{{address.recv_name}}</td>
+					<td style="height:100px;width:200px;">{{address.recv_tel}}</td>
+					<td style="height:100px;width:200px;">{{address.province}}={{address.city}}={{address.area}}</td>
+					<td style="height:100px;width:200px;">{{address.desc}}</td>
+					<td style="height:100px;width:100px;"><a onclick="return window.confirm('您确定要删除这个地址吗？')" href="{% url 'users:delete_address' address.id %}">删除</a></td>
+				</tr>
+			{% if address.is_default %}
+				默认地址
+			{% endif %}
+			{% endfor %}
+		</tbody>
+	</table>
+</form>
+</div>
+</div>
+</div>
+
+<!--##################################################################-->
+
+
+<!--############################页脚######################################-->
+<div>
+    <img src="{% static 'images/zhao_shang/5.png' %}" alt="">
+</div>
+<!--##################################################################-->
+<br>
+</body>
+</html>

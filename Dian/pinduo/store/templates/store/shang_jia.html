@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'js/lib/bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="/static/css/shang_jia.css">
+
+
+<div id="huahua">
+    <div id="huahua1">
+        <!--头部-->
+
+        <div id="tou_bu">
+            <p style="font-size: 37px; color: #d02228;">欢乐购</p>
+            <p style="font-size: 23px; color: black; margin: 10px 0px 0px 30px;">商家信息</p>
+        </div>
+
+        <div class="store">
+            {% csrf_token %}
+            <table border="1px solid #969696" cellspacing="0" cellpadding="0" style="color:#FF2400;text-align: center;margin:20px 0px 100px 0px;">
+                <thead style="height:45px;width:200px;font-size: 18px;background-color: #969696;">
+                    <tr style="line-height:16px;">
+                        <td style="height:100px;width:200px;">商铺封面</td>
+                        <td>店铺名称</td>
+                        <td>店铺描述</td>
+                        <td style="height:45px;width:200px;">详  情</td>
+                    </tr>
+                </thead>
+                <tbody id="img1">
+                    {% for store in stores %}
+                        <tr >
+                            <td style="height:150px;width:200px;"><div><img src="/{{store.cover}}" alt="" style="width: 100px;height: 100px;border-radius: 50%;"></div></td>
+                            <td style="height:100px;width:200px;">{{store.name}}</td>
+                            <td style="height:100px;width:200px;">{{store.intro}}</td>
+                            <td style="height:100px;width:200px;"><a href="{% url 'store:detail' store.id %}">详情请点击</a></td>
+                        </tr>
+                     {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

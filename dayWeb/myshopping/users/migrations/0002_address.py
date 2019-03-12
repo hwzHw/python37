@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('street', models.CharField(max_length=255, verbose_name='收获人街道')),
                 ('desc', models.CharField(max_length=255, verbose_name='详细地址')),
                 ('is_default', models.BooleanField(default=False, verbose_name='是否为默认地址')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='地址所属用户')),
+                ('users', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='地址所属用户')),
             ],
         ),
     ]

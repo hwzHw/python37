@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('intro', models.TextField(verbose_name='店铺描述')),
                 ('openTime', models.DateTimeField(auto_now_add=True, verbose_name='开店时间')),
                 ('status', models.IntegerField(default=0, verbose_name='店铺状态')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='店铺所属')),
+                ('users', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='店铺所属')),
             ],
         ),
     ]
