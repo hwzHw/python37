@@ -53,13 +53,6 @@ def login_success(req):
     code = req.session.get('code')
     if yanzheng != code:
         return render(req, 'user/index.html', {'error': '验证码错误！'})
-    # yanzheng = req.POST.get('yanzheng', )
-    # code = req.session['code']
-    # print(code)
-
-    # md5util = md5()
-    # md5util.update(password.encode('utf8'))
-    # pwd1 = md5util.hexdigest()
     try:
         user = models.Users.objects.get(name=username, pwd=password)
         req.session['user_id'] = user.id

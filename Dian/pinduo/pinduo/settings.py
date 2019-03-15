@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'mysearch',
     'haystack',
     'orders',
+    'utils',
 ]
 
 MIDDLEWARE = [

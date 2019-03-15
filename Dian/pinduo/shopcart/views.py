@@ -60,11 +60,6 @@ def listt(requst):
     return render(requst,"shopcart/list.html", {"shopcarts": shopcarts, "i": i})
 
 
-# def shopcar(request):
-    # return render(request, "shopcart/shopcar.html")
-    # pass
-
-
 # 修改商品
 def update(request):
     """
@@ -84,9 +79,6 @@ def update(request):
     shopCart.allTotal = shopCart.count * goods.price
     shopCart.save()
 
-
-# def list333(request):
-#     return render(request, "shopcart/list1.html")
 
 @require_POST
 @csrf_exempt

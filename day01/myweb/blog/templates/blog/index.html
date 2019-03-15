@@ -14,8 +14,8 @@
     </script>
 </head>
     <body>
-		<a href="/myblog/login" style="margin-left: 50px;">登录</a>
-		<a href="/myblog/register" style="margin-left: 50px;">注册</a><br>
+		<a href="/blog/login_success" style="margin-left: 50px;">登录</a>
+		<a href="/blog/register" style="margin-left: 50px;">注册</a><br>
 		<!--第一种图片导入方法-->
         <img src="/static/imgs/666.jpg" style="width: 400px; height: 400px;"/><br>
 
@@ -23,7 +23,7 @@
         <!--{% load static %}-->
         <!--<img src="{% static '/imge/h11.jpg' %}"  style="width: 400px; height: 400px;"/><br>-->
 
-        <from action="/blog/login/" method="post"></from>
+        <from action="/blog/login_success/" method="post">
     {% csrf_token %}
     标题：<input type="text" name="title"/>
     <br>内容：<textarea name="content" id="" cols="30" rows="10"></textarea>
@@ -39,6 +39,6 @@
  node.src = '/blog/create_code/?search=' + Math.random();
  }
 </script>
-
+</from>
     </body>
 </html>

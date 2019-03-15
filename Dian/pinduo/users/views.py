@@ -75,40 +75,6 @@ def index(request):
                                                })
 
 
-@login_required
-# 修改用户信息函数
-def update(request):
-    """
-    修改用户信息
-    :param request:
-    :return:
-    """
-    # 查询所有用户信息
-    user = models.UserInfo.objects.all()
-    # 遍历用户信息数据
-    for a in user:
-        user = models.User.objects.get(pk=a.user_id)
-        #         # 判断用户是否为当前登录用户
-        if user.username == request.session['loginUser']:
-            # 如果是，传入id，找到用户
-            user1 = models.UserInfo.objects.filter(user_id=user.id)
-            # 遍历当前用户数据
-            for i in user1:
-                if request.method == "GET":
-                    return render(request, "blog/update.html", {"i": i})
-                else:
-                    # 修改昵称
-                    i.nickname = request.POST.get("nickname")
-                    # 修改年龄
-                    i.age = request.POST.get("age")
-                    # 修改邮箱
-                    i.email = request.POST.get("email", False)
-                    # 保存设置
-                    i.save()
-                    return redirect(reverse("users:update"))
-
-
-# 用户登录
 def user_login(request):
     """
     用户登录
@@ -150,7 +116,7 @@ def user_login(request):
             return render(request,"blog/login.html",{"msg":"用户名或密码错误！"})
 
 
-# 推出用户登录
+# 退出用户登录
 def del_login(request):
     """
     删除用户信息
@@ -210,7 +176,7 @@ def user_register(request):
             return render(request, "blog/login.html", {"msg": "账号不能为空"})
 
 
-def check_username(request,username):
+def check_username(request, username):
     """
     在注册用户时用AJAX检测用户名是否存在
     :param request:
@@ -220,9 +186,9 @@ def check_username(request,username):
     # 检测用户名是否存在
     qs = User.objects.filter(username=username)
     if len(qs):
-        return JsonResponse({"msg":"该用户名已存在，请从新输入！！","success":False})
+        return JsonResponse({"msg": "该用户名已存在，请从新输入！！", "success": False})
     else:
-        return JsonResponse({"msg":"恭喜您，用户名可用！！","success":True})
+        return JsonResponse({"msg": "恭喜您，用户名可用！！", "success": True})
 
 
 # 验证码
@@ -237,9 +203,42 @@ def code(request):
     request.session["code"] = code
 
     file = BytesIO()
-    img.save(file,'PNG')
+    img.save(file, 'PNG')
 
     return HttpResponse(file.getvalue(), "image/png")
+
+
+@login_required
+# 修改用户信息
+def update(request):
+    """
+    修改用户信息
+    :param request:
+    :return:
+    """
+    # 查询所有用户信息
+    user = models.UserInfo.objects.all()
+    # 遍历用户信息数据
+    for a in user:
+        user = models.User.objects.get(pk=a.user_id)
+        #         # 判断用户是否为当前登录用户
+        if user.username == request.session['loginUser']:
+            # 如果是，传入id，找到用户
+            user1 = models.UserInfo.objects.filter(user_id=user.id)
+            # 遍历当前用户数据
+            for i in user1:
+                if request.method == "GET":
+                    return render(request, "blog/update.html", {"i": i})
+                else:
+                    # 修改昵称
+                    i.nickname = request.POST.get("nickname")
+                    # 修改年龄
+                    i.age = request.POST.get("age")
+                    # 修改邮箱
+                    i.email = request.POST.get("email", False)
+                    # 保存设置
+                    i.save()
+                    return redirect(reverse("users:update"))
 
 
 @login_required
@@ -299,7 +298,7 @@ def update_password(request,u_id):
                 user.set_password(n_pwd)
                 user.save()
                 del_login(request)
-                return render(request, "blog/login.html")
+                return render(request, "blog/login_success.html")
             else:
                 return render(request, "blog/update_password.html", {"user": request.user.id, "msg": "两次密码输入不一致"})
         else:
@@ -383,26 +382,11 @@ from django.http import HttpResponse
 
 # 使用邮箱注册账号
 def login1(request):
-    """
-    使用邮箱注册账号
-    :param request:
-    :return:
-    """
     if request.method == "GET":
         return render(request, "blog/login1.html", {})
     else:
         email = request.POST["username"].strip()
         password = request.POST.get("password").strip()
-        # confirmpwd = request.POST.get("confirmpwd").strip()
-        # nickname = request.POST["nickname"]
-
-        # # 数据校验
-        # if len(email) < 1:
-        #     return render(request, "blog/reg_email.html", {"msg": "用户邮箱不能为空！！"})
-        # if len(password) < 6:
-        #     return render(request, "blog/reg_email.html", {"msg": "密码长度不能小于6位！！"})
-        # if password != confirmpwd:
-        #     return render(request, "blog/reg_email.html", {"msg": "两次密码不一致！！"})
         try:
             user = models.User.objects.get(username=email)
             return render(request, "blog/login1.html", {"msg": "该用户名称已经存在，请重新填写！！"})
@@ -425,9 +409,9 @@ def login1(request):
                     m_html = '<a href="' + href + '" target="_blank">马上点击激活，一个小时内有效</a>'
 
                     send_mail(m_title, m_msg, settings.EMAIL_FROM, [email], html_message=m_html)
-                    return render(request, "blog/login.html", {"msg": "恭喜您，注册成功，请登录邮箱激活账号！！"})
+                    return render(request, "blog/login_success.html", {"msg": "恭喜您，注册成功，请登录邮箱激活账号！！"})
                 except Exception as t:
-                    print(t,1111111)
+                    print(t, 1111111)
                     return render(request, "blog/login1.html", {"msg": "恭喜您，注册成功，邮箱发送失败，请点击重新发送"})
 
             except Exception as e:
@@ -452,6 +436,6 @@ def active(request, token):
         user = models.User.objects.get(pk=active_id)
         user.is_active = True
         user.save()
-        return render(request, "blog/login.html", {"msg": "恭喜您，激活账号成功，请登录！！"})
+        return render(request, "blog/login_success.html", {"msg": "恭喜您，激活账号成功，请登录！！"})
     except Exception as e:
         return HttpResponse("激活失败==>{}".format(e))

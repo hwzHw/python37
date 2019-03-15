@@ -54,11 +54,6 @@
 			<div class="global-fr">
 				<ul class="global-login">
 					<li>您好，欢迎光临韩都衣舍！</li>
-					<!--{% block xianshi %}-->
-					<!--<li><a href="/users/user_login/">登录</a></li>-->
-					<!--<li><a href="{% url 'users:user_register' %}"><span>注册</span></a></li>-->
-					<!--{% endblock %}-->
-
 					{% if request.session.loginUser %}
 						<li><a href="{% url 'users:update' %}">{{request.session.loginUser}}</a></li>
 						<li><a href="/users/del_login"><span>退出</span></a></li>
@@ -210,68 +205,6 @@
                                 		</a>
 									{% endif %}
 									{% endfor %}
-                                    <!--<a href="" target="_blank" class="fl_ah">-->
-                                    	<!--<img src="/static/img/nana.png" alt="娜娜日记">-->
-                                	<!--</a>-->
-                                    <!--<a href="http://www.handu.com/topic-423.html" target="_blank" class="fl_ah" >-->
-                                    	<!--<img  src="/static/img/hstyle.png" alt="HSTYLE"/>-->
-                               		<!--</a>-->
-                               		<!--<a href="http://www.handu.com/brand_topic.php?id=10314" target="_blank" class="fl_ah">-->
-                               		 	<!--<img src="/static/img/forqueen.png" alt="范奎恩">-->
-                               		<!--</a>-->
-                                	<!--<a href="http://www.handu.com/brand_topic.php?id=319" target="_blank" class="fl_ah">-->
-                                		<!--<img src="/static/img/soneed.png" alt="soneed">-->
-                                	<!--</a>-->
-                                	<!--<a target="_blank" href="http://www.handu.com/brand_topic.php?id=10142" class="fl_ah">-->
-                                		<!--<img src="/static/img/hanyunyixiang.png" alt="韩韵衣香">-->
-                                	<!--</a>-->
-                                	<!--<a href="http://www.handu.com/brand_topic.php?id=10442" target="_blank" class="fl_ah">-->
-                                    	<!--<img src="/static/img/ytxz.png" alt="樱桃小镇">-->
-                                    <!--</a>-->
-                                	<!--<a href="http://www.handu.com/brand_topic.php?id=328" target="_blank" class="fl_ah">-->
-                                   	 	<!--<img src="/static/img/nibbuns.png" alt="nibbuns">-->
-                                    <!--</a>-->
-                                    <!--<a href="http://www.handu.com/brand_topic.php?id=10687" target="_blank" class="fl_ah">-->
-                                    	<!--<img src="/static/img/cx.png" alt="池希">-->
-                                    <!--</a>-->
-                                    <!--<a href="http://www.handu.com/brand_topic.php?id=10593" target="_blank"class="fl_ah" >-->
-                                    	<!--<img src="/static/img/bly.png" alt="白鹿语">-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                                <!--<div style="width:70px; float:left; margin-left:10px;">-->
-
-                                    <!--<a href="http://www.handu.com/brand_topic.php?id=10470" target="_blank" class="fl_ah" >-->
-                                    	<!--<img src="/static/img/laola.png" alt="劳拉的誓约">-->
-                                    <!--</a>-->
-                                    <!--<a target="_blank" href="http://www.handu.com/brand_topic.php?id=155" class="fl_ah">-->
-                                    	<!--<img src="/static/img/sulv.png" alt="原创素缕">-->
-                                    <!--</a>-->
-                                    <!--<a href="http://www.handu.com/brand_topic.php?id=10686" target="_blank" class="fl_ah" >-->
-                                      	<!--<img src="/static/img/zc.png" alt="哲初">-->
-                                    <!--</a>-->
-                                    <!--<a href="http://www.handu.com/brand_topic.php?id=22" target="_blank" class="fl_ah" >-->
-                                    	<!--<img src="/static/img/amh.png" alt="AMH">-->
-                                	<!--</a>-->
-                                	<!--<a target="_blank" href="http://www.handu.com/brand_topic.php?id=10469" class="fl_ah">-->
-                                		<!--<img src="/static/img/anma.png" alt="暗码">-->
-                                	<!--</a>-->
-                                  	<!--<a target="_blank" href="http://www.handu.com/brand_topic.php?id=10361" class="fl_ah"  >-->
-                                  		<!--<img src="/static/img/zg.png" alt="自古">-->
-                                 	<!--</a>-->
-                               	 	<!--<a href="http://www.handu.com/brand_topic.php?id=196" target="_blank" class="fl_ah" >-->
-                               	 		<!--<img src="/static/img/mini.png" alt="童装minizaru">-->
-                                	<!--</a>-->
-                                	<!--<a target="_blank" href="http://www.handu.com/brand_topic.php?id=10534" class="fl_ah"  >-->
-                                		<!--<img src="/static/img/hp.png" alt="HoneyPig">-->
-                                	<!--</a>-->
-                                   	<!--<a href="http://www.handu.com/brand_topic.php?id=10765" target="_blank" class="fl_ah" >-->
-                                    	<!--<img src="/static/img/dx1.png" alt="户外童装">-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                              	<!--<div style="width:70px; float:left; margin-left:10px;">-->
-                                    <!--<a target="_blank" href="http://www.handu.com/brand_topic.php?id=10407" class="fl_ah" >-->
-                                    	<!--<img src="/static/img/guoya.png" alt="果芽">-->
-                                	<!--</a>-->
 									{% endfor %}
                               	</div>
 							</div>
@@ -511,7 +444,8 @@
 		</div>
 		<!-- body第二行，视频 -->
 		<div class="index-video">
-			<div class="index-video-pic"><a href=""><img src="/static/img/680.jpg" alt=""></a></div>
+			<div class="index-video-pic"><a href=""><img style="height:340px; width:1200px;" src="/static/img/10.jpg" alt=""></a></div>
+			<!--<div class="index-video-pic"><a href=""><img style="margin-left:710px; margin-top:-316px; height:320px; width:490px;" src="/static/img/1473068687914451814.jpg" alt=""></a></div>-->
 			<div class="index-video-con">
 				<embed height="316px" width="498px" src="http://vodcdn.video.taobao.com/player/ugc/tb_ugc_pieces_core_player_loader.swf?version=1.0.20150330&vid=36759941&uid=1585817269&p=2&t=1&rid=&random=6666" type="application/x-shockwave-flash">
 			</div>
@@ -758,14 +692,16 @@
 				<div class="hstyle-con-right">
 					<h4>热销排行榜</h4>
 					<ul>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
+						<br>
+						<li style="color:black; font-size:20px;"><a href=""></a>男士炸街外套</li><br>
+						<li style="color:black; font-size:20px;"><a href=""></a>万千小迷妹</li><br>
+						<li style="color:black; font-size:20px;"><a href=""></a>男士高帮马丁靴</li><br>
+						<li style="color:black; font-size:20px;"><a href=""></a>夏季印花衬衫</li><br>
+						<li style="color:black; font-size:20px;"><a href=""></a>破洞牛仔裤</li><br>
+						<li style="color:black; font-size:20px;"><a href=""></a>韩风快时尚男装</li><br>
+						<li style="color:black; font-size:20px;"><a href=""></a>休闲裤</li><br>
+						<li style="color:black; font-size:20px;"><a href=""></a>香奈儿</li><br>
+						<li style="color:black; font-size:20px;"><a href=""></a>金典卫衣</li><br>
 					</ul>
 				</div>
 			</div>
@@ -796,9 +732,58 @@
 					</li>
 					<li style="margin-right:0">
 						<a href="">
+							<img src="/static/img/q.jpg" alt="">
+						</a>
+						<p>￥100.00 <span>￥198.00</span></p>
+						<span>立即抢购</span>
+					</li>
+					<li>
+						<a href="">
+							<img src="/static/img/w.jpg" alt="">
+						</a>
+						<p>￥145.00 <span>￥251.00</span></p>
+						<span>立即抢购</span>
+					</li>
+					<li style="margin-right:0">
+						<a href="">
+							<img src="/static/img/e.jpg" alt="">
+						</a>
+						<p>￥130.00 <span>￥288.00</span></p>
+						<span>立即抢购</span>
+					</li>
+					<li>
+						<a href="">
+							<img src="/static/img/r.jpg" alt="">
+						</a>
+						<p>￥145.00 <span>￥210.00</span></p>
+						<span>立即抢购</span>
+					</li>
+					<li style="margin-right:0">
+						<a href="">
+							<img src="/static/img/t.jpg" alt="">
+						</a>
+						<p>￥130.00 <span>￥199.00</span></p>
+						<span>立即抢购</span>
+					</li>
+					<li>
+						<a href="">
+							<img src="/static/img/y.jpg" alt="">
+						</a>
+						<p>￥166.00 <span>￥223.00</span></p>
+						<span>立即抢购</span>
+					</li>
+					<li style="margin-right:0">
+						<a href="">
 							<img src="/static/img/1466735537161963311.jpg" alt="">
 						</a>
-						<p>￥108.00 <span>￥298.00</span></p>
+						<p>￥160.00 <span>￥301.00</span></p>
+						<span>立即抢购</span>
+					</li>
+					<li>
+						<a href="">
+							<img src="/static/img/y.jpg" alt="">
+						</a>
+						<p>￥166.00 <span>￥223.00</span></p>
 						<span>立即抢购</span>
 					</li>
 				</ul>

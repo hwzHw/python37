@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-#是一个订单表
+#一个订单表
 class Orders(models.Model):
     id = models.AutoField(primary_key=True)
     # 订单所属用户

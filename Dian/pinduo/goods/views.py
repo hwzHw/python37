@@ -50,7 +50,6 @@ def add(request):
 # 获取商品
 def findTypeBuId(request):
     """
-    周凯博
     获取商品信息
     :param request:
     :return:

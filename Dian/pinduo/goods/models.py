@@ -3,6 +3,7 @@ from django.db import models
 # import store
 from store.models import Store
 
+
 #商品类型表
 class GoodsType(models.Model):
     #商品id
@@ -40,9 +41,9 @@ class Goods(models.Model):
     store = models.ForeignKey(Store, on_delete=models.CASCADE,verbose_name="商品所属商店")
     #构造外键
     goodstype = models.ForeignKey(GoodsType,on_delete=models.CASCADE,verbose_name="商品类型")
+
     def __str__(self):
         return self.name
-
 
 
 #图片类

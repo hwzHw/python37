@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>登录主页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<meta name="keywords" content="Blog Login Form Responsive Templates, Iphone Compatible Templates, Smartphone Compatible Templates, Ipad Compatible Templates, Flat Responsive Templates"/>
+<link href="/static/css/index_style.css" rel='stylesheet' type='text/css' />
+<!--webfonts-->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+<!--/webfonts-->
+	<style>
+		.yanzhengma{
+			line-height:24px;
+		}
+	</style>
+</head>
+<body>
+<!--start-main-->
+<h1>Blog Login Form</h1>
+<div class="login-box">
+	<div class="camera"> </div>
+	<h2>Blog Name</h2>
+	<form action="{% url 'blog:login_success' %}" method="post">
+		{% csrf_token %}
+		<input name="username" type="text" class="text" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" >
+		<input name="password" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+<p>
+		验证码：
+<input type="text" name="code" id="code">
+<img src="/blog/create_code/" alt="图片有问题" onclick="refresh_check_code(this)">
+</p>
+<script>
+ function refresh_check_code(node) {
+    // src 后面加问号会自动刷新验证码 img 的 src
+    // get 请求方式缓存处理
+ node.src = '/blog/create_code/?search=' + Math.random();
+ }
+</script>
+
+
+		<div class="btn"><input type="submit" onclick="myFunction()" value="Continue"></div>
+	</form>
+		<div class="remember">
+			<p>
+				<a href="#">忘记密码<img src="/static/imgs/arrow.png" /></a>
+				<a href="/blog/register" style="margin-left: 50px;">注册<img src="/static/imgs/arrow.png" /></a>
+
+			</p>
+		<!-- <h4><a href="#">Sign up now<img src="/static/images/arrow.png" /></a></h4> -->
+		</div>
+</div>
+<!--//End-login-form-->
+<!--start-copyright-->
+<div class="copy-right">
+	<p>Template by <a href="http://w3layouts.com">w3layouts</a></p>
+</div>
+<!--//end-copyright-->
+</body>
+</html>

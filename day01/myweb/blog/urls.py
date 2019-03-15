@@ -34,7 +34,17 @@ urlpatterns = [
     url(r'^create_code/$', views.create_code,name='create_code'),
     url(r'^index/$', views.index),
     url(r'^login/$', views.login),
-    url(r'^register/$', views.register),
     url(r'^list/$', views.list),
-    url(r'^regist/$', views.regist,name='regist'),
+    # url(r'^register/$', views.register,name='register'),
+    url('^login_success/$', views.login_success, name='login_success'),
+    url('^register/$', views.register, name='register'),
+
+
+
+    url(r'^login', views.LoginView.as_view(), name='login'),
+    # 发送短信验证
+    url(r'^send_message$', views.send_message, name='send_message'),
+    # 极验验证
+    url(r'^pc-geetest/register', views.pcgetcaptcha, name='pcgetcaptcha'),
+
 ]

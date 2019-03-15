@@ -1,31 +1,58 @@
 from django.db import models
-
+from django.urls import reverse
+from tinymce.models import HTMLField
 # Create your models here.
 
 
+#继承Model父类，来给数据库映射起来
 class User(models.Model):
+    #主键 类型写法
     id = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=20, verbose_name='用户名称', db_column='uname')
-    age = models.IntegerField(default=18)
-    genger = models.CharField(max_length=10, default='男')
-    address = models.CharField(max_length=255)
-    avater = models.CharField(max_length=255, default='static/imgs/123.jpg')
+    #给到长度限制
+    name = models.CharField(max_length=50)
+    sex = models.CharField(max_length=20)
+    email = models.CharField(max_length=255)
+    pwd = models.CharField(max_length=255)
+    data = models.CharField(max_length=50)
+    phone = models.CharField(max_length=50)
+    cusID = models.CharField(max_length=20)
+    header = models.ImageField(upload_to='static/headers/', null=True, blank=True,
+                                  default='static/headers/xxx.jpg')
 
-    # model类内置得
-    class Meta:
-        db_table = 't_user'
+    #第三种插入方法  这个语句获得联系
+    # userManager = UsersManager()
 
-    # 1.类方法  通过类名直接调
-    # @classmethod
-    # def create_user(cls, username, age, genger):
-    #     user = cls(username=username, age=age, genger=genger)
-    #     return user
+    #第一种插入方法  类方法
+    '''
+    @classmethod
+    def create_user(cls,name,age):
+        user = cls(name=name, age=age)
+        return user
+    '''
+    def __str__(self):
+        return self.name
 
 
 class Article(models.Model):
-    print(...)
-    author = models.ForeignKey(User)
-    content = models.TextField()
-    title = models.CharField(max_length=255)
     id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=255, verbose_name='标题')
+    # content = models.TextField()
+    content = HTMLField(verbose_name='文章内容')
+    #1对多的时候，要放在多方
+    author=models.ForeignKey(User, on_delete=models.CASCADE,verbose_name='作者', related_name='arts')
+    # artmanage = UsersManager()
 
+    def __str__(self):
+        return self.title
+
+    #自定义返回文章PK的值
+    def get_art_url(self):
+        return reverse('user:artshow', kwargs={'pk': self.pk})
+
+
+class Comment(models.Model):
+    id = models.AutoField(primary_key=True, verbose_name='评论编号')
+    content = models.CharField(max_length=255, verbose_name='评论内容')
+    null = models.ForeignKey('self', null=True, verbose_name='评论')
+    user_cont = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='用户评论')
+    art_cont = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='评论文章')

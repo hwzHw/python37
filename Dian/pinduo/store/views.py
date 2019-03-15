@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect, reverse
-from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_GET
-from django.contrib.auth import authenticate,login,logout#引入商品种类表
 from django.contrib.auth.decorators import login_required
 
 
@@ -34,7 +32,7 @@ def add(request):
         # 保存
         store.save()
         #
-        print(store.id)
+        # print(store.id)
         #返回详情页面
         return redirect(reverse("store:detail",kwargs={"s_id":store.id}))
         # return redirect(reverse("store:list"))
@@ -56,7 +54,7 @@ def list(request):
     #
     return render(request,'store/shang_jia.html',{"stores":stores})
 
-#
+
 @login_required
 #
 def update(request,s_id):
@@ -68,13 +66,10 @@ def update(request,s_id):
     """
     # GET
     if request.method == "GET":
-        #
         store = models.Store.objects.get(pk=s_id)
-        #
         return render(request,"store/update.html",{'store':store})
     # POST
     else:
-        #
         name = request.POST["name"]
         intro = request.POST["intro"]
         store = models.Store.objects.get(pk=s_id)
@@ -87,17 +82,12 @@ def update(request,s_id):
 
         except:
             pass
-        #
         store.save()
-        #
         return redirect(reverse("store:detail",kwargs={"s_id":store.id}))
 
 
-#
 @require_GET
-#
 @login_required
-#
 def detail(request,s_id):
     """
     展示商家详情
@@ -151,9 +141,6 @@ def zhao_shang(request):
     # 用户开店界面
     return render(request,"store/zhao_shang.html")
 
-
-# def update_store(request):
-#     return render(request,"store/update_store(miss).html")
 
 # 商家模块
 def shang_jia(request):

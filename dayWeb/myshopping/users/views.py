@@ -27,7 +27,7 @@ def user_index(req):
 #登录
 def user_login(req):
 
-    return render(req, 'users/login.html', {})
+    return render(req, 'users/login_success.html', {})
 
 
 # 判断登录
@@ -46,10 +46,10 @@ def login_success(req):
             return redirect('users:user_index')
         else:
             error = '帐号被锁定，请联系管理员'
-            return render(req, 'users/login.html', {'error': error})
+            return render(req, 'users/login_success.html', {'error': error})
     else:
         error = '用户名或密码错误'
-        return render(req, 'users/login.html', {'error': error})
+        return render(req, 'users/login_success.html', {'error': error})
 
 
 #注册

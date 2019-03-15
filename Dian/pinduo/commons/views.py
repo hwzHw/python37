@@ -48,11 +48,11 @@ def index(request):
 
     allGoodsType = GoodsType.objects.filter(parent__isnull=True)
 
-    return render(request, "index.html", {"allGoodsType":allGoodsType,
-                                     "goods1_list":goods1_list,
-                                     "goods2_list":goods2_list,
-                                     "goods3_list":goods3_list,
-                                     "goods4_list":goods4_list,
-                                     "goods5_list":goods5_list
-                                     })
+    return render(request, "index.html", {"allGoodsType": allGoodsType,
+                                          "goods1_list": goods1_list,
+                                          "goods2_list": goods2_list,
+                                          "goods3_list": goods3_list,
+                                          "goods4_list": goods4_list,
+                                          "goods5_list": goods5_list
+                                          })
     # return render(request,'blog/index.html')

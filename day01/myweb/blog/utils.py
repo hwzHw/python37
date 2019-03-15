@@ -28,6 +28,8 @@
 # ..................佛祖保佑，永不加班...................
 import random, string
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import random, string
+from PIL import Image,ImageDraw,ImageFont,ImageFilter
 
 
 def getRandomChar(count=4):

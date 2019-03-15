@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # 店铺
 class Store(models.Model):
     id = models.AutoField(primary_key=True)
@@ -16,7 +17,6 @@ class Store(models.Model):
     status = models.IntegerField(default=0, verbose_name="店铺状态") #0正常营业，1，暂停营业 2永久删除
     # 店铺所属用户
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="店铺所属用户")
-
 
     def __str__(self):
         return self.name
